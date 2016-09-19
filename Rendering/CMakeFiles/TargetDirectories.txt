@@ -1,6 +1,6 @@
-/home/medialab/VTK-7.0/VTK-7.0.0/Examples/Rendering/Cxx/CMakeFiles/edit_cache.dir
-/home/medialab/VTK-7.0/VTK-7.0.0/Examples/Rendering/Cxx/CMakeFiles/rebuild_cache.dir
-/home/medialab/VTK-7.0/VTK-7.0.0/Examples/Rendering/Cxx/CMakeFiles/Cylinder.dir
-/home/medialab/VTK-7.0/VTK-7.0.0/Examples/Rendering/Cxx/CMakeFiles/SpecularSpheres.dir
-/home/medialab/VTK-7.0/VTK-7.0.0/Examples/Rendering/Cxx/CMakeFiles/AmbientSpheres.dir
-/home/medialab/VTK-7.0/VTK-7.0.0/Examples/Rendering/Cxx/CMakeFiles/DiffuseSpheres.dir
+/home/medialab/Zhewei/VTK-Projects/Rendering/CMakeFiles/edit_cache.dir
+/home/medialab/Zhewei/VTK-Projects/Rendering/CMakeFiles/rebuild_cache.dir
+/home/medialab/Zhewei/VTK-Projects/Rendering/CMakeFiles/Cylinder.dir
+/home/medialab/Zhewei/VTK-Projects/Rendering/CMakeFiles/SpecularSpheres.dir
+/home/medialab/Zhewei/VTK-Projects/Rendering/CMakeFiles/AmbientSpheres.dir
+/home/medialab/Zhewei/VTK-Projects/Rendering/CMakeFiles/DiffuseSpheres.dir

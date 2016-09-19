@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/medialab/VTK-7.0/VTK-7.0.0/Examples/Rendering/Cxx
+CMAKE_SOURCE_DIR = /home/medialab/Zhewei/VTK-Projects/Rendering
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/medialab/VTK-7.0/VTK-7.0.0/Examples/Rendering/Cxx
+CMAKE_BINARY_DIR = /home/medialab/Zhewei/VTK-Projects/Rendering
 
 #=============================================================================
 # Target rules for target CMakeFiles/Cylinder.dir
@@ -66,7 +66,7 @@ CMAKE_BINARY_DIR = /home/medialab/VTK-7.0/VTK-7.0.0/Examples/Rendering/Cxx
 CMakeFiles/Cylinder.dir/all:
 	$(MAKE) -f CMakeFiles/Cylinder.dir/build.make CMakeFiles/Cylinder.dir/depend
 	$(MAKE) -f CMakeFiles/Cylinder.dir/build.make CMakeFiles/Cylinder.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/medialab/VTK-7.0/VTK-7.0.0/Examples/Rendering/Cxx/CMakeFiles --progress-num=3,4 "Built target Cylinder"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/medialab/Zhewei/VTK-Projects/Rendering/CMakeFiles --progress-num=3,4 "Built target Cylinder"
 .PHONY : CMakeFiles/Cylinder.dir/all
 
 # Include target in all.
@@ -76,9 +76,9 @@ all: CMakeFiles/Cylinder.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Cylinder.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/medialab/VTK-7.0/VTK-7.0.0/Examples/Rendering/Cxx/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/medialab/Zhewei/VTK-Projects/Rendering/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Cylinder.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/medialab/VTK-7.0/VTK-7.0.0/Examples/Rendering/Cxx/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/medialab/Zhewei/VTK-Projects/Rendering/CMakeFiles 0
 .PHONY : CMakeFiles/Cylinder.dir/rule
 
 # Convenience name for target.
@@ -103,7 +103,7 @@ clean: CMakeFiles/Cylinder.dir/clean
 CMakeFiles/SpecularSpheres.dir/all:
 	$(MAKE) -f CMakeFiles/SpecularSpheres.dir/build.make CMakeFiles/SpecularSpheres.dir/depend
 	$(MAKE) -f CMakeFiles/SpecularSpheres.dir/build.make CMakeFiles/SpecularSpheres.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/medialab/VTK-7.0/VTK-7.0.0/Examples/Rendering/Cxx/CMakeFiles --progress-num=7,8 "Built target SpecularSpheres"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/medialab/Zhewei/VTK-Projects/Rendering/CMakeFiles --progress-num=7,8 "Built target SpecularSpheres"
 .PHONY : CMakeFiles/SpecularSpheres.dir/all
 
 # Include target in all.
@@ -113,9 +113,9 @@ all: CMakeFiles/SpecularSpheres.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/SpecularSpheres.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/medialab/VTK-7.0/VTK-7.0.0/Examples/Rendering/Cxx/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/medialab/Zhewei/VTK-Projects/Rendering/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/SpecularSpheres.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/medialab/VTK-7.0/VTK-7.0.0/Examples/Rendering/Cxx/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/medialab/Zhewei/VTK-Projects/Rendering/CMakeFiles 0
 .PHONY : CMakeFiles/SpecularSpheres.dir/rule
 
 # Convenience name for target.
@@ -140,7 +140,7 @@ clean: CMakeFiles/SpecularSpheres.dir/clean
 CMakeFiles/AmbientSpheres.dir/all:
 	$(MAKE) -f CMakeFiles/AmbientSpheres.dir/build.make CMakeFiles/AmbientSpheres.dir/depend
 	$(MAKE) -f CMakeFiles/AmbientSpheres.dir/build.make CMakeFiles/AmbientSpheres.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/medialab/VTK-7.0/VTK-7.0.0/Examples/Rendering/Cxx/CMakeFiles --progress-num=1,2 "Built target AmbientSpheres"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/medialab/Zhewei/VTK-Projects/Rendering/CMakeFiles --progress-num=1,2 "Built target AmbientSpheres"
 .PHONY : CMakeFiles/AmbientSpheres.dir/all
 
 # Include target in all.
@@ -150,9 +150,9 @@ all: CMakeFiles/AmbientSpheres.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/AmbientSpheres.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/medialab/VTK-7.0/VTK-7.0.0/Examples/Rendering/Cxx/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/medialab/Zhewei/VTK-Projects/Rendering/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/AmbientSpheres.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/medialab/VTK-7.0/VTK-7.0.0/Examples/Rendering/Cxx/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/medialab/Zhewei/VTK-Projects/Rendering/CMakeFiles 0
 .PHONY : CMakeFiles/AmbientSpheres.dir/rule
 
 # Convenience name for target.
@@ -177,7 +177,7 @@ clean: CMakeFiles/AmbientSpheres.dir/clean
 CMakeFiles/DiffuseSpheres.dir/all:
 	$(MAKE) -f CMakeFiles/DiffuseSpheres.dir/build.make CMakeFiles/DiffuseSpheres.dir/depend
 	$(MAKE) -f CMakeFiles/DiffuseSpheres.dir/build.make CMakeFiles/DiffuseSpheres.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/medialab/VTK-7.0/VTK-7.0.0/Examples/Rendering/Cxx/CMakeFiles --progress-num=5,6 "Built target DiffuseSpheres"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/medialab/Zhewei/VTK-Projects/Rendering/CMakeFiles --progress-num=5,6 "Built target DiffuseSpheres"
 .PHONY : CMakeFiles/DiffuseSpheres.dir/all
 
 # Include target in all.
@@ -187,9 +187,9 @@ all: CMakeFiles/DiffuseSpheres.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/DiffuseSpheres.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/medialab/VTK-7.0/VTK-7.0.0/Examples/Rendering/Cxx/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/medialab/Zhewei/VTK-Projects/Rendering/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/DiffuseSpheres.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/medialab/VTK-7.0/VTK-7.0.0/Examples/Rendering/Cxx/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/medialab/Zhewei/VTK-Projects/Rendering/CMakeFiles 0
 .PHONY : CMakeFiles/DiffuseSpheres.dir/rule
 
 # Convenience name for target.

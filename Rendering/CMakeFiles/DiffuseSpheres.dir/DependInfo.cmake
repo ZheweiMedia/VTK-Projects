@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/medialab/VTK-7.0/VTK-7.0.0/Examples/Rendering/Cxx/DiffuseSpheres.cxx" "/home/medialab/VTK-7.0/VTK-7.0.0/Examples/Rendering/Cxx/CMakeFiles/DiffuseSpheres.dir/DiffuseSpheres.cxx.o"
+  "/home/medialab/Zhewei/VTK-Projects/Rendering/DiffuseSpheres.cxx" "/home/medialab/Zhewei/VTK-Projects/Rendering/CMakeFiles/DiffuseSpheres.dir/DiffuseSpheres.cxx.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

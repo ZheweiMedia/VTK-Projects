@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/medialab/VTK-7.0/VTK-7.0.0/Examples/Rendering/Cxx
+CMAKE_SOURCE_DIR = /home/medialab/Zhewei/VTK-Projects/Rendering
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/medialab/VTK-7.0/VTK-7.0.0/Examples/Rendering/Cxx
+CMAKE_BINARY_DIR = /home/medialab/Zhewei/VTK-Projects/Rendering
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/medialab/VTK-7.0/VTK-7.0.0/Examples/Rendering/Cxx/CMakeFiles /home/medialab/VTK-7.0/VTK-7.0.0/Examples/Rendering/Cxx/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/medialab/Zhewei/VTK-Projects/Rendering/CMakeFiles /home/medialab/Zhewei/VTK-Projects/Rendering/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/medialab/VTK-7.0/VTK-7.0.0/Examples/Rendering/Cxx/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/medialab/Zhewei/VTK-Projects/Rendering/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
