@@ -1,0 +1,4 @@
+/home/medialab/Zhewei/VTK-Projects/HW01/CMakeFiles/edit_cache.dir
+/home/medialab/Zhewei/VTK-Projects/HW01/CMakeFiles/rebuild_cache.dir
+/home/medialab/Zhewei/VTK-Projects/HW01/CMakeFiles/Cylinder_Series.dir
+/home/medialab/Zhewei/VTK-Projects/HW01/CMakeFiles/DiffuseSpheres.dir
