@@ -1,0 +1,22 @@
+// This is an example about to generate 10 sylinders in a row.
+//
+#include "vtkSmartPointer.h"
+#include "vtkSphereSource.h"
+#include "vtkPolyDataMapper.h"
+#include "vtkActor.h"
+#include "vtkRenderer.h"
+#include "vtkRenderWindow.h"
+#include "vtkRenderWindowInteractor.h"
+#include "vtkProperty.h"
+#include "vtkCamera.h"
+#include "vtkLight.h"
+
+int main()
+{
+  // Creat a sphere
+  vtkSmartPointer<vtkSphereSource> sphere = vtkSmartPointer<vtkSphereSource>::New();
+  sphere->SetThetaResolution(100);
+  sphere->SetPhiResolution(50);
+
+  vtkSmartPointer<vtkpolyDataMapper> sphereMapper = vtkSmartPointer<vtkPolyDataMapper>::New();
+  sphereMapper->SetInputConnection(sphere->GetOutputPort());
