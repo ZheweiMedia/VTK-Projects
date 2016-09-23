@@ -23,6 +23,8 @@ include(${VTK_USE_FILE})
 set(RENDERING_EXAMPLES_SRCS
   DiffuseSpheres
   Cylinder_Series
+  Cone
+  Cylinder_One
   )
 
 foreach(name ${RENDERING_EXAMPLES_SRCS})

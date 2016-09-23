@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named DiffuseSpheres
+
+# Build rule for target.
+DiffuseSpheres: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 DiffuseSpheres
+.PHONY : DiffuseSpheres
+
+# fast build rule for target.
+DiffuseSpheres/fast:
+	$(MAKE) -f CMakeFiles/DiffuseSpheres.dir/build.make CMakeFiles/DiffuseSpheres.dir/build
+.PHONY : DiffuseSpheres/fast
+
+#=============================================================================
 # Target rules for targets named Cylinder_Series
 
 # Build rule for target.
@@ -124,17 +137,84 @@ Cylinder_Series/fast:
 .PHONY : Cylinder_Series/fast
 
 #=============================================================================
-# Target rules for targets named DiffuseSpheres
+# Target rules for targets named Cone
 
 # Build rule for target.
-DiffuseSpheres: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 DiffuseSpheres
-.PHONY : DiffuseSpheres
+Cone: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Cone
+.PHONY : Cone
 
 # fast build rule for target.
-DiffuseSpheres/fast:
-	$(MAKE) -f CMakeFiles/DiffuseSpheres.dir/build.make CMakeFiles/DiffuseSpheres.dir/build
-.PHONY : DiffuseSpheres/fast
+Cone/fast:
+	$(MAKE) -f CMakeFiles/Cone.dir/build.make CMakeFiles/Cone.dir/build
+.PHONY : Cone/fast
+
+#=============================================================================
+# Target rules for targets named Cylinder_One
+
+# Build rule for target.
+Cylinder_One: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Cylinder_One
+.PHONY : Cylinder_One
+
+# fast build rule for target.
+Cylinder_One/fast:
+	$(MAKE) -f CMakeFiles/Cylinder_One.dir/build.make CMakeFiles/Cylinder_One.dir/build
+.PHONY : Cylinder_One/fast
+
+Cone.o: Cone.cxx.o
+
+.PHONY : Cone.o
+
+# target to build an object file
+Cone.cxx.o:
+	$(MAKE) -f CMakeFiles/Cone.dir/build.make CMakeFiles/Cone.dir/Cone.cxx.o
+.PHONY : Cone.cxx.o
+
+Cone.i: Cone.cxx.i
+
+.PHONY : Cone.i
+
+# target to preprocess a source file
+Cone.cxx.i:
+	$(MAKE) -f CMakeFiles/Cone.dir/build.make CMakeFiles/Cone.dir/Cone.cxx.i
+.PHONY : Cone.cxx.i
+
+Cone.s: Cone.cxx.s
+
+.PHONY : Cone.s
+
+# target to generate assembly for a file
+Cone.cxx.s:
+	$(MAKE) -f CMakeFiles/Cone.dir/build.make CMakeFiles/Cone.dir/Cone.cxx.s
+.PHONY : Cone.cxx.s
+
+Cylinder_One.o: Cylinder_One.cxx.o
+
+.PHONY : Cylinder_One.o
+
+# target to build an object file
+Cylinder_One.cxx.o:
+	$(MAKE) -f CMakeFiles/Cylinder_One.dir/build.make CMakeFiles/Cylinder_One.dir/Cylinder_One.cxx.o
+.PHONY : Cylinder_One.cxx.o
+
+Cylinder_One.i: Cylinder_One.cxx.i
+
+.PHONY : Cylinder_One.i
+
+# target to preprocess a source file
+Cylinder_One.cxx.i:
+	$(MAKE) -f CMakeFiles/Cylinder_One.dir/build.make CMakeFiles/Cylinder_One.dir/Cylinder_One.cxx.i
+.PHONY : Cylinder_One.cxx.i
+
+Cylinder_One.s: Cylinder_One.cxx.s
+
+.PHONY : Cylinder_One.s
+
+# target to generate assembly for a file
+Cylinder_One.cxx.s:
+	$(MAKE) -f CMakeFiles/Cylinder_One.dir/build.make CMakeFiles/Cylinder_One.dir/Cylinder_One.cxx.s
+.PHONY : Cylinder_One.cxx.s
 
 Cylinder_Series.o: Cylinder_Series.cxx.o
 
@@ -198,8 +278,16 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... Cylinder_Series"
 	@echo "... DiffuseSpheres"
+	@echo "... Cylinder_Series"
+	@echo "... Cone"
+	@echo "... Cylinder_One"
+	@echo "... Cone.o"
+	@echo "... Cone.i"
+	@echo "... Cone.s"
+	@echo "... Cylinder_One.o"
+	@echo "... Cylinder_One.i"
+	@echo "... Cylinder_One.s"
 	@echo "... Cylinder_Series.o"
 	@echo "... Cylinder_Series.i"
 	@echo "... Cylinder_Series.s"
