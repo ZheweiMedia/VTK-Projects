@@ -21,9 +21,7 @@ find_package(VTK 7.0 REQUIRED NO_MODULE)
 include(${VTK_USE_FILE})
 
 set(RENDERING_EXAMPLES_SRCS
-  DiffuseSpheres
   Cylinder_Series
-  Cone
   Cylinder_One
   Cylinder_Bottom
   )
