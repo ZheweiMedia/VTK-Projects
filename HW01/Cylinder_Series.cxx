@@ -1,73 +1,74 @@
-// This is an example about to generate 10 sylinders in a row.
-//
-#include "vtkSmartPointer.h"
+// First include the required header files for the VTK classes we are using.
+#include "vtkCylinderSource.h"
 #include "vtkConeSource.h"
-#include "vtkSphereSource.h"
 #include "vtkPolyDataMapper.h"
-#include "vtkActor.h"
-#include "vtkRenderer.h"
 #include "vtkRenderWindow.h"
-#include "vtkRenderWindowInteractor.h"
 #include "vtkProperty.h"
 #include "vtkCamera.h"
+#include "vtkActor.h"
+#include "vtkRenderer.h"
 #include "vtkLight.h"
-#include "unistd.h"
+
 
 int main()
 {
   
-  
+ 
 
-  vtkConeSource *sphere = vtkConeSource::New();
-  sphere->SetHeight( 3.0 );
-  sphere->SetRadius( 1.0 );
-  sphere->SetResolution( 10 );
-  vtkSmartPointer<vtkPolyDataMapper> sphereMapper = vtkSmartPointer<vtkPolyDataMapper>::New();
-  sphereMapper->SetInputConnection(sphere->GetOutputPort());
-  vtkSmartPointer<vtkRenderWindowInteractor> iren = vtkSmartPointer<vtkRenderWindowInteractor>::New();
   vtkSmartPointer<vtkRenderWindow> renWin = vtkSmartPointer<vtkRenderWindow>::New();
-  renWin->SetSize(400, 200);
-  iren->SetRenderWindow(renWin);
   vtkSmartPointer<vtkLight> light = vtkSmartPointer<vtkLight>::New();
   light->SetFocalPoint(1.875, 0.6125, 0);
-  light->SetPosition(0.875, 1.6125, 1);
-
+  light->SetPosition(0, 0, 10);
+  vtkSmartPointer<vtkCamera> camera = vtkSmartPointer<vtkCamera>::New();
+  camera->SetPosition(0,0,-50);
   
 
   
   
-
-  // Wait for 100 ms to show next group
-  for (unsigned int j = 0; j < 360; j++)
-    {
-      //sleep(0.03);
-      // for iteration to get 4 spheres.
-      //
-      vtkSmartPointer<vtkRenderer> ren = vtkSmartPointer<vtkRenderer>::New();
-      renWin->AddRenderer(ren);
-      for(unsigned int i = 0; i < 4; i++)
-	{
-	  vtkSmartPointer<vtkActor> sphere1 = vtkSmartPointer<vtkActor>::New();
-	  sphere1->SetMapper(sphereMapper);
-	  sphere1->GetProperty()->SetColor(1, 0.1*i,0);
-	  sphere1->GetProperty()->SetAmbient(0.1*i);
-	  sphere1->AddPosition(i*10, 0, 0);
-
-	  // add actors to the renderer.
-	  ren->AddActor(sphere1);
-	}
-      ren->SetBackground(0.1, 0.2, 0.4);
-      ren->GetActiveCamera()->Azimuth(1);
-      // set up the lighting.
-      
-      ren->AddLight(light);
-
-    }
-  iren->Initialize();
-  iren->Start();
-  
+  int i;
+  int j;
  
   
+  for (j = 1; j < 50; j++)
+    {
+      
+      vtkSmartPointer<vtkRenderer> ren = vtkSmartPointer<vtkRenderer>::New();
+      
+      
+      //ren->AddLight(light);
+      //ren->SetActiveCamera(camera);
+      for (int k=1; k<20; k++)
+	{
+	  vtkSmartPointer<vtkCylinderSource> cylinder = vtkSmartPointer<vtkCylinderSource>::New();
+	  vtkSmartPointer<vtkPolyDataMapper> cylinderMapper = vtkSmartPointer<vtkPolyDataMapper>::New();
+	  cylinderMapper->SetInputConnection (cylinder->GetOutputPort());
+	  double height = rand()%75;
+	  double radius = 3;
+	  cylinder->SetResolution(18);
+	  cylinder->SetHeight(height);
+	  cylinder->SetRadius(radius);
+	  vtkSmartPointer<vtkActor> cylinderActor = vtkSmartPointer<vtkActor>::New();
+	  
+	  cylinderActor->SetMapper(cylinderMapper);
+	  cylinderActor->GetProperty()->SetColor(1.0000, 0.3882, 0.2784);
+	  
+	  cylinderActor->AddPosition(25*k,height/2,0);
+	  ren->AddActor( cylinderActor );
+	  ren->SetBackground( 0.1, 0.2, 0.4 );
+	}
+      renWin->AddRenderer( ren );
+      renWin->SetSize( 600, 300 );
+      
+      for (i = 0; i < 10; ++i)
+	{
+	  // render the image
+	  renWin->Render();
+	  // rotate the active camera by one degree
+	  // ren->GetActiveCamera()->Azimuth( 1 );
+	 }
+    }
 
-  return EXIT_SUCCESS;
+
+
+  return 0;
 }

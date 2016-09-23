@@ -44,15 +44,15 @@ int main()
       vtkSmartPointer<vtkActor> cylinderActor = vtkSmartPointer<vtkActor>::New();
       height = rand()%100;
       cylinder->SetHeight(height);
-      center = height/2;
-      cylinder->SetCenter(0,0,0);
-      std::cout << height << ' '<< center <<std::endl;
+      center = height/2-100;
+      cylinder->SetCenter(height-100,0,0);
+      //std::cout << height << center;
       cylinder->SetRadius(radius);
       cylinderActor->SetMapper(cylinderMapper);
       cylinderActor->GetProperty()->SetColor(1.0000, 0.3882, 0.2784);
 	  
       //coneActor->AddPosition(k*5,0,0);
-      cylinderActor->AddPosition(0,center,0);
+      cylinderActor->AddPosition(0,0,0);
       ren->AddActor( cylinderActor );
       ren->SetBackground( 0.1, 0.2, 0.4 );
       ren->AddLight(light);

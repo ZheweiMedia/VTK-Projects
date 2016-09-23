@@ -59,16 +59,19 @@ CMakeFiles/Cylinder_One.dir/Cylinder_One.cxx.o
  /home/medialab/VTK-7.0/VTK-7.0.0/Common/ExecutionModel/vtkPolyDataAlgorithm.h
  /home/medialab/VTK-7.0/VTK-7.0.0/Common/Math/vtkTuple.h
  /home/medialab/VTK-7.0/VTK-7.0.0/Filters/Sources/vtkConeSource.h
+ /home/medialab/VTK-7.0/VTK-7.0.0/Filters/Sources/vtkCylinderSource.h
  /home/medialab/VTK-7.0/VTK-7.0.0/Rendering/Core/vtkAbstractMapper.h
  /home/medialab/VTK-7.0/VTK-7.0.0/Rendering/Core/vtkAbstractMapper3D.h
  /home/medialab/VTK-7.0/VTK-7.0.0/Rendering/Core/vtkActor.h
  /home/medialab/VTK-7.0/VTK-7.0.0/Rendering/Core/vtkActorCollection.h
  /home/medialab/VTK-7.0/VTK-7.0.0/Rendering/Core/vtkCamera.h
+ /home/medialab/VTK-7.0/VTK-7.0.0/Rendering/Core/vtkLight.h
  /home/medialab/VTK-7.0/VTK-7.0.0/Rendering/Core/vtkMapper.h
  /home/medialab/VTK-7.0/VTK-7.0.0/Rendering/Core/vtkPolyDataMapper.h
  /home/medialab/VTK-7.0/VTK-7.0.0/Rendering/Core/vtkProp.h
  /home/medialab/VTK-7.0/VTK-7.0.0/Rendering/Core/vtkProp3D.h
  /home/medialab/VTK-7.0/VTK-7.0.0/Rendering/Core/vtkPropCollection.h
+ /home/medialab/VTK-7.0/VTK-7.0.0/Rendering/Core/vtkProperty.h
  /home/medialab/VTK-7.0/VTK-7.0.0/Rendering/Core/vtkRenderWindow.h
  /home/medialab/VTK-7.0/VTK-7.0.0/Rendering/Core/vtkRenderer.h
  /home/medialab/VTK-7.0/VTK-7.0.0/Rendering/Core/vtkTexture.h

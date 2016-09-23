@@ -436,6 +436,14 @@ vtkPolyDataAlgorithm.h
 vtkCell.h
 /home/medialab/VTK-7.0/VTK-7.0.0/Filters/Sources/vtkCell.h
 
+/home/medialab/VTK-7.0/VTK-7.0.0/Filters/Sources/vtkCylinderSource.h
+vtkFiltersSourcesModule.h
+/home/medialab/VTK-7.0/VTK-7.0.0/Filters/Sources/vtkFiltersSourcesModule.h
+vtkPolyDataAlgorithm.h
+/home/medialab/VTK-7.0/VTK-7.0.0/Filters/Sources/vtkPolyDataAlgorithm.h
+vtkCell.h
+/home/medialab/VTK-7.0/VTK-7.0.0/Filters/Sources/vtkCell.h
+
 /home/medialab/VTK-7.0/VTK-7.0.0/Rendering/Core/vtkAbstractMapper.h
 vtkRenderingCoreModule.h
 /home/medialab/VTK-7.0/VTK-7.0.0/Rendering/Core/vtkRenderingCoreModule.h
@@ -469,6 +477,12 @@ vtkObject.h
 /home/medialab/VTK-7.0/VTK-7.0.0/Rendering/Core/vtkObject.h
 vtkRect.h
 /home/medialab/VTK-7.0/VTK-7.0.0/Rendering/Core/vtkRect.h
+
+/home/medialab/VTK-7.0/VTK-7.0.0/Rendering/Core/vtkLight.h
+vtkRenderingCoreModule.h
+/home/medialab/VTK-7.0/VTK-7.0.0/Rendering/Core/vtkRenderingCoreModule.h
+vtkObject.h
+/home/medialab/VTK-7.0/VTK-7.0.0/Rendering/Core/vtkObject.h
 
 /home/medialab/VTK-7.0/VTK-7.0.0/Rendering/Core/vtkMapper.h
 vtkRenderingCoreModule.h
@@ -507,6 +521,12 @@ vtkCollection.h
 /home/medialab/VTK-7.0/VTK-7.0.0/Rendering/Core/vtkCollection.h
 vtkProp.h
 /home/medialab/VTK-7.0/VTK-7.0.0/Rendering/Core/vtkProp.h
+
+/home/medialab/VTK-7.0/VTK-7.0.0/Rendering/Core/vtkProperty.h
+vtkRenderingCoreModule.h
+/home/medialab/VTK-7.0/VTK-7.0.0/Rendering/Core/vtkRenderingCoreModule.h
+vtkObject.h
+/home/medialab/VTK-7.0/VTK-7.0.0/Rendering/Core/vtkObject.h
 
 /home/medialab/VTK-7.0/VTK-7.0.0/Rendering/Core/vtkRenderWindow.h
 vtkRenderingCoreModule.h
@@ -601,16 +621,26 @@ vtkAutoInit.h
 /home/medialab/VTK-7.0/VTK-build/Rendering/Core/vtkAutoInit.h
 
 /home/medialab/Zhewei/VTK-Projects/HW01/Cylinder_One.cxx
+vtkCylinderSource.h
+/home/medialab/Zhewei/VTK-Projects/HW01/vtkCylinderSource.h
 vtkConeSource.h
 /home/medialab/Zhewei/VTK-Projects/HW01/vtkConeSource.h
 vtkPolyDataMapper.h
 /home/medialab/Zhewei/VTK-Projects/HW01/vtkPolyDataMapper.h
 vtkRenderWindow.h
 /home/medialab/Zhewei/VTK-Projects/HW01/vtkRenderWindow.h
+vtkProperty.h
+/home/medialab/Zhewei/VTK-Projects/HW01/vtkProperty.h
 vtkCamera.h
 /home/medialab/Zhewei/VTK-Projects/HW01/vtkCamera.h
 vtkActor.h
 /home/medialab/Zhewei/VTK-Projects/HW01/vtkActor.h
 vtkRenderer.h
 /home/medialab/Zhewei/VTK-Projects/HW01/vtkRenderer.h
+vtkLight.h
+/home/medialab/Zhewei/VTK-Projects/HW01/vtkLight.h
+stdlib.h
+/home/medialab/Zhewei/VTK-Projects/HW01/stdlib.h
+iostream
+-
 

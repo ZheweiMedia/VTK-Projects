@@ -66,7 +66,7 @@ CMAKE_BINARY_DIR = /home/medialab/Zhewei/VTK-Projects/HW01
 CMakeFiles/DiffuseSpheres.dir/all:
 	$(MAKE) -f CMakeFiles/DiffuseSpheres.dir/build.make CMakeFiles/DiffuseSpheres.dir/depend
 	$(MAKE) -f CMakeFiles/DiffuseSpheres.dir/build.make CMakeFiles/DiffuseSpheres.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/medialab/Zhewei/VTK-Projects/HW01/CMakeFiles --progress-num=7,8 "Built target DiffuseSpheres"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/medialab/Zhewei/VTK-Projects/HW01/CMakeFiles --progress-num=9,10 "Built target DiffuseSpheres"
 .PHONY : CMakeFiles/DiffuseSpheres.dir/all
 
 # Include target in all.
@@ -103,7 +103,7 @@ clean: CMakeFiles/DiffuseSpheres.dir/clean
 CMakeFiles/Cylinder_Series.dir/all:
 	$(MAKE) -f CMakeFiles/Cylinder_Series.dir/build.make CMakeFiles/Cylinder_Series.dir/depend
 	$(MAKE) -f CMakeFiles/Cylinder_Series.dir/build.make CMakeFiles/Cylinder_Series.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/medialab/Zhewei/VTK-Projects/HW01/CMakeFiles --progress-num=5,6 "Built target Cylinder_Series"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/medialab/Zhewei/VTK-Projects/HW01/CMakeFiles --progress-num=7,8 "Built target Cylinder_Series"
 .PHONY : CMakeFiles/Cylinder_Series.dir/all
 
 # Include target in all.
@@ -130,6 +130,43 @@ CMakeFiles/Cylinder_Series.dir/clean:
 
 # clean rule for target.
 clean: CMakeFiles/Cylinder_Series.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/Cylinder_Bottom.dir
+
+# All Build rule for target.
+CMakeFiles/Cylinder_Bottom.dir/all:
+	$(MAKE) -f CMakeFiles/Cylinder_Bottom.dir/build.make CMakeFiles/Cylinder_Bottom.dir/depend
+	$(MAKE) -f CMakeFiles/Cylinder_Bottom.dir/build.make CMakeFiles/Cylinder_Bottom.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/medialab/Zhewei/VTK-Projects/HW01/CMakeFiles --progress-num=3,4 "Built target Cylinder_Bottom"
+.PHONY : CMakeFiles/Cylinder_Bottom.dir/all
+
+# Include target in all.
+all: CMakeFiles/Cylinder_Bottom.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/Cylinder_Bottom.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/medialab/Zhewei/VTK-Projects/HW01/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Cylinder_Bottom.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/medialab/Zhewei/VTK-Projects/HW01/CMakeFiles 0
+.PHONY : CMakeFiles/Cylinder_Bottom.dir/rule
+
+# Convenience name for target.
+Cylinder_Bottom: CMakeFiles/Cylinder_Bottom.dir/rule
+
+.PHONY : Cylinder_Bottom
+
+# clean rule for target.
+CMakeFiles/Cylinder_Bottom.dir/clean:
+	$(MAKE) -f CMakeFiles/Cylinder_Bottom.dir/build.make CMakeFiles/Cylinder_Bottom.dir/clean
+.PHONY : CMakeFiles/Cylinder_Bottom.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/Cylinder_Bottom.dir/clean
 
 .PHONY : clean
 
@@ -177,7 +214,7 @@ clean: CMakeFiles/Cone.dir/clean
 CMakeFiles/Cylinder_One.dir/all:
 	$(MAKE) -f CMakeFiles/Cylinder_One.dir/build.make CMakeFiles/Cylinder_One.dir/depend
 	$(MAKE) -f CMakeFiles/Cylinder_One.dir/build.make CMakeFiles/Cylinder_One.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/medialab/Zhewei/VTK-Projects/HW01/CMakeFiles --progress-num=3,4 "Built target Cylinder_One"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/medialab/Zhewei/VTK-Projects/HW01/CMakeFiles --progress-num=5,6 "Built target Cylinder_One"
 .PHONY : CMakeFiles/Cylinder_One.dir/all
 
 # Include target in all.

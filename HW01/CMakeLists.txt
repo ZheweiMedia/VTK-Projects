@@ -25,6 +25,7 @@ set(RENDERING_EXAMPLES_SRCS
   Cylinder_Series
   Cone
   Cylinder_One
+  Cylinder_Bottom
   )
 
 foreach(name ${RENDERING_EXAMPLES_SRCS})
