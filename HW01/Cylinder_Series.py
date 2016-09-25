@@ -47,7 +47,7 @@ def usage (programm):
     print ('       number1 and number2 are integers in [0,180]')
 
 def work(numbers):
-    Raw_data = gzip.open('VTK_Subjects_180.pickle.gz', 'rb')
+    Raw_data = gzip.open('VTK_Subjects_180_difference.pickle.gz', 'rb')
     Subjects_data, Label, ID = Pickle.load(Raw_data)
     subjectNo1 = int(numbers[0])
     subjectNo2 = int(numbers[1])
