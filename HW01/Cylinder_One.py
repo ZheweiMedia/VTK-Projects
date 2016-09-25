@@ -6,7 +6,7 @@ Zhewei @ 9/25/2016
 """
 
 import vtk
-import gzip
+import sys, gzip
 import pickle as Pickle
 import numpy
 
@@ -18,11 +18,7 @@ augment_ratio = 100
 timeFrame = 130
 featureNo = 20
 
-Raw_data = gzip.open('VTK_Subjects_180.pickle.gz', 'rb')
-Subjects_data, Label, ID = Pickle.load(Raw_data)
 
-data1 = Subjects_data[0:130,:]
-data2 = Subjects_data[1*130:2*130,:]
 
 def source_to_mapper_to_actor(height):
     source = vtk.vtkCylinderSource()
@@ -37,7 +33,28 @@ def source_to_mapper_to_actor(height):
     actor.GetProperty().SetColor(0,1,0)
     return source, mapper, actor
 
-def main():
+def main(args):
+    if len(args) < 3:
+        usage( args[0] )
+        pass
+    else:
+        work( args[1:] )
+        pass
+    pass
+
+def usage (programm):
+    print ("usage: python2.7 %s numer1 number2"%(programm))
+    print ('       number1 and number2 in [0,180]')
+
+def work(numbers):
+    Raw_data = gzip.open('VTK_Subjects_180.pickle.gz', 'rb')
+    Subjects_data, Label, ID = Pickle.load(Raw_data)
+    subjectNo1 = int(numbers[0])
+    subjectNo2 = int(numbers[1])
+
+    print (SubjectNo1)
+    data1 = Subjects_data[subjectNo1*130:(subjectNo1+1)*130,:]
+    data2 = Subjects_data[subjectNo2*130:(subjectNo2+1)*130,:]
     # create a rendering window and renderer
     renWin = vtk.vtkRenderWindow()
     iren = vtk.vtkRenderWindowInteractor()
@@ -68,3 +85,9 @@ def main():
         renWin.SetSize(700,400)
 
         renWin.Render()
+
+
+        
+if __name__ == '__main__':
+    main(sys.argv)
+    pass
