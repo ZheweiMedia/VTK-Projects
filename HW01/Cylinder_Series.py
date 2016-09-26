@@ -47,7 +47,7 @@ def usage (programm):
     print ('       number1 and number2 are integers in [0,180]')
 
 def work(numbers):
-    Raw_data = gzip.open('VTK_Subjects_180_difference.pickle.gz', 'rb')
+    Raw_data = gzip.open('VTK_Subjects_180.pickle.gz', 'rb')
     Subjects_data, Label, ID = Pickle.load(Raw_data)
     subjectNo1 = int(numbers[0])
     subjectNo2 = int(numbers[1])
@@ -56,12 +56,12 @@ def work(numbers):
 
     data1 = Subjects_data[subjectNo1*130:(subjectNo1+1)*130,:]
     data2 = Subjects_data[subjectNo2*130:(subjectNo2+1)*130,:]
+    
     # create a rendering window and renderer
     renWin = vtk.vtkRenderWindow()
     iren = vtk.vtkRenderWindowInteractor()
     camera = vtk.vtkCamera()
     camera.SetPosition(0, (bottomLine1+bottomLine2)/2, -550)
-
 
     for j in range(1,timeFrame-1):
         ren = vtk.vtkRenderer()
@@ -85,7 +85,9 @@ def work(numbers):
         renWin.AddRenderer(ren)
         renWin.SetSize(700,400)
 
+        iren.Initialize()
         renWin.Render()
+        iren.Start()
 
 
         
