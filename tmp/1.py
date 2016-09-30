@@ -155,6 +155,7 @@ def main():
                     ValidData.append(_Subject)
                     _Subject = _EachSubject(row['Subject ID'], row['Sex'],
                                             row['DX Group'], row['Image ID'], row['Age'], row['Weight'])
+                    print (row['Age'])
                     iSubjectID = jSubjectID
                     iAge = row['Age']
                     
@@ -181,7 +182,7 @@ def main():
 
     # fill the data back to the ValidData list
     ValidData = fill_data_to_List(ValidData, raw_dataDict)
-    with gzip.open('Subjects_180_ADNC.pickle.gz', 'wb') as output_file:
+    with gzip.open('VTK.pickle.gz', 'wb') as output_file:
         Pickle.dump(ValidData, output_file)
     print('Done!')
 

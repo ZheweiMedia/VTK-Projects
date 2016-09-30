@@ -20,18 +20,19 @@ featureNo = 20
 
 
 
-def source_to_mapper_to_actor(height):
-    source = vtk.vtkCylinderSource()
-    mapper = vtk.vtkPolyDataMapper()
+def source_to_mapper_to_actor(height,mapper):
+    
     actor = vtk.vtkActor()
-    source.SetCenter(0,0,0)
-    source.SetRadius(6.0)
-    source.SetHeight(height*augment_ratio)
-    source.SetResolution(100)
-    mapper.SetInputConnection(source.GetOutputPort())
     actor.SetMapper(mapper)
+    actor.SetScale(1,height,1)
     actor.GetProperty().SetColor(0,1,0)
-    return source, mapper, actor
+    return actor
+
+def data_to_float(dataList):
+    data_listNew = list()
+    for data in dataList:
+        data_listNew.append(float(data))
+    return data_listNew
 
 def main(args):
     if len(args) < 3:
@@ -49,10 +50,15 @@ def usage (programm):
 def work(numbers):
     Raw_data = gzip.open('VTK_Data.pickle.gz', 'rb')
     Subjects_data, Label, ID, Age, Weight = Pickle.load(Raw_data)
+    Age = data_to_float(Age)
+    Weight = data_to_float(Weight)
     subjectNo1 = int(numbers[0])
     subjectNo2 = int(numbers[1])
     print ("First subject is", Label[subjectNo1])
     print ('Second subject is', Label[subjectNo2])
+    
+    #print (Age)
+    #print (Weight)
 
     data1 = Subjects_data[subjectNo1*130:(subjectNo1+1)*130,:]
     data2 = Subjects_data[subjectNo2*130:(subjectNo2+1)*130,:]
@@ -65,14 +71,23 @@ def work(numbers):
     camera.SetPosition(0, (bottomLine1+bottomLine2)/2, -550)
     ren.SetActiveCamera(camera)
     
+    cylinderSource = vtk.vtkCylinderSource()
+    cylinderSource.SetResolution(8)
+    cylinderSource.SetRadius(6.0)
+    cylinderSource.SetHeight(augment_ratio)
+ 
+    #Create a mapper and actor
+    mapper = vtk.vtkPolyDataMapper()
+    mapper.SetInputConnection(cylinderSource.GetOutputPort())
+    
 
     for j in range(1,timeFrame-1):
         for i in range(featureNo):
             # create source
             height1 = data1[j,i]
             height2 = data2[j,i]
-            source1, mapper1, actor1 = source_to_mapper_to_actor(height1)
-            source2, mapper2, actor2 = source_to_mapper_to_actor(height2)
+            actor1 = source_to_mapper_to_actor(height1, mapper)
+            actor2 = source_to_mapper_to_actor(height2, mapper)
                  
             actor1.AddPosition(distance_eachSubjects*i-center_of_Subjects, height1*100/2+bottomLine1,25*j)
             actor2.AddPosition(distance_eachSubjects*i-center_of_Subjects, height2*100/2+bottomLine2,25*j)

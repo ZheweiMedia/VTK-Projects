@@ -15,10 +15,12 @@ TimeFrame = 130
 
 class _EachSubject:
     # each subject is a element of a list
-    def __init__(self, SubjectID, Sex, DX_Group, imageID):
+    def __init__(self, SubjectID, Sex, DX_Group, imageID, Age, Weight):
         self.Sex = Sex
         self.DX_Group = DX_Group
         self.SubjectID = SubjectID
+        self.Age = Age
+        self.Weight = Weight
         # baseline is a dict, imageID:data
         self.baseline = {imageID:list()}
         # otherdata after baseline is also a dict, imageID:data
@@ -151,9 +153,10 @@ def Normlize_Each_subject_as_Zero_One(dataList):
         
 
 os.chdir("/home/medialab/Zhewei/data/data_from_MATLAB")
-Raw_data = gzip.open('Subjects_180_ADNC.pickle.gz', 'rb')
+Raw_data = gzip.open('VTK.pickle.gz', 'rb')
 Subjects_data = Pickle.load(Raw_data)
 Label, Data, ID, Age, Weight = data_to_list(Subjects_data)
+print (Age)
 
 # Now Data is a list of array. We need to stack the data
 # print (len(Label))
