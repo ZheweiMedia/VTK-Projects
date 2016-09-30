@@ -10,8 +10,8 @@ import sys, gzip
 import pickle as Pickle
 import numpy
 
-bottomLine1 = -100
-bottomLine2 = 30
+bottomLine1 = 30
+bottomLine2 = -100
 distance_eachSubjects = 20
 center_of_Subjects = 200
 augment_ratio = 100
@@ -20,12 +20,15 @@ featureNo = 20
 
 
 
-def source_to_mapper_to_actor(height,mapper):
-    
+def source_to_mapper_to_actor(height,mapper, group_ratio, weight_ratio, group):
+
     actor = vtk.vtkActor()
     actor.SetMapper(mapper)
-    actor.SetScale(1,height,1)
-    actor.GetProperty().SetColor(0,1,0)
+    actor.SetScale(weight_ratio,height,1)
+    if group == 'Normal':
+        actor.GetProperty().SetColor(0,group_ratio,0)
+    else:
+        actor.GetProperty().SetColor(group_ratio,0,0)
     return actor
 
 def data_to_float(dataList):
@@ -50,18 +53,31 @@ def usage (programm):
 def work(numbers):
     Raw_data = gzip.open('VTK_Data.pickle.gz', 'rb')
     Subjects_data, Label, ID, Age, Weight = Pickle.load(Raw_data)
-    Age = data_to_float(Age)
-    Weight = data_to_float(Weight)
+    Age = numpy.array(data_to_float(Age))
+    max_age = numpy.amax(Age)
+    Weight = numpy.array(data_to_float(Weight))
+    max_Weight = numpy.amax(Weight)
     subjectNo1 = int(numbers[0])
     subjectNo2 = int(numbers[1])
     print ("First subject is", Label[subjectNo1])
     print ('Second subject is', Label[subjectNo2])
-    
+
     #print (Age)
     #print (Weight)
-
+    label1 = Label[subjectNo1]
+    label2 = Label[subjectNo2]
     data1 = Subjects_data[subjectNo1*130:(subjectNo1+1)*130,:]
     data2 = Subjects_data[subjectNo2*130:(subjectNo2+1)*130,:]
+    age1 = Age[subjectNo1]
+    age2 = Age[subjectNo2]
+    weight1 = Weight[subjectNo1]
+    weight2 = Weight[subjectNo2]
+    age1_ratio = age1/max_age
+    age2_ratio = age2/max_age
+    weight1_ratio = weight1/max_Weight
+    weight2_ratio = weight2/max_Weight
+    print (age1, age2)
+    print (weight1, weight2)
     # create a rendering window and renderer
     ren = vtk.vtkRenderer()
     renWin = vtk.vtkRenderWindow()
@@ -70,25 +86,25 @@ def work(numbers):
     camera = vtk.vtkCamera()
     camera.SetPosition(0, (bottomLine1+bottomLine2)/2, -550)
     ren.SetActiveCamera(camera)
-    
+
     cylinderSource = vtk.vtkCylinderSource()
     cylinderSource.SetResolution(8)
-    cylinderSource.SetRadius(6.0)
+    cylinderSource.SetRadius(10.0)
     cylinderSource.SetHeight(augment_ratio)
- 
+
     #Create a mapper and actor
     mapper = vtk.vtkPolyDataMapper()
     mapper.SetInputConnection(cylinderSource.GetOutputPort())
-    
+
 
     for j in range(1,timeFrame-1):
         for i in range(featureNo):
             # create source
             height1 = data1[j,i]
             height2 = data2[j,i]
-            actor1 = source_to_mapper_to_actor(height1, mapper)
-            actor2 = source_to_mapper_to_actor(height2, mapper)
-                 
+            actor1 = source_to_mapper_to_actor(height1, mapper, age1_ratio, weight1_ratio, label1)
+            actor2 = source_to_mapper_to_actor(height2, mapper, age2_ratio, weight2_ratio, label2)
+
             actor1.AddPosition(distance_eachSubjects*i-center_of_Subjects, height1*100/2+bottomLine1,25*j)
             actor2.AddPosition(distance_eachSubjects*i-center_of_Subjects, height2*100/2+bottomLine2,25*j)
 
@@ -103,7 +119,8 @@ def work(numbers):
     iren.Start()
 
 
-        
+
 if __name__ == '__main__':
     main(sys.argv)
     pass
+
