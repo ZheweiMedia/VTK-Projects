@@ -1,8 +1,9 @@
 """
 python(2.7) version of Cylinder_series.
-Zhewei @ 9/25/2016
-"""
 
+Zhewei @ 9/25/2016
+
+"""
 from __future__ import print_function
 import vtk
 import sys, gzip
@@ -58,15 +59,11 @@ def work(numbers):
     # create a rendering window and renderer
     renWin = vtk.vtkRenderWindow()
     iren = vtk.vtkRenderWindowInteractor()
-    iren.SetRenderWindow(renWin)
     camera = vtk.vtkCamera()
     camera.SetPosition(0, (bottomLine1+bottomLine2)/2, -550)
-    
 
 
     for j in range(1,timeFrame-1):
-        
-        
         ren = vtk.vtkRenderer()
         ren.SetActiveCamera(camera)
         for i in range(featureNo):
@@ -87,10 +84,8 @@ def work(numbers):
             ren.SetBackground(0.1, 0.2, 0.4)
         renWin.AddRenderer(ren)
         renWin.SetSize(700,400)
-        
+
         renWin.Render()
-    iren.Initialize()
-    iren.Start()
 
 
         
