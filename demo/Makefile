@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/medialab/Zhewei/VTK-Projects/demo
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
@@ -77,6 +66,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -111,44 +111,44 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named FunctionC
+# Target rules for targets named cylinderSurface
 
 # Build rule for target.
-FunctionC: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 FunctionC
-.PHONY : FunctionC
+cylinderSurface: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 cylinderSurface
+.PHONY : cylinderSurface
 
 # fast build rule for target.
-FunctionC/fast:
-	$(MAKE) -f CMakeFiles/FunctionC.dir/build.make CMakeFiles/FunctionC.dir/build
-.PHONY : FunctionC/fast
+cylinderSurface/fast:
+	$(MAKE) -f CMakeFiles/cylinderSurface.dir/build.make CMakeFiles/cylinderSurface.dir/build
+.PHONY : cylinderSurface/fast
 
-FunctionC.o: FunctionC.cxx.o
+cylinderSurface.o: cylinderSurface.cxx.o
 
-.PHONY : FunctionC.o
+.PHONY : cylinderSurface.o
 
 # target to build an object file
-FunctionC.cxx.o:
-	$(MAKE) -f CMakeFiles/FunctionC.dir/build.make CMakeFiles/FunctionC.dir/FunctionC.cxx.o
-.PHONY : FunctionC.cxx.o
+cylinderSurface.cxx.o:
+	$(MAKE) -f CMakeFiles/cylinderSurface.dir/build.make CMakeFiles/cylinderSurface.dir/cylinderSurface.cxx.o
+.PHONY : cylinderSurface.cxx.o
 
-FunctionC.i: FunctionC.cxx.i
+cylinderSurface.i: cylinderSurface.cxx.i
 
-.PHONY : FunctionC.i
+.PHONY : cylinderSurface.i
 
 # target to preprocess a source file
-FunctionC.cxx.i:
-	$(MAKE) -f CMakeFiles/FunctionC.dir/build.make CMakeFiles/FunctionC.dir/FunctionC.cxx.i
-.PHONY : FunctionC.cxx.i
+cylinderSurface.cxx.i:
+	$(MAKE) -f CMakeFiles/cylinderSurface.dir/build.make CMakeFiles/cylinderSurface.dir/cylinderSurface.cxx.i
+.PHONY : cylinderSurface.cxx.i
 
-FunctionC.s: FunctionC.cxx.s
+cylinderSurface.s: cylinderSurface.cxx.s
 
-.PHONY : FunctionC.s
+.PHONY : cylinderSurface.s
 
 # target to generate assembly for a file
-FunctionC.cxx.s:
-	$(MAKE) -f CMakeFiles/FunctionC.dir/build.make CMakeFiles/FunctionC.dir/FunctionC.cxx.s
-.PHONY : FunctionC.cxx.s
+cylinderSurface.cxx.s:
+	$(MAKE) -f CMakeFiles/cylinderSurface.dir/build.make CMakeFiles/cylinderSurface.dir/cylinderSurface.cxx.s
+.PHONY : cylinderSurface.cxx.s
 
 # Help Target
 help:
@@ -156,12 +156,12 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... FunctionC"
-	@echo "... FunctionC.o"
-	@echo "... FunctionC.i"
-	@echo "... FunctionC.s"
+	@echo "... rebuild_cache"
+	@echo "... cylinderSurface"
+	@echo "... cylinderSurface.o"
+	@echo "... cylinderSurface.i"
+	@echo "... cylinderSurface.s"
 .PHONY : help
 
 

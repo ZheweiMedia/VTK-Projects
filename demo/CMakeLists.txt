@@ -1,14 +1,13 @@
 cmake_minimum_required(VERSION 2.8)
- 
-PROJECT(FunctionC)
- 
+PROJECT(cylinderSurface)
+
 find_package(VTK REQUIRED)
 include(${VTK_USE_FILE})
- 
-add_executable(FunctionC MACOSX_BUNDLE FunctionC)
- 
+
+add_executable(cylinderSurface MACOSX_BUNDLE cylinderSurface)
+
 if(VTK_LIBRARIES)
-  target_link_libraries(FunctionC ${VTK_LIBRARIES})
+    target_link_libraries(cylinderSurface ${VTK_LIBRARIES})
 else()
-  target_link_libraries(FunctionC vtkHybrid vtkWidgets)
+    target_link_libraries(cylinderSurface vtkHybrid vtkWidgets)
 endif()

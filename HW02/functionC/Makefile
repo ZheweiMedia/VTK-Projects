@@ -48,24 +48,13 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/medialab/Zhewei/VTK-Projects/HW02
+CMAKE_SOURCE_DIR = /home/medialab/Zhewei/VTK-Projects/demo
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/medialab/Zhewei/VTK-Projects/HW02
+CMAKE_BINARY_DIR = /home/medialab/Zhewei/VTK-Projects/demo
 
 #=============================================================================
 # Targets provided globally by CMake.
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -78,11 +67,22 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/medialab/Zhewei/VTK-Projects/HW02/CMakeFiles /home/medialab/Zhewei/VTK-Projects/HW02/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/medialab/Zhewei/VTK-Projects/demo/CMakeFiles /home/medialab/Zhewei/VTK-Projects/demo/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/medialab/Zhewei/VTK-Projects/HW02/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/medialab/Zhewei/VTK-Projects/demo/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,17 +111,44 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named QuadraticSurface
+# Target rules for targets named FunctionC
 
 # Build rule for target.
-QuadraticSurface: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 QuadraticSurface
-.PHONY : QuadraticSurface
+FunctionC: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 FunctionC
+.PHONY : FunctionC
 
 # fast build rule for target.
-QuadraticSurface/fast:
-	$(MAKE) -f CMakeFiles/QuadraticSurface.dir/build.make CMakeFiles/QuadraticSurface.dir/build
-.PHONY : QuadraticSurface/fast
+FunctionC/fast:
+	$(MAKE) -f CMakeFiles/FunctionC.dir/build.make CMakeFiles/FunctionC.dir/build
+.PHONY : FunctionC/fast
+
+FunctionC.o: FunctionC.cxx.o
+
+.PHONY : FunctionC.o
+
+# target to build an object file
+FunctionC.cxx.o:
+	$(MAKE) -f CMakeFiles/FunctionC.dir/build.make CMakeFiles/FunctionC.dir/FunctionC.cxx.o
+.PHONY : FunctionC.cxx.o
+
+FunctionC.i: FunctionC.cxx.i
+
+.PHONY : FunctionC.i
+
+# target to preprocess a source file
+FunctionC.cxx.i:
+	$(MAKE) -f CMakeFiles/FunctionC.dir/build.make CMakeFiles/FunctionC.dir/FunctionC.cxx.i
+.PHONY : FunctionC.cxx.i
+
+FunctionC.s: FunctionC.cxx.s
+
+.PHONY : FunctionC.s
+
+# target to generate assembly for a file
+FunctionC.cxx.s:
+	$(MAKE) -f CMakeFiles/FunctionC.dir/build.make CMakeFiles/FunctionC.dir/FunctionC.cxx.s
+.PHONY : FunctionC.cxx.s
 
 # Help Target
 help:
@@ -129,9 +156,12 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... QuadraticSurface"
+	@echo "... edit_cache"
+	@echo "... FunctionC"
+	@echo "... FunctionC.o"
+	@echo "... FunctionC.i"
+	@echo "... FunctionC.s"
 .PHONY : help
 
 
