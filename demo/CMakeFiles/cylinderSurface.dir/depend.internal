@@ -61,7 +61,8 @@ CMakeFiles/cylinderSurface.dir/cylinderSurface.cxx.o
  /home/medialab/VTK-7.0/VTK-7.0.0/Common/ExecutionModel/vtkAlgorithm.h
  /home/medialab/VTK-7.0/VTK-7.0.0/Common/ExecutionModel/vtkImageAlgorithm.h
  /home/medialab/VTK-7.0/VTK-7.0.0/Common/ExecutionModel/vtkPolyDataAlgorithm.h
- /home/medialab/VTK-7.0/VTK-7.0.0/Filters/Core/vtkDelaunay2D.h
+ /home/medialab/VTK-7.0/VTK-7.0.0/Common/ExecutionModel/vtkUnstructuredGridAlgorithm.h
+ /home/medialab/VTK-7.0/VTK-7.0.0/Filters/Core/vtkDelaunay3D.h
  /home/medialab/VTK-7.0/VTK-7.0.0/Filters/General/vtkVertexGlyphFilter.h
  /home/medialab/VTK-7.0/VTK-7.0.0/IO/XML/vtkXMLPolyDataWriter.h
  /home/medialab/VTK-7.0/VTK-7.0.0/IO/XML/vtkXMLUnstructuredDataWriter.h

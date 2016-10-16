@@ -1,8 +1,8 @@
 #include <vtkVersion.h>
 #include <vtkSmartPointer.h>
-#include <vtkMath.h>
+ 
 #include <vtkActor.h>
-#include <vtkDelaunay3D.h>
+#include <vtkDelaunay2D.h>
 #include <vtkLookupTable.h>
 #include <vtkMath.h>
 #include <vtkPointData.h>
@@ -26,29 +26,17 @@ int main(int, char *[])
   // Create a grid of points (height/terrian map)
   vtkSmartPointer<vtkPoints> points = 
     vtkSmartPointer<vtkPoints>::New();
-
-  // Create a cylinderSurface
-  double centerX, centerY, centerZ;
-  centerX = 0.0;
-  centerY = 0.0;
-  centerZ = 0.0;
-  double heightZ = 3.0;
-  double Radius = 5.0;
-
-  // we need to draw circles, so GrideSize is 360 degrees now.
-  unsigned int GridSize = 360;
+ 
+  unsigned int GridSize = 20;
   double xx, yy, zz;
-  for(unsigned int x = 0; x < GridSize; x += 10)
+  for(unsigned int x = 0; x < GridSize; x++)
     {
-    for(unsigned int y = 0; y < GridSize; y += 10)
+    for(unsigned int y = 0; y < GridSize; y++)
       {
-	for(unsigned int z = 0; z < heightZ; z++)
-	  {
-	    xx = cos(x) + vtkMath::Random(-.2, .2);
-	    yy = sin(y) + vtkMath::Random(-.2, .2);
-	    zz = z+ vtkMath::Random(-.5, .5);
-	    points->InsertNextPoint(xx, yy, zz);
-	  }
+      xx = x + vtkMath::Random(-.2, .2);
+      yy = y + vtkMath::Random(-.2, .2);
+      zz = vtkMath::Random(-.5, .5);
+      points->InsertNextPoint(xx, yy, zz);
       }
     }
  
@@ -58,10 +46,13 @@ int main(int, char *[])
   inputPolyData->SetPoints(points);
  
   // Triangulate the grid points
-  vtkSmartPointer<vtkDelaunay3D> delaunay = 
-    vtkSmartPointer<vtkDelaunay3D>::New();
-
+  vtkSmartPointer<vtkDelaunay2D> delaunay = 
+    vtkSmartPointer<vtkDelaunay2D>::New();
+#if VTK_MAJOR_VERSION <= 5
+  delaunay->SetInput(inputPolyData);
+#else
   delaunay->SetInputData(inputPolyData);
+#endif
   delaunay->Update();
   vtkPolyData* outputPolyData = delaunay->GetOutput();
  

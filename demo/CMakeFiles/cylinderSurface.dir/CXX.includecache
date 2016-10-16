@@ -446,11 +446,17 @@ vtkAlgorithm.h
 vtkPolyData.h
 /home/medialab/VTK-7.0/VTK-7.0.0/Common/ExecutionModel/vtkPolyData.h
 
-/home/medialab/VTK-7.0/VTK-7.0.0/Filters/Core/vtkDelaunay2D.h
+/home/medialab/VTK-7.0/VTK-7.0.0/Common/ExecutionModel/vtkUnstructuredGridAlgorithm.h
+vtkCommonExecutionModelModule.h
+/home/medialab/VTK-7.0/VTK-7.0.0/Common/ExecutionModel/vtkCommonExecutionModelModule.h
+vtkAlgorithm.h
+/home/medialab/VTK-7.0/VTK-7.0.0/Common/ExecutionModel/vtkAlgorithm.h
+
+/home/medialab/VTK-7.0/VTK-7.0.0/Filters/Core/vtkDelaunay3D.h
 vtkFiltersCoreModule.h
 /home/medialab/VTK-7.0/VTK-7.0.0/Filters/Core/vtkFiltersCoreModule.h
-vtkPolyDataAlgorithm.h
-/home/medialab/VTK-7.0/VTK-7.0.0/Filters/Core/vtkPolyDataAlgorithm.h
+vtkUnstructuredGridAlgorithm.h
+/home/medialab/VTK-7.0/VTK-7.0.0/Filters/Core/vtkUnstructuredGridAlgorithm.h
 
 /home/medialab/VTK-7.0/VTK-7.0.0/Filters/General/vtkVertexGlyphFilter.h
 vtkFiltersGeneralModule.h
@@ -655,9 +661,11 @@ vtkVersion.h
 -
 vtkSmartPointer.h
 -
+vtkMath.h
+-
 vtkActor.h
 -
-vtkDelaunay2D.h
+vtkDelaunay3D.h
 -
 vtkLookupTable.h
 -
