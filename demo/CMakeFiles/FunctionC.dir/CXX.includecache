@@ -408,11 +408,43 @@ vtkAlgorithm.h
 vtkPolyData.h
 /home/medialab/VTK-7.0/VTK-7.0.0/Common/ExecutionModel/vtkPolyData.h
 
+/home/medialab/VTK-7.0/VTK-7.0.0/Common/Math/vtkMatrix4x4.h
+vtkCommonMathModule.h
+/home/medialab/VTK-7.0/VTK-7.0.0/Common/Math/vtkCommonMathModule.h
+vtkObject.h
+/home/medialab/VTK-7.0/VTK-7.0.0/Common/Math/vtkObject.h
+
 /home/medialab/VTK-7.0/VTK-7.0.0/Common/Misc/vtkContourValues.h
 vtkCommonMiscModule.h
 /home/medialab/VTK-7.0/VTK-7.0.0/Common/Misc/vtkCommonMiscModule.h
 vtkObject.h
 /home/medialab/VTK-7.0/VTK-7.0.0/Common/Misc/vtkObject.h
+
+/home/medialab/VTK-7.0/VTK-7.0.0/Common/Transforms/vtkAbstractTransform.h
+vtkCommonTransformsModule.h
+/home/medialab/VTK-7.0/VTK-7.0.0/Common/Transforms/vtkCommonTransformsModule.h
+vtkObject.h
+/home/medialab/VTK-7.0/VTK-7.0.0/Common/Transforms/vtkObject.h
+
+/home/medialab/VTK-7.0/VTK-7.0.0/Common/Transforms/vtkHomogeneousTransform.h
+vtkCommonTransformsModule.h
+/home/medialab/VTK-7.0/VTK-7.0.0/Common/Transforms/vtkCommonTransformsModule.h
+vtkAbstractTransform.h
+/home/medialab/VTK-7.0/VTK-7.0.0/Common/Transforms/vtkAbstractTransform.h
+
+/home/medialab/VTK-7.0/VTK-7.0.0/Common/Transforms/vtkLinearTransform.h
+vtkCommonTransformsModule.h
+/home/medialab/VTK-7.0/VTK-7.0.0/Common/Transforms/vtkCommonTransformsModule.h
+vtkHomogeneousTransform.h
+/home/medialab/VTK-7.0/VTK-7.0.0/Common/Transforms/vtkHomogeneousTransform.h
+
+/home/medialab/VTK-7.0/VTK-7.0.0/Common/Transforms/vtkTransform.h
+vtkCommonTransformsModule.h
+/home/medialab/VTK-7.0/VTK-7.0.0/Common/Transforms/vtkCommonTransformsModule.h
+vtkLinearTransform.h
+/home/medialab/VTK-7.0/VTK-7.0.0/Common/Transforms/vtkLinearTransform.h
+vtkMatrix4x4.h
+/home/medialab/VTK-7.0/VTK-7.0.0/Common/Transforms/vtkMatrix4x4.h
 
 /home/medialab/VTK-7.0/VTK-7.0.0/Filters/Core/vtkContourFilter.h
 vtkFiltersCoreModule.h
@@ -422,11 +454,23 @@ vtkPolyDataAlgorithm.h
 vtkContourValues.h
 /home/medialab/VTK-7.0/VTK-7.0.0/Filters/Core/vtkContourValues.h
 
+/home/medialab/VTK-7.0/VTK-7.0.0/Filters/Modeling/vtkOutlineFilter.h
+vtkFiltersModelingModule.h
+/home/medialab/VTK-7.0/VTK-7.0.0/Filters/Modeling/vtkFiltersModelingModule.h
+vtkPolyDataAlgorithm.h
+/home/medialab/VTK-7.0/VTK-7.0.0/Filters/Modeling/vtkPolyDataAlgorithm.h
+
 /home/medialab/VTK-7.0/VTK-7.0.0/Imaging/Hybrid/vtkSampleFunction.h
 vtkImagingHybridModule.h
 /home/medialab/VTK-7.0/VTK-7.0.0/Imaging/Hybrid/vtkImagingHybridModule.h
 vtkImageAlgorithm.h
 /home/medialab/VTK-7.0/VTK-7.0.0/Imaging/Hybrid/vtkImageAlgorithm.h
+
+/home/medialab/VTK-7.0/VTK-7.0.0/Rendering/Annotation/vtkAxesActor.h
+vtkRenderingAnnotationModule.h
+/home/medialab/VTK-7.0/VTK-7.0.0/Rendering/Annotation/vtkRenderingAnnotationModule.h
+vtkProp3D.h
+/home/medialab/VTK-7.0/VTK-7.0.0/Rendering/Annotation/vtkProp3D.h
 
 /home/medialab/VTK-7.0/VTK-7.0.0/Rendering/Core/vtkAbstractMapper.h
 vtkRenderingCoreModule.h
@@ -580,11 +624,29 @@ float.h
 
 /home/medialab/VTK-7.0/VTK-build/Common/ExecutionModel/vtkCommonExecutionModelModule.h
 
+/home/medialab/VTK-7.0/VTK-build/Common/Math/vtkCommonMathModule.h
+
 /home/medialab/VTK-7.0/VTK-build/Common/Misc/vtkCommonMiscModule.h
+
+/home/medialab/VTK-7.0/VTK-build/Common/Transforms/vtkCommonTransformsModule.h
 
 /home/medialab/VTK-7.0/VTK-build/Filters/Core/vtkFiltersCoreModule.h
 vtkAutoInit.h
 /home/medialab/VTK-7.0/VTK-build/Filters/Core/vtkAutoInit.h
+
+/home/medialab/VTK-7.0/VTK-build/Filters/General/vtkFiltersGeneralModule.h
+vtkFiltersCoreModule.h
+/home/medialab/VTK-7.0/VTK-build/Filters/General/vtkFiltersCoreModule.h
+
+/home/medialab/VTK-7.0/VTK-build/Filters/Modeling/vtkFiltersModelingModule.h
+vtkFiltersGeneralModule.h
+/home/medialab/VTK-7.0/VTK-build/Filters/Modeling/vtkFiltersGeneralModule.h
+vtkFiltersSourcesModule.h
+/home/medialab/VTK-7.0/VTK-build/Filters/Modeling/vtkFiltersSourcesModule.h
+
+/home/medialab/VTK-7.0/VTK-build/Filters/Sources/vtkFiltersSourcesModule.h
+vtkFiltersGeneralModule.h
+/home/medialab/VTK-7.0/VTK-build/Filters/Sources/vtkFiltersGeneralModule.h
 
 /home/medialab/VTK-7.0/VTK-build/IO/Image/vtkIOImageModule.h
 vtkAutoInit.h
@@ -594,11 +656,23 @@ vtkAutoInit.h
 vtkIOImageModule.h
 /home/medialab/VTK-7.0/VTK-build/Imaging/Hybrid/vtkIOImageModule.h
 
+/home/medialab/VTK-7.0/VTK-build/Rendering/Annotation/vtkRenderingAnnotationModule.h
+vtkRenderingFreeTypeModule.h
+/home/medialab/VTK-7.0/VTK-build/Rendering/Annotation/vtkRenderingFreeTypeModule.h
+
 /home/medialab/VTK-7.0/VTK-build/Rendering/Core/vtkRenderingCoreModule.h
 vtkAutoInit.h
 /home/medialab/VTK-7.0/VTK-build/Rendering/Core/vtkAutoInit.h
 
-/home/medialab/Zhewei/VTK-Projects/demo/QuadraticSurface.cxx
+/home/medialab/VTK-7.0/VTK-build/Rendering/FreeType/vtkRenderingFreeTypeModule.h
+vtkRenderingCoreModule.h
+/home/medialab/VTK-7.0/VTK-build/Rendering/FreeType/vtkRenderingCoreModule.h
+vtkRenderingCoreModule.h
+/home/medialab/VTK-7.0/VTK-build/Rendering/FreeType/vtkRenderingCoreModule.h
+vtkAutoInit.h
+/home/medialab/VTK-7.0/VTK-build/Rendering/FreeType/vtkAutoInit.h
+
+/home/medialab/Zhewei/VTK-Projects/demo/FunctionC.cxx
 vtkSmartPointer.h
 -
 vtkSampleFunction.h
@@ -619,6 +693,12 @@ vtkPolyDataMapper.h
 -
 vtkMyFunction.h
 /home/medialab/Zhewei/VTK-Projects/demo/vtkMyFunction.h
+vtkOutlineFilter.h
+-
+vtkAxesActor.h
+-
+vtkTransform.h
+-
 
 /home/medialab/Zhewei/VTK-Projects/demo/vtkMyFunction.h
 vtkCommonDataModelModule.h

@@ -60,39 +60,39 @@ CMAKE_SOURCE_DIR = /home/medialab/Zhewei/VTK-Projects/demo
 CMAKE_BINARY_DIR = /home/medialab/Zhewei/VTK-Projects/demo
 
 #=============================================================================
-# Target rules for target CMakeFiles/QuadraticSurface.dir
+# Target rules for target CMakeFiles/FunctionC.dir
 
 # All Build rule for target.
-CMakeFiles/QuadraticSurface.dir/all:
-	$(MAKE) -f CMakeFiles/QuadraticSurface.dir/build.make CMakeFiles/QuadraticSurface.dir/depend
-	$(MAKE) -f CMakeFiles/QuadraticSurface.dir/build.make CMakeFiles/QuadraticSurface.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/medialab/Zhewei/VTK-Projects/demo/CMakeFiles --progress-num=1,2 "Built target QuadraticSurface"
-.PHONY : CMakeFiles/QuadraticSurface.dir/all
+CMakeFiles/FunctionC.dir/all:
+	$(MAKE) -f CMakeFiles/FunctionC.dir/build.make CMakeFiles/FunctionC.dir/depend
+	$(MAKE) -f CMakeFiles/FunctionC.dir/build.make CMakeFiles/FunctionC.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/medialab/Zhewei/VTK-Projects/demo/CMakeFiles --progress-num=1,2 "Built target FunctionC"
+.PHONY : CMakeFiles/FunctionC.dir/all
 
 # Include target in all.
-all: CMakeFiles/QuadraticSurface.dir/all
+all: CMakeFiles/FunctionC.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/QuadraticSurface.dir/rule: cmake_check_build_system
+CMakeFiles/FunctionC.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/medialab/Zhewei/VTK-Projects/demo/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/QuadraticSurface.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/FunctionC.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/medialab/Zhewei/VTK-Projects/demo/CMakeFiles 0
-.PHONY : CMakeFiles/QuadraticSurface.dir/rule
+.PHONY : CMakeFiles/FunctionC.dir/rule
 
 # Convenience name for target.
-QuadraticSurface: CMakeFiles/QuadraticSurface.dir/rule
+FunctionC: CMakeFiles/FunctionC.dir/rule
 
-.PHONY : QuadraticSurface
-
-# clean rule for target.
-CMakeFiles/QuadraticSurface.dir/clean:
-	$(MAKE) -f CMakeFiles/QuadraticSurface.dir/build.make CMakeFiles/QuadraticSurface.dir/clean
-.PHONY : CMakeFiles/QuadraticSurface.dir/clean
+.PHONY : FunctionC
 
 # clean rule for target.
-clean: CMakeFiles/QuadraticSurface.dir/clean
+CMakeFiles/FunctionC.dir/clean:
+	$(MAKE) -f CMakeFiles/FunctionC.dir/build.make CMakeFiles/FunctionC.dir/clean
+.PHONY : CMakeFiles/FunctionC.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/FunctionC.dir/clean
 
 .PHONY : clean
 

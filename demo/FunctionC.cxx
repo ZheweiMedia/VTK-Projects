@@ -9,6 +9,11 @@
 #include <vtkRenderWindowInteractor.h>
 #include <vtkPolyDataMapper.h>
 #include "vtkMyFunction.h"
+#include <vtkOutlineFilter.h>
+#include <vtkAxesActor.h>
+#include <vtkTransform.h>
+
+
 
 
 int main(int, char *[])
@@ -26,9 +31,9 @@ int main(int, char *[])
     vtkSmartPointer<vtkSampleFunction>::New();
   sample->SetSampleDimensions(50,50,50);
   sample->SetImplicitFunction(myFunction);
-  double value = 2.0;
-  double xmin = -value, xmax = value, ymin = -value, ymax = value, zmin = -value, zmax = value;
-  sample->SetModelBounds(xmin, xmax, ymin, ymax, zmin, zmax);
+  //double value = 2.0;
+  //double xmin = -value, xmax = value, ymin = -value, ymax = value, zmin = -value, zmax = value;
+  //sample->SetModelBounds(xmin, xmax, ymin, ymax, zmin, zmax);
  
  
   vtkSmartPointer<vtkContourFilter> contourFilter =
@@ -36,6 +41,28 @@ int main(int, char *[])
   contourFilter->SetInputConnection(sample->GetOutputPort());
   contourFilter->GenerateValues(5, 0.0, 3.0);
   contourFilter->Update();
+
+  //Outline
+  vtkSmartPointer<vtkOutlineFilter> outline =
+    vtkSmartPointer<vtkOutlineFilter>::New();
+  outline->SetInputConnection(sample->GetOutputPort());
+  vtkSmartPointer<vtkPolyDataMapper> outlineMapper =
+    vtkSmartPointer<vtkPolyDataMapper>::New();
+  outlineMapper->SetInputConnection(outline->GetOutputPort());
+  vtkSmartPointer<vtkActor> outlineActor =
+    vtkSmartPointer<vtkActor>::New();
+  outlineActor->SetMapper(outlineMapper);
+  outlineActor->GetProperty()->SetColor(0,0,0);
+
+  //axes, transfrom
+  vtkSmartPointer<vtkTransform> transform =
+    vtkSmartPointer<vtkTransform>::New();
+  transform->Translate(-1.0, -1.0, -1.0);
+
+  vtkSmartPointer<vtkAxesActor> axes =
+    vtkSmartPointer<vtkAxesActor>::New();
+  axes->SetUserTransform(transform);
+  
  
   // Visualize
   vtkSmartPointer<vtkPolyDataMapper> mapper = 
@@ -56,7 +83,9 @@ int main(int, char *[])
   renderWindowInteractor->SetRenderWindow(renderWindow);
  
   renderer->AddActor(actor);
-  renderer->SetBackground(.3, .6, .3); // Background color green
+  renderer->AddActor(outlineActor);
+  renderer->AddActor(axes);
+  renderer->SetBackground(1, 1, 1); // Background color green
  
   renderWindow->Render();
   renderWindowInteractor->Start();	

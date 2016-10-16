@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/medialab/Zhewei/VTK-Projects/demo
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -77,6 +66,17 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -111,44 +111,44 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named QuadraticSurface
+# Target rules for targets named FunctionC
 
 # Build rule for target.
-QuadraticSurface: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 QuadraticSurface
-.PHONY : QuadraticSurface
+FunctionC: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 FunctionC
+.PHONY : FunctionC
 
 # fast build rule for target.
-QuadraticSurface/fast:
-	$(MAKE) -f CMakeFiles/QuadraticSurface.dir/build.make CMakeFiles/QuadraticSurface.dir/build
-.PHONY : QuadraticSurface/fast
+FunctionC/fast:
+	$(MAKE) -f CMakeFiles/FunctionC.dir/build.make CMakeFiles/FunctionC.dir/build
+.PHONY : FunctionC/fast
 
-QuadraticSurface.o: QuadraticSurface.cxx.o
+FunctionC.o: FunctionC.cxx.o
 
-.PHONY : QuadraticSurface.o
+.PHONY : FunctionC.o
 
 # target to build an object file
-QuadraticSurface.cxx.o:
-	$(MAKE) -f CMakeFiles/QuadraticSurface.dir/build.make CMakeFiles/QuadraticSurface.dir/QuadraticSurface.cxx.o
-.PHONY : QuadraticSurface.cxx.o
+FunctionC.cxx.o:
+	$(MAKE) -f CMakeFiles/FunctionC.dir/build.make CMakeFiles/FunctionC.dir/FunctionC.cxx.o
+.PHONY : FunctionC.cxx.o
 
-QuadraticSurface.i: QuadraticSurface.cxx.i
+FunctionC.i: FunctionC.cxx.i
 
-.PHONY : QuadraticSurface.i
+.PHONY : FunctionC.i
 
 # target to preprocess a source file
-QuadraticSurface.cxx.i:
-	$(MAKE) -f CMakeFiles/QuadraticSurface.dir/build.make CMakeFiles/QuadraticSurface.dir/QuadraticSurface.cxx.i
-.PHONY : QuadraticSurface.cxx.i
+FunctionC.cxx.i:
+	$(MAKE) -f CMakeFiles/FunctionC.dir/build.make CMakeFiles/FunctionC.dir/FunctionC.cxx.i
+.PHONY : FunctionC.cxx.i
 
-QuadraticSurface.s: QuadraticSurface.cxx.s
+FunctionC.s: FunctionC.cxx.s
 
-.PHONY : QuadraticSurface.s
+.PHONY : FunctionC.s
 
 # target to generate assembly for a file
-QuadraticSurface.cxx.s:
-	$(MAKE) -f CMakeFiles/QuadraticSurface.dir/build.make CMakeFiles/QuadraticSurface.dir/QuadraticSurface.cxx.s
-.PHONY : QuadraticSurface.cxx.s
+FunctionC.cxx.s:
+	$(MAKE) -f CMakeFiles/FunctionC.dir/build.make CMakeFiles/FunctionC.dir/FunctionC.cxx.s
+.PHONY : FunctionC.cxx.s
 
 # Help Target
 help:
@@ -156,12 +156,12 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... QuadraticSurface"
-	@echo "... QuadraticSurface.o"
-	@echo "... QuadraticSurface.i"
-	@echo "... QuadraticSurface.s"
+	@echo "... edit_cache"
+	@echo "... FunctionC"
+	@echo "... FunctionC.o"
+	@echo "... FunctionC.i"
+	@echo "... FunctionC.s"
 .PHONY : help
 
 

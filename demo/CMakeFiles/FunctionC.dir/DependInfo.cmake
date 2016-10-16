@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/medialab/Zhewei/VTK-Projects/demo/QuadraticSurface.cxx" "/home/medialab/Zhewei/VTK-Projects/demo/CMakeFiles/QuadraticSurface.dir/QuadraticSurface.cxx.o"
+  "/home/medialab/Zhewei/VTK-Projects/demo/FunctionC.cxx" "/home/medialab/Zhewei/VTK-Projects/demo/CMakeFiles/FunctionC.dir/FunctionC.cxx.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
