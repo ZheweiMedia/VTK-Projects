@@ -1,0 +1,3 @@
+/home/medialab/Zhewei/VTK-Projects/demo/CMakeFiles/edit_cache.dir
+/home/medialab/Zhewei/VTK-Projects/demo/CMakeFiles/rebuild_cache.dir
+/home/medialab/Zhewei/VTK-Projects/demo/CMakeFiles/QuadraticSurface.dir
