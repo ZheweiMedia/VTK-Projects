@@ -16,6 +16,7 @@ CMakeFiles/QuadraticSurface.dir/QuadraticSurface.cxx.o: /home/medialab/VTK-7.0/V
 CMakeFiles/QuadraticSurface.dir/QuadraticSurface.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Common/Core/vtkIdTypeArray.h
 CMakeFiles/QuadraticSurface.dir/QuadraticSurface.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Common/Core/vtkIndent.h
 CMakeFiles/QuadraticSurface.dir/QuadraticSurface.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Common/Core/vtkIntArray.h
+CMakeFiles/QuadraticSurface.dir/QuadraticSurface.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Common/Core/vtkMath.h
 CMakeFiles/QuadraticSurface.dir/QuadraticSurface.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Common/Core/vtkOStrStreamWrapper.h
 CMakeFiles/QuadraticSurface.dir/QuadraticSurface.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Common/Core/vtkOStreamWrapper.h
 CMakeFiles/QuadraticSurface.dir/QuadraticSurface.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Common/Core/vtkObject.h
@@ -51,7 +52,6 @@ CMakeFiles/QuadraticSurface.dir/QuadraticSurface.cxx.o: /home/medialab/VTK-7.0/V
 CMakeFiles/QuadraticSurface.dir/QuadraticSurface.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Common/DataModel/vtkImplicitFunction.h
 CMakeFiles/QuadraticSurface.dir/QuadraticSurface.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Common/DataModel/vtkPointSet.h
 CMakeFiles/QuadraticSurface.dir/QuadraticSurface.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Common/DataModel/vtkPolyData.h
-CMakeFiles/QuadraticSurface.dir/QuadraticSurface.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Common/DataModel/vtkQuadric.h
 CMakeFiles/QuadraticSurface.dir/QuadraticSurface.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Common/ExecutionModel/vtkAlgorithm.h
 CMakeFiles/QuadraticSurface.dir/QuadraticSurface.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Common/ExecutionModel/vtkImageAlgorithm.h
 CMakeFiles/QuadraticSurface.dir/QuadraticSurface.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Common/ExecutionModel/vtkPolyDataAlgorithm.h
@@ -78,6 +78,7 @@ CMakeFiles/QuadraticSurface.dir/QuadraticSurface.cxx.o: /home/medialab/VTK-7.0/V
 CMakeFiles/QuadraticSurface.dir/QuadraticSurface.cxx.o: /home/medialab/VTK-7.0/VTK-build/Common/Core/vtkAtomic.h
 CMakeFiles/QuadraticSurface.dir/QuadraticSurface.cxx.o: /home/medialab/VTK-7.0/VTK-build/Common/Core/vtkCommonCoreModule.h
 CMakeFiles/QuadraticSurface.dir/QuadraticSurface.cxx.o: /home/medialab/VTK-7.0/VTK-build/Common/Core/vtkConfigure.h
+CMakeFiles/QuadraticSurface.dir/QuadraticSurface.cxx.o: /home/medialab/VTK-7.0/VTK-build/Common/Core/vtkMathConfigure.h
 CMakeFiles/QuadraticSurface.dir/QuadraticSurface.cxx.o: /home/medialab/VTK-7.0/VTK-build/Common/Core/vtkVersionMacros.h
 CMakeFiles/QuadraticSurface.dir/QuadraticSurface.cxx.o: /home/medialab/VTK-7.0/VTK-build/Common/DataModel/vtkCommonDataModelModule.h
 CMakeFiles/QuadraticSurface.dir/QuadraticSurface.cxx.o: /home/medialab/VTK-7.0/VTK-build/Common/ExecutionModel/vtkCommonExecutionModelModule.h

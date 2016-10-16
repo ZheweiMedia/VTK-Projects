@@ -104,6 +104,16 @@ vtkDataArray.h
 vtkDataArrayTemplate.h
 /home/medialab/VTK-7.0/VTK-7.0.0/Common/Core/vtkDataArrayTemplate.h
 
+/home/medialab/VTK-7.0/VTK-7.0.0/Common/Core/vtkMath.h
+vtkCommonCoreModule.h
+/home/medialab/VTK-7.0/VTK-7.0.0/Common/Core/vtkCommonCoreModule.h
+vtkObject.h
+/home/medialab/VTK-7.0/VTK-7.0.0/Common/Core/vtkObject.h
+vtkMathConfigure.h
+/home/medialab/VTK-7.0/VTK-7.0.0/Common/Core/vtkMathConfigure.h
+cassert
+-
+
 /home/medialab/VTK-7.0/VTK-7.0.0/Common/Core/vtkOStrStreamWrapper.h
 
 /home/medialab/VTK-7.0/VTK-7.0.0/Common/Core/vtkOStreamWrapper.h
@@ -378,12 +388,6 @@ vtkCellLinks.h
 vtkCellArray.h
 /home/medialab/VTK-7.0/VTK-7.0.0/Common/DataModel/vtkCellArray.h
 
-/home/medialab/VTK-7.0/VTK-7.0.0/Common/DataModel/vtkQuadric.h
-vtkCommonDataModelModule.h
-/home/medialab/VTK-7.0/VTK-7.0.0/Common/DataModel/vtkCommonDataModelModule.h
-vtkImplicitFunction.h
-/home/medialab/VTK-7.0/VTK-7.0.0/Common/DataModel/vtkImplicitFunction.h
-
 /home/medialab/VTK-7.0/VTK-7.0.0/Common/ExecutionModel/vtkAlgorithm.h
 vtkCommonExecutionModelModule.h
 /home/medialab/VTK-7.0/VTK-7.0.0/Common/ExecutionModel/vtkCommonExecutionModelModule.h
@@ -564,6 +568,12 @@ libkern/OSAtomic.h
 vtkVersionMacros.h
 /home/medialab/VTK-7.0/VTK-build/Common/Core/vtkVersionMacros.h
 
+/home/medialab/VTK-7.0/VTK-build/Common/Core/vtkMathConfigure.h
+cmath
+-
+float.h
+-
+
 /home/medialab/VTK-7.0/VTK-build/Common/Core/vtkVersionMacros.h
 
 /home/medialab/VTK-7.0/VTK-build/Common/DataModel/vtkCommonDataModelModule.h
@@ -591,8 +601,6 @@ vtkAutoInit.h
 /home/medialab/Zhewei/VTK-Projects/demo/QuadraticSurface.cxx
 vtkSmartPointer.h
 -
-vtkQuadric.h
--
 vtkSampleFunction.h
 -
 vtkContourFilter.h
@@ -616,5 +624,7 @@ vtkMyFunction.h
 vtkCommonDataModelModule.h
 -
 vtkImplicitFunction.h
+-
+vtkMath.h
 -
 
