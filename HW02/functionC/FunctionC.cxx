@@ -20,19 +20,12 @@ int main(int, char *[])
 {
   // Create the quadric function definition
   vtkMyFunction *myFunction = new vtkMyFunction;
-
-  //vtkSmartPointer<vtkQuadric> quadric =
-  //vtkSmartPointer<vtkQuadric>::New();
-  //quadric->SetCoefficients(.5,1,.2,0,.1,0,0,.2,0,0);
   
   // Sample the quadric function
   vtkSmartPointer<vtkSampleFunction> sample = 
     vtkSmartPointer<vtkSampleFunction>::New();
   sample->SetSampleDimensions(50,50,50);
   sample->SetImplicitFunction(myFunction);
-  //double value = 2.0;
-  //double xmin = -value, xmax = value, ymin = -value, ymax = value, zmin = -value, zmax = value;
-  //sample->SetModelBounds(xmin, xmax, ymin, ymax, zmin, zmax);
  
  
   vtkSmartPointer<vtkContourFilter> contourFilter =
