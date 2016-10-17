@@ -5,7 +5,7 @@ PROJECT(FunctionC)
 find_package(VTK REQUIRED)
 include(${VTK_USE_FILE})
  
-add_executable(FunctionC MACOSX_BUNDLE FunctionC)
+add_executable(FunctionC FunctionC.cxx)
  
 if(VTK_LIBRARIES)
   target_link_libraries(FunctionC ${VTK_LIBRARIES})

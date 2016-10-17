@@ -432,6 +432,12 @@ vtkCommonExecutionModelModule.h
 vtkObject.h
 /home/medialab/VTK-7.0/VTK-7.0.0/Common/ExecutionModel/vtkObject.h
 
+/home/medialab/VTK-7.0/VTK-7.0.0/Common/ExecutionModel/vtkDataSetAlgorithm.h
+vtkCommonExecutionModelModule.h
+/home/medialab/VTK-7.0/VTK-7.0.0/Common/ExecutionModel/vtkCommonExecutionModelModule.h
+vtkAlgorithm.h
+/home/medialab/VTK-7.0/VTK-7.0.0/Common/ExecutionModel/vtkAlgorithm.h
+
 /home/medialab/VTK-7.0/VTK-7.0.0/Common/ExecutionModel/vtkImageAlgorithm.h
 vtkCommonExecutionModelModule.h
 /home/medialab/VTK-7.0/VTK-7.0.0/Common/ExecutionModel/vtkCommonExecutionModelModule.h
@@ -446,23 +452,23 @@ vtkAlgorithm.h
 vtkPolyData.h
 /home/medialab/VTK-7.0/VTK-7.0.0/Common/ExecutionModel/vtkPolyData.h
 
-/home/medialab/VTK-7.0/VTK-7.0.0/Common/ExecutionModel/vtkUnstructuredGridAlgorithm.h
-vtkCommonExecutionModelModule.h
-/home/medialab/VTK-7.0/VTK-7.0.0/Common/ExecutionModel/vtkCommonExecutionModelModule.h
-vtkAlgorithm.h
-/home/medialab/VTK-7.0/VTK-7.0.0/Common/ExecutionModel/vtkAlgorithm.h
-
-/home/medialab/VTK-7.0/VTK-7.0.0/Filters/Core/vtkDelaunay3D.h
+/home/medialab/VTK-7.0/VTK-7.0.0/Filters/Core/vtkDelaunay2D.h
 vtkFiltersCoreModule.h
 /home/medialab/VTK-7.0/VTK-7.0.0/Filters/Core/vtkFiltersCoreModule.h
-vtkUnstructuredGridAlgorithm.h
-/home/medialab/VTK-7.0/VTK-7.0.0/Filters/Core/vtkUnstructuredGridAlgorithm.h
+vtkPolyDataAlgorithm.h
+/home/medialab/VTK-7.0/VTK-7.0.0/Filters/Core/vtkPolyDataAlgorithm.h
 
 /home/medialab/VTK-7.0/VTK-7.0.0/Filters/General/vtkVertexGlyphFilter.h
 vtkFiltersGeneralModule.h
 /home/medialab/VTK-7.0/VTK-7.0.0/Filters/General/vtkFiltersGeneralModule.h
 vtkPolyDataAlgorithm.h
 /home/medialab/VTK-7.0/VTK-7.0.0/Filters/General/vtkPolyDataAlgorithm.h
+
+/home/medialab/VTK-7.0/VTK-7.0.0/Filters/Texture/vtkTextureMapToCylinder.h
+vtkFiltersTextureModule.h
+/home/medialab/VTK-7.0/VTK-7.0.0/Filters/Texture/vtkFiltersTextureModule.h
+vtkDataSetAlgorithm.h
+/home/medialab/VTK-7.0/VTK-7.0.0/Filters/Texture/vtkDataSetAlgorithm.h
 
 /home/medialab/VTK-7.0/VTK-7.0.0/IO/XML/vtkXMLPolyDataWriter.h
 vtkIOXMLModule.h
@@ -644,6 +650,10 @@ vtkAutoInit.h
 vtkFiltersCoreModule.h
 /home/medialab/VTK-7.0/VTK-build/Filters/General/vtkFiltersCoreModule.h
 
+/home/medialab/VTK-7.0/VTK-build/Filters/Texture/vtkFiltersTextureModule.h
+vtkFiltersGeneralModule.h
+/home/medialab/VTK-7.0/VTK-build/Filters/Texture/vtkFiltersGeneralModule.h
+
 /home/medialab/VTK-7.0/VTK-build/IO/Geometry/vtkIOGeometryModule.h
 vtkAutoInit.h
 /home/medialab/VTK-7.0/VTK-build/IO/Geometry/vtkAutoInit.h
@@ -661,11 +671,9 @@ vtkVersion.h
 -
 vtkSmartPointer.h
 -
-vtkMath.h
--
 vtkActor.h
 -
-vtkDelaunay3D.h
+vtkDelaunay2D.h
 -
 vtkLookupTable.h
 -
@@ -690,5 +698,7 @@ vtkRenderer.h
 vtkVertexGlyphFilter.h
 -
 vtkXMLPolyDataWriter.h
+-
+vtkTextureMapToCylinder.h
 -
 

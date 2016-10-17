@@ -20,8 +20,6 @@ class VTKCOMMONDATAMODEL_EXPORT vtkSphere : public vtkImplicitFunction
 {
 public:
   vtkTypeMacro(vtkSphere, vtkImplicitFunction);
-  void PrintSelf(ostream& os, vtkIndent indent) VTK_OVERRIDE;
-
   /**
    * Construct sphere with center at (0,0,0) and radius=0.5.
    */
@@ -41,37 +39,10 @@ public:
    */
   void EvaluateGradient(double x[3], double n[3]) VTK_OVERRIDE;
 
-  //@{
-  /**
-   * Set / get the radius of the sphere. The default is 0.5.
-   */
-  vtkSetMacro(Radius,double);
-  vtkGetMacro(Radius,double);
-  //@}
 
-  //@{
-  /**
-   * Set / get the center of the sphere. The default is (0,0,0).
-   */
-  vtkSetVector3Macro(Center,double);
-  vtkGetVectorMacro(Center,double,3);
-  //@}
-
-  //@{
-  /**
-   * Create a bounding sphere from a set of points. The set of points is
-   * defined by an array of doubles, in the order of x-y-z (which repeats for
-   * each point).  An optional hints array provides a guess for the initial
-   * bounding sphere; the two values in the hints array are the two points
-   * expected to be the furthest apart. The output sphere consists of a
-   * center (x-y-z) and a radius.
-   */
 protected:
   vtkSphere();
-  ~vtkSphere() VTK_OVERRIDE {}
-
-  double Radius;
-  double Center[3];
+  ~vtkSphere() VTK_OVERRIDE {};
 
 private:
   //vtkSphere(const vtkSphere&) VTK_DELETE_FUNCTION;
@@ -86,11 +57,7 @@ private:
 // Construct sphere with center at (0,0,0) and radius=0.5.
 vtkSphere::vtkSphere()
 {
-  this->Radius = 0.5;
-
-  this->Center[0] = 0.0;
-  this->Center[1] = 0.0;
-  this->Center[2] = 0.0;
+  
 }
 
 //----------------------------------------------------------------------------
@@ -110,14 +77,6 @@ void vtkSphere::EvaluateGradient(double x[3], double n[3])
 }
 
 //----------------------------------------------------------------------------
-void vtkSphere::PrintSelf(ostream& os, vtkIndent indent)
-{
-  this->Superclass::PrintSelf(os,indent);
-
-  os << indent << "Radius: " << this->Radius << "\n";
-  os << indent << "Center: (" << this->Center[0] << ", "
-     << this->Center[1] << ", " << this->Center[2] << ")\n";
-}
 
 
 #endif

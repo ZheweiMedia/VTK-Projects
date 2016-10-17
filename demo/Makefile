@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named trip
+
+# Build rule for target.
+trip: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 trip
+.PHONY : trip
+
+# fast build rule for target.
+trip/fast:
+	$(MAKE) -f CMakeFiles/trip.dir/build.make CMakeFiles/trip.dir/build
+.PHONY : trip/fast
+
+#=============================================================================
 # Target rules for targets named cylinderSurface
 
 # Build rule for target.
@@ -150,6 +163,33 @@ cylinderSurface.cxx.s:
 	$(MAKE) -f CMakeFiles/cylinderSurface.dir/build.make CMakeFiles/cylinderSurface.dir/cylinderSurface.cxx.s
 .PHONY : cylinderSurface.cxx.s
 
+cylinder_trip.o: cylinder_trip.cxx.o
+
+.PHONY : cylinder_trip.o
+
+# target to build an object file
+cylinder_trip.cxx.o:
+	$(MAKE) -f CMakeFiles/trip.dir/build.make CMakeFiles/trip.dir/cylinder_trip.cxx.o
+.PHONY : cylinder_trip.cxx.o
+
+cylinder_trip.i: cylinder_trip.cxx.i
+
+.PHONY : cylinder_trip.i
+
+# target to preprocess a source file
+cylinder_trip.cxx.i:
+	$(MAKE) -f CMakeFiles/trip.dir/build.make CMakeFiles/trip.dir/cylinder_trip.cxx.i
+.PHONY : cylinder_trip.cxx.i
+
+cylinder_trip.s: cylinder_trip.cxx.s
+
+.PHONY : cylinder_trip.s
+
+# target to generate assembly for a file
+cylinder_trip.cxx.s:
+	$(MAKE) -f CMakeFiles/trip.dir/build.make CMakeFiles/trip.dir/cylinder_trip.cxx.s
+.PHONY : cylinder_trip.cxx.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -158,10 +198,14 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... trip"
 	@echo "... cylinderSurface"
 	@echo "... cylinderSurface.o"
 	@echo "... cylinderSurface.i"
 	@echo "... cylinderSurface.s"
+	@echo "... cylinder_trip.o"
+	@echo "... cylinder_trip.i"
+	@echo "... cylinder_trip.s"
 .PHONY : help
 
 

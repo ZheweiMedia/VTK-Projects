@@ -114,7 +114,7 @@ CMAKE_OBJCOPY:FILEPATH=/usr/bin/objcopy
 CMAKE_OBJDUMP:FILEPATH=/usr/bin/objdump
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=cylinderSurface
+CMAKE_PROJECT_NAME:STATIC=demo
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
@@ -173,6 +173,12 @@ cylinderSurface_BINARY_DIR:STATIC=/home/medialab/Zhewei/VTK-Projects/demo
 
 //Value Computed by CMake
 cylinderSurface_SOURCE_DIR:STATIC=/home/medialab/Zhewei/VTK-Projects/demo
+
+//Value Computed by CMake
+demo_BINARY_DIR:STATIC=/home/medialab/Zhewei/VTK-Projects/demo
+
+//Value Computed by CMake
+demo_SOURCE_DIR:STATIC=/home/medialab/Zhewei/VTK-Projects/demo
 
 
 ########################

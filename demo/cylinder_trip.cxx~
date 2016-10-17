@@ -32,15 +32,15 @@ int main(int, char *[])
   centerX = 0.0;
   centerY = 0.0;
   centerZ = 0.0;
-  double heightZ = 3.0;
-  double Radius = 50.0;
+  double heightZ = 30.0;
+  double Radius = 5.0;
 
   // we need to draw circles, so GrideSize is 360 degrees now.
   unsigned int GridSize = 360;
   double xx, yy, zz;
-  for(unsigned int z = 0; z < heightZ; z++)
+  for(unsigned int x = 0; x < GridSize; x += 5)
     {
-      for(unsigned int x = 0; x < GridSize; x += 5)
+	for(unsigned int z = 0; z < heightZ; z++)
 	  {
 	    xx = cos(x)*Radius + vtkMath::Random(-.2, .2);
 	    yy = sin(x)*Radius + vtkMath::Random(-.2, .2);

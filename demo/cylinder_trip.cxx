@@ -16,6 +16,10 @@
 #include <vtkVertexGlyphFilter.h>
 #include <vtkXMLPolyDataWriter.h>
 #include <vtkTextureMapToCylinder.h>
+#include <vtkTriangleStrip.h>
+#include <vtkCellArray.h>
+
+
  
 // For compatibility with new VTK generic data arrays
 #ifdef vtkGenericDataArray_h
@@ -27,104 +31,54 @@ int main(int, char *[])
   // Create a grid of points (height/terrian map)
   vtkSmartPointer<vtkPoints> points = 
     vtkSmartPointer<vtkPoints>::New();
+
+  vtkSmartPointer<vtkTriangleStrip> triangleStrip =
+    vtkSmartPointer<vtkTriangleStrip>::New();
  
   double centerX, centerY, centerZ;
   centerX = 0.0;
   centerY = 0.0;
   centerZ = 0.0;
   double heightZ = 3.0;
-  double Radius = 50.0;
+  double Radius = 5.0;
 
   // we need to draw circles, so GrideSize is 360 degrees now.
   unsigned int GridSize = 360;
   double xx, yy, zz;
+  unsigned int step = 5;
+  triangleStrip->GetPointIds()->SetNumberOfIds((GridSize/step)*heightZ);
+  unsigned int index = 0;
+  unsigned int index2 = 0;
+
   for(unsigned int z = 0; z < heightZ; z++)
+  
     {
-      for(unsigned int x = 0; x < GridSize; x += 5)
+	for(unsigned int x = 0; x < GridSize; x += 5)
 	  {
 	    xx = cos(x)*Radius + vtkMath::Random(-.2, .2);
 	    yy = sin(x)*Radius + vtkMath::Random(-.2, .2);
 	    zz = z + vtkMath::Random(-.2, .2);
 	    points->InsertNextPoint(xx, yy, zz);
+	    triangleStrip->GetPointIds()->SetId(index++,index2++);
 	  }
     }
- 
+
+  vtkSmartPointer<vtkCellArray> cells = 
+    vtkSmartPointer<vtkCellArray>::New();
+  cells->InsertNextCell(triangleStrip);
   // Add the grid points to a polydata object
   vtkSmartPointer<vtkPolyData> inputPolyData = 
     vtkSmartPointer<vtkPolyData>::New();
   inputPolyData->SetPoints(points);
+  inputPolyData->SetStrips(cells);
   
-  // Triangulate the grid points
-  vtkSmartPointer<vtkDelaunay2D> delaunay = 
-    vtkSmartPointer<vtkDelaunay2D>::New();
-#if VTK_MAJOR_VERSION <= 5
-  delaunay->SetInput(inputPolyData);
-#else
-  delaunay->SetInputData(inputPolyData);
-#endif
-  delaunay->Update();
-  vtkPolyData* outputPolyData = delaunay->GetOutput();
- 
-  /*double bounds[6];
-  outputPolyData->GetBounds(bounds);
- 
-  // Find min and max z
-  double minz = bounds[4];
-  double maxz = bounds[5];
- 
-  std::cout << "minz: " << minz << std::endl;
-  std::cout << "maxz: " << maxz << std::endl;
- 
-  // Create the color map
-  vtkSmartPointer<vtkLookupTable> colorLookupTable = 
-    vtkSmartPointer<vtkLookupTable>::New();
-  colorLookupTable->SetTableRange(minz, maxz);
-  colorLookupTable->Build();
- 
-  // Generate the colors for each point based on the color map
-  vtkSmartPointer<vtkUnsignedCharArray> colors = 
-    vtkSmartPointer<vtkUnsignedCharArray>::New();
-  colors->SetNumberOfComponents(3);
-  colors->SetName("Colors");
- 
-  std::cout << "There are " << outputPolyData->GetNumberOfPoints()
-            << " points." << std::endl;
- 
-  for(int i = 0; i < outputPolyData->GetNumberOfPoints(); i++)
-    {
-    double p[3];
-    outputPolyData->GetPoint(i,p);
- 
-    double dcolor[3];
-    colorLookupTable->GetColor(p[2], dcolor);
-    std::cout << "dcolor: "
-              << dcolor[0] << " "
-              << dcolor[1] << " "
-              << dcolor[2] << std::endl;
-    unsigned char color[3];
-    for(unsigned int j = 0; j < 3; j++)
-      {
-      color[j] = static_cast<unsigned char>(255.0 * dcolor[j]);
-      }
-    std::cout << "color: "
-              << (int)color[0] << " "
-              << (int)color[1] << " "
-              << (int)color[2] << std::endl;
- 
-    colors->InsertNextTupleValue(color);
-    }
- 
-  outputPolyData->GetPointData()->SetScalars(colors);
-
-  vtkSmartPointer<vtkTextureMapToCylinder> cylinder =
-    vtkSmartPointer<vtkTextureMapToCylinder>::New();
-  cylinder->SetInputData(outputPolyData);
-  cylinder->PreventSeamOn();*/
+  
+  
  
   // Create a mapper and actor
   vtkSmartPointer<vtkPolyDataMapper> mapper = 
     vtkSmartPointer<vtkPolyDataMapper>::New();
-  mapper->SetInputData(outputPolyData);
+  mapper->SetInputData(inputPolyData);
  
   vtkSmartPointer<vtkActor> actor = 
     vtkSmartPointer<vtkActor>::New();

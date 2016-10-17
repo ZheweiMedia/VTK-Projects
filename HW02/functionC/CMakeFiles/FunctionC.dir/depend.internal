@@ -102,5 +102,5 @@ CMakeFiles/FunctionC.dir/FunctionC.cxx.o
  /home/medialab/VTK-7.0/VTK-build/Rendering/Annotation/vtkRenderingAnnotationModule.h
  /home/medialab/VTK-7.0/VTK-build/Rendering/Core/vtkRenderingCoreModule.h
  /home/medialab/VTK-7.0/VTK-build/Rendering/FreeType/vtkRenderingFreeTypeModule.h
- /home/medialab/Zhewei/VTK-Projects/demo/FunctionC.cxx
- /home/medialab/Zhewei/VTK-Projects/demo/vtkMyFunction.h
+ /home/medialab/Zhewei/VTK-Projects/HW02/functionC/FunctionC.cxx
+ /home/medialab/Zhewei/VTK-Projects/HW02/functionC/vtkMyFunction.h

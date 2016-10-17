@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/medialab/Zhewei/VTK-Projects/HW02/functionC/FunctionC.cxx" "/home/medialab/Zhewei/VTK-Projects/HW02/functionC/CMakeFiles/FunctionC.dir/FunctionC.cxx.o"
+  "/home/medialab/Zhewei/VTK-Projects/demo/cylinder_trip.cxx" "/home/medialab/Zhewei/VTK-Projects/demo/CMakeFiles/trip.dir/cylinder_trip.cxx.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

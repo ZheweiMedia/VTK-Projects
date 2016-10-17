@@ -1,5 +1,4 @@
 #include <vtkSmartPointer.h>
-//#include <vtkQuadric.h>
 #include <vtkSampleFunction.h>
 #include <vtkContourFilter.h>
 #include <vtkActor.h>
@@ -8,10 +7,10 @@
 #include <vtkRenderer.h>
 #include <vtkRenderWindowInteractor.h>
 #include <vtkPolyDataMapper.h>
-#include "vtkMyFunction.h"
 #include <vtkOutlineFilter.h>
 #include <vtkAxesActor.h>
 #include <vtkTransform.h>
+#include "vtkMyFunction.h"
 
 
 
