@@ -15,11 +15,11 @@
 
 
 
+
 int main(int, char *[])
 {
   // Create the quadric function definition
-  vtkSmartPointer<vtkSphere> myFunction =
-    vtkSmartPointer<vtkSphere>::New();
+  vtkMyFunction *myFunction = new vtkMyFunction;
 
   //vtkSmartPointer<vtkQuadric> quadric =
   //vtkSmartPointer<vtkQuadric>::New();
