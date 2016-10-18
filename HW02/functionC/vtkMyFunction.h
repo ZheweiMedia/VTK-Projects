@@ -1,14 +1,3 @@
-/*=========================================================================
-  Program:   Visualization Toolkit
-  Module:    vtkSphere.h
-  Copyright (c) Ken Martin, Will Schroeder, Bill Lorensen
-  All rights reserved.
-  See Copyright.txt or http://www.kitware.com/Copyright.htm for details.
-     This software is distributed WITHOUT ANY WARRANTY; without even
-     the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
-     PURPOSE.  See the above copyright notice for more information.
-=========================================================================*/
-
 #ifndef vtkMy_h
 #define vtkMy_h
 
@@ -22,13 +11,13 @@ public:
 
   vtkMyFunction();
 
-  double EvaluateFunction(double x[3]) VTK_OVERRIDE;
+  double EvaluateFunction(double x[3]);
   double EvaluateFunction(double x, double y, double z)
     {return this->vtkImplicitFunction::EvaluateFunction(x, y, z); } ;
-  void EvaluateGradient(double x[3], double n[3]) VTK_OVERRIDE;
+  void EvaluateGradient(double x[3], double n[3]);
 
 
-  ~vtkMyFunction() VTK_OVERRIDE {};
+  ~vtkMyFunction();
 };
 
 
@@ -59,6 +48,9 @@ void vtkMyFunction::EvaluateGradient(double x[3], double n[3])
 }
 
 //----------------------------------------------------------------------------
-
+vtkMyFunction::~vtkMyFunction()
+{
+  
+}
 
 #endif

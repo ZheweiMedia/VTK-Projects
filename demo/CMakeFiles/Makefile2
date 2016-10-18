@@ -60,43 +60,6 @@ CMAKE_SOURCE_DIR = /home/medialab/Zhewei/VTK-Projects/demo
 CMAKE_BINARY_DIR = /home/medialab/Zhewei/VTK-Projects/demo
 
 #=============================================================================
-# Target rules for target CMakeFiles/trip.dir
-
-# All Build rule for target.
-CMakeFiles/trip.dir/all:
-	$(MAKE) -f CMakeFiles/trip.dir/build.make CMakeFiles/trip.dir/depend
-	$(MAKE) -f CMakeFiles/trip.dir/build.make CMakeFiles/trip.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/medialab/Zhewei/VTK-Projects/demo/CMakeFiles --progress-num=3,4 "Built target trip"
-.PHONY : CMakeFiles/trip.dir/all
-
-# Include target in all.
-all: CMakeFiles/trip.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/trip.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/medialab/Zhewei/VTK-Projects/demo/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/trip.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/medialab/Zhewei/VTK-Projects/demo/CMakeFiles 0
-.PHONY : CMakeFiles/trip.dir/rule
-
-# Convenience name for target.
-trip: CMakeFiles/trip.dir/rule
-
-.PHONY : trip
-
-# clean rule for target.
-CMakeFiles/trip.dir/clean:
-	$(MAKE) -f CMakeFiles/trip.dir/build.make CMakeFiles/trip.dir/clean
-.PHONY : CMakeFiles/trip.dir/clean
-
-# clean rule for target.
-clean: CMakeFiles/trip.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
 # Target rules for target CMakeFiles/cylinderSurface.dir
 
 # All Build rule for target.
@@ -130,6 +93,80 @@ CMakeFiles/cylinderSurface.dir/clean:
 
 # clean rule for target.
 clean: CMakeFiles/cylinderSurface.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/trip.dir
+
+# All Build rule for target.
+CMakeFiles/trip.dir/all:
+	$(MAKE) -f CMakeFiles/trip.dir/build.make CMakeFiles/trip.dir/depend
+	$(MAKE) -f CMakeFiles/trip.dir/build.make CMakeFiles/trip.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/medialab/Zhewei/VTK-Projects/demo/CMakeFiles --progress-num=5,6 "Built target trip"
+.PHONY : CMakeFiles/trip.dir/all
+
+# Include target in all.
+all: CMakeFiles/trip.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/trip.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/medialab/Zhewei/VTK-Projects/demo/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/trip.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/medialab/Zhewei/VTK-Projects/demo/CMakeFiles 0
+.PHONY : CMakeFiles/trip.dir/rule
+
+# Convenience name for target.
+trip: CMakeFiles/trip.dir/rule
+
+.PHONY : trip
+
+# clean rule for target.
+CMakeFiles/trip.dir/clean:
+	$(MAKE) -f CMakeFiles/trip.dir/build.make CMakeFiles/trip.dir/clean
+.PHONY : CMakeFiles/trip.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/trip.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/cylinderUnsmooth.dir
+
+# All Build rule for target.
+CMakeFiles/cylinderUnsmooth.dir/all:
+	$(MAKE) -f CMakeFiles/cylinderUnsmooth.dir/build.make CMakeFiles/cylinderUnsmooth.dir/depend
+	$(MAKE) -f CMakeFiles/cylinderUnsmooth.dir/build.make CMakeFiles/cylinderUnsmooth.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/medialab/Zhewei/VTK-Projects/demo/CMakeFiles --progress-num=3,4 "Built target cylinderUnsmooth"
+.PHONY : CMakeFiles/cylinderUnsmooth.dir/all
+
+# Include target in all.
+all: CMakeFiles/cylinderUnsmooth.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/cylinderUnsmooth.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/medialab/Zhewei/VTK-Projects/demo/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/cylinderUnsmooth.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/medialab/Zhewei/VTK-Projects/demo/CMakeFiles 0
+.PHONY : CMakeFiles/cylinderUnsmooth.dir/rule
+
+# Convenience name for target.
+cylinderUnsmooth: CMakeFiles/cylinderUnsmooth.dir/rule
+
+.PHONY : cylinderUnsmooth
+
+# clean rule for target.
+CMakeFiles/cylinderUnsmooth.dir/clean:
+	$(MAKE) -f CMakeFiles/cylinderUnsmooth.dir/build.make CMakeFiles/cylinderUnsmooth.dir/clean
+.PHONY : CMakeFiles/cylinderUnsmooth.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/cylinderUnsmooth.dir/clean
 
 .PHONY : clean
 

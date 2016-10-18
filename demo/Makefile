@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named cylinderSurface
+
+# Build rule for target.
+cylinderSurface: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 cylinderSurface
+.PHONY : cylinderSurface
+
+# fast build rule for target.
+cylinderSurface/fast:
+	$(MAKE) -f CMakeFiles/cylinderSurface.dir/build.make CMakeFiles/cylinderSurface.dir/build
+.PHONY : cylinderSurface/fast
+
+#=============================================================================
 # Target rules for targets named trip
 
 # Build rule for target.
@@ -124,17 +137,17 @@ trip/fast:
 .PHONY : trip/fast
 
 #=============================================================================
-# Target rules for targets named cylinderSurface
+# Target rules for targets named cylinderUnsmooth
 
 # Build rule for target.
-cylinderSurface: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 cylinderSurface
-.PHONY : cylinderSurface
+cylinderUnsmooth: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 cylinderUnsmooth
+.PHONY : cylinderUnsmooth
 
 # fast build rule for target.
-cylinderSurface/fast:
-	$(MAKE) -f CMakeFiles/cylinderSurface.dir/build.make CMakeFiles/cylinderSurface.dir/build
-.PHONY : cylinderSurface/fast
+cylinderUnsmooth/fast:
+	$(MAKE) -f CMakeFiles/cylinderUnsmooth.dir/build.make CMakeFiles/cylinderUnsmooth.dir/build
+.PHONY : cylinderUnsmooth/fast
 
 cylinderSurface.o: cylinderSurface.cxx.o
 
@@ -162,6 +175,33 @@ cylinderSurface.s: cylinderSurface.cxx.s
 cylinderSurface.cxx.s:
 	$(MAKE) -f CMakeFiles/cylinderSurface.dir/build.make CMakeFiles/cylinderSurface.dir/cylinderSurface.cxx.s
 .PHONY : cylinderSurface.cxx.s
+
+cylinderUnsmooth.o: cylinderUnsmooth.cxx.o
+
+.PHONY : cylinderUnsmooth.o
+
+# target to build an object file
+cylinderUnsmooth.cxx.o:
+	$(MAKE) -f CMakeFiles/cylinderUnsmooth.dir/build.make CMakeFiles/cylinderUnsmooth.dir/cylinderUnsmooth.cxx.o
+.PHONY : cylinderUnsmooth.cxx.o
+
+cylinderUnsmooth.i: cylinderUnsmooth.cxx.i
+
+.PHONY : cylinderUnsmooth.i
+
+# target to preprocess a source file
+cylinderUnsmooth.cxx.i:
+	$(MAKE) -f CMakeFiles/cylinderUnsmooth.dir/build.make CMakeFiles/cylinderUnsmooth.dir/cylinderUnsmooth.cxx.i
+.PHONY : cylinderUnsmooth.cxx.i
+
+cylinderUnsmooth.s: cylinderUnsmooth.cxx.s
+
+.PHONY : cylinderUnsmooth.s
+
+# target to generate assembly for a file
+cylinderUnsmooth.cxx.s:
+	$(MAKE) -f CMakeFiles/cylinderUnsmooth.dir/build.make CMakeFiles/cylinderUnsmooth.dir/cylinderUnsmooth.cxx.s
+.PHONY : cylinderUnsmooth.cxx.s
 
 cylinder_trip.o: cylinder_trip.cxx.o
 
@@ -197,12 +237,16 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
-	@echo "... rebuild_cache"
-	@echo "... trip"
 	@echo "... cylinderSurface"
+	@echo "... trip"
+	@echo "... cylinderUnsmooth"
+	@echo "... rebuild_cache"
 	@echo "... cylinderSurface.o"
 	@echo "... cylinderSurface.i"
 	@echo "... cylinderSurface.s"
+	@echo "... cylinderUnsmooth.o"
+	@echo "... cylinderUnsmooth.i"
+	@echo "... cylinderUnsmooth.s"
 	@echo "... cylinder_trip.o"
 	@echo "... cylinder_trip.i"
 	@echo "... cylinder_trip.s"

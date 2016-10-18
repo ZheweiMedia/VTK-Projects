@@ -15,7 +15,6 @@
 #include <vtkRenderer.h>
 #include <vtkVertexGlyphFilter.h>
 #include <vtkXMLPolyDataWriter.h>
-#include <vtkTextureMapToCylinder.h>
  
 // For compatibility with new VTK generic data arrays
 #ifdef vtkGenericDataArray_h
@@ -27,33 +26,35 @@ int main(int, char *[])
   // Create a grid of points (height/terrian map)
   vtkSmartPointer<vtkPoints> points = 
     vtkSmartPointer<vtkPoints>::New();
- 
-  double centerX, centerY, centerZ;
-  centerX = 0.0;
-  centerY = 0.0;
-  centerZ = 0.0;
-  double heightZ = 30.0;
-  double Radius = 5.0;
 
-  // we need to draw circles, so GrideSize is 360 degrees now.
-  unsigned int GridSize = 360;
-  double xx, yy, zz;
-  for(unsigned int x = 0; x < GridSize; x += 5)
+  // Create grid points for cylinder
+  vtkSmartPointer<vtkPoints> cylinderPoints =
+    vtkSmartPointer<vtkPoints>::New();
+ 
+  unsigned int GridSize = 20;
+  double xx, yy, zz, zz_tmp;
+  for(unsigned int x = 0; x < GridSize; x++)
     {
-	for(unsigned int z = 0; z < heightZ; z++)
-	  {
-	    xx = cos(x)*Radius + vtkMath::Random(-.2, .2);
-	    yy = sin(x)*Radius + vtkMath::Random(-.2, .2);
-	    zz = z + vtkMath::Random(-.2, .2);
-	    points->InsertNextPoint(xx, yy, zz);
-	  }
+    for(unsigned int y = 0; y < GridSize; y++)
+      {
+      xx = x + vtkMath::Random(-.2, .2);
+      yy = y + vtkMath::Random(-.2, .2);
+      zz = vtkMath::Random(-.5, .5);
+      points->InsertNextPoint(xx, yy, zz);
+
+      // map to cylinder
+      //test
+      zz_tmp = 10*zz;
+      cylinderPoints->InsertNextPoint(xx, yy, zz_tmp);
+      }
     }
  
   // Add the grid points to a polydata object
   vtkSmartPointer<vtkPolyData> inputPolyData = 
     vtkSmartPointer<vtkPolyData>::New();
   inputPolyData->SetPoints(points);
-  
+
+ 
   // Triangulate the grid points
   vtkSmartPointer<vtkDelaunay2D> delaunay = 
     vtkSmartPointer<vtkDelaunay2D>::New();
@@ -65,7 +66,7 @@ int main(int, char *[])
   delaunay->Update();
   vtkPolyData* outputPolyData = delaunay->GetOutput();
  
-  /*double bounds[6];
+  double bounds[6];
   outputPolyData->GetBounds(bounds);
  
   // Find min and max z
@@ -113,18 +114,19 @@ int main(int, char *[])
  
     colors->InsertNextTupleValue(color);
     }
- 
-  outputPolyData->GetPointData()->SetScalars(colors);
 
-  vtkSmartPointer<vtkTextureMapToCylinder> cylinder =
-    vtkSmartPointer<vtkTextureMapToCylinder>::New();
-  cylinder->SetInputData(outputPolyData);
-  cylinder->PreventSeamOn();*/
+  //replace the point value with the cylinder value
+  outputPolyData->SetPoints(cylinderPoints);
+  outputPolyData->GetPointData()->SetScalars(colors);
  
   // Create a mapper and actor
   vtkSmartPointer<vtkPolyDataMapper> mapper = 
     vtkSmartPointer<vtkPolyDataMapper>::New();
+#if VTK_MAJOR_VERSION <= 5
+  mapper->SetInputConnection(outputPolyData->GetProducerPort());
+#else
   mapper->SetInputData(outputPolyData);
+#endif
  
   vtkSmartPointer<vtkActor> actor = 
     vtkSmartPointer<vtkActor>::New();
