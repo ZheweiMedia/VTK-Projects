@@ -1,6 +1,5 @@
 #include <vtkVersion.h>
 #include <vtkSmartPointer.h>
- 
 #include <vtkActor.h>
 #include <vtkDelaunay2D.h>
 #include <vtkLookupTable.h>
@@ -35,10 +34,10 @@ int main(int, char *[])
   double xx, yy, zz;
   double x_cylinder, y_cylinder, z_cylinder;
   double degree;
-  double radius = 4;
-  for(unsigned int x = 0; x < GridSize; x++)
+  double radius = GridSize/2/vtkMath::Pi();
+  for(unsigned int x = 0; x <= GridSize; x++)
     {
-    for(unsigned int y = 0; y < GridSize; y++)
+    for(unsigned int y = 0; y <= GridSize; y++)
       {
       xx = x + vtkMath::Random(-.2, .2);
       yy = y + vtkMath::Random(-.2, .2);
@@ -47,7 +46,7 @@ int main(int, char *[])
 
       // map to cylinder
       // yy now is Z, and xx map to degree
-      degree = xx/radius*2;
+      degree = (xx/radius);
       z_cylinder = yy;
       x_cylinder = (radius+zz)*cos(degree);
       y_cylinder = (radius+zz)*sin(degree);
