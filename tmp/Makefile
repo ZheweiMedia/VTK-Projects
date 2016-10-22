@@ -111,44 +111,44 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named ColoredElevationMap
+# Target rules for targets named ImageLaplacian
 
 # Build rule for target.
-ColoredElevationMap: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ColoredElevationMap
-.PHONY : ColoredElevationMap
+ImageLaplacian: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ImageLaplacian
+.PHONY : ImageLaplacian
 
 # fast build rule for target.
-ColoredElevationMap/fast:
-	$(MAKE) -f CMakeFiles/ColoredElevationMap.dir/build.make CMakeFiles/ColoredElevationMap.dir/build
-.PHONY : ColoredElevationMap/fast
+ImageLaplacian/fast:
+	$(MAKE) -f CMakeFiles/ImageLaplacian.dir/build.make CMakeFiles/ImageLaplacian.dir/build
+.PHONY : ImageLaplacian/fast
 
-ColoredElevationMap.o: ColoredElevationMap.cxx.o
+test.o: test.cxx.o
 
-.PHONY : ColoredElevationMap.o
+.PHONY : test.o
 
 # target to build an object file
-ColoredElevationMap.cxx.o:
-	$(MAKE) -f CMakeFiles/ColoredElevationMap.dir/build.make CMakeFiles/ColoredElevationMap.dir/ColoredElevationMap.cxx.o
-.PHONY : ColoredElevationMap.cxx.o
+test.cxx.o:
+	$(MAKE) -f CMakeFiles/ImageLaplacian.dir/build.make CMakeFiles/ImageLaplacian.dir/test.cxx.o
+.PHONY : test.cxx.o
 
-ColoredElevationMap.i: ColoredElevationMap.cxx.i
+test.i: test.cxx.i
 
-.PHONY : ColoredElevationMap.i
+.PHONY : test.i
 
 # target to preprocess a source file
-ColoredElevationMap.cxx.i:
-	$(MAKE) -f CMakeFiles/ColoredElevationMap.dir/build.make CMakeFiles/ColoredElevationMap.dir/ColoredElevationMap.cxx.i
-.PHONY : ColoredElevationMap.cxx.i
+test.cxx.i:
+	$(MAKE) -f CMakeFiles/ImageLaplacian.dir/build.make CMakeFiles/ImageLaplacian.dir/test.cxx.i
+.PHONY : test.cxx.i
 
-ColoredElevationMap.s: ColoredElevationMap.cxx.s
+test.s: test.cxx.s
 
-.PHONY : ColoredElevationMap.s
+.PHONY : test.s
 
 # target to generate assembly for a file
-ColoredElevationMap.cxx.s:
-	$(MAKE) -f CMakeFiles/ColoredElevationMap.dir/build.make CMakeFiles/ColoredElevationMap.dir/ColoredElevationMap.cxx.s
-.PHONY : ColoredElevationMap.cxx.s
+test.cxx.s:
+	$(MAKE) -f CMakeFiles/ImageLaplacian.dir/build.make CMakeFiles/ImageLaplacian.dir/test.cxx.s
+.PHONY : test.cxx.s
 
 # Help Target
 help:
@@ -158,10 +158,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... ColoredElevationMap"
-	@echo "... ColoredElevationMap.o"
-	@echo "... ColoredElevationMap.i"
-	@echo "... ColoredElevationMap.s"
+	@echo "... ImageLaplacian"
+	@echo "... test.o"
+	@echo "... test.i"
+	@echo "... test.s"
 .PHONY : help
 
 

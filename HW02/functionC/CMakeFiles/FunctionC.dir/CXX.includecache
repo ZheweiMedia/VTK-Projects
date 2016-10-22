@@ -691,14 +691,14 @@ vtkRenderWindowInteractor.h
 -
 vtkPolyDataMapper.h
 -
-vtkMyFunction.h
-/home/medialab/Zhewei/VTK-Projects/HW02/functionC/vtkMyFunction.h
 vtkOutlineFilter.h
 -
 vtkAxesActor.h
 -
 vtkTransform.h
 -
+vtkMyFunction.h
+/home/medialab/Zhewei/VTK-Projects/HW02/functionC/vtkMyFunction.h
 
 /home/medialab/Zhewei/VTK-Projects/HW02/functionC/vtkMyFunction.h
 vtkCommonDataModelModule.h

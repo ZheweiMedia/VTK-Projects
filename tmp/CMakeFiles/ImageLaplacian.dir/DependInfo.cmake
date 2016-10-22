@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/medialab/Zhewei/VTK-Projects/tmp/ColoredElevationMap.cxx" "/home/medialab/Zhewei/VTK-Projects/tmp/CMakeFiles/ColoredElevationMap.dir/ColoredElevationMap.cxx.o"
+  "/home/medialab/Zhewei/VTK-Projects/tmp/test.cxx" "/home/medialab/Zhewei/VTK-Projects/tmp/CMakeFiles/ImageLaplacian.dir/test.cxx.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

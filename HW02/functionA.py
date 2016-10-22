@@ -1,4 +1,4 @@
-w"""
+"""
 Python progam for the HW02, 3.b 
 
 F(x, y, z) = x^2+3xy+5yz+7xz
