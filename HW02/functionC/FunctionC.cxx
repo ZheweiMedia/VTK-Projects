@@ -24,7 +24,7 @@ int main(int, char *[])
   // Sample the quadric function
   vtkSmartPointer<vtkSampleFunction> sample = 
     vtkSmartPointer<vtkSampleFunction>::New();
-  sample->SetSampleDimensions(50,50,50);
+  sample->SetSampleDimensions(30,30,30);
   sample->SetImplicitFunction(myFunction);
  
  
