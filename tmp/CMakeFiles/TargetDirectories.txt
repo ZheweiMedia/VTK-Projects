@@ -1,3 +1,0 @@
-/home/medialab/Zhewei/VTK-Projects/tmp/CMakeFiles/edit_cache.dir
-/home/medialab/Zhewei/VTK-Projects/tmp/CMakeFiles/rebuild_cache.dir
-/home/medialab/Zhewei/VTK-Projects/tmp/CMakeFiles/ImageLaplacian.dir
