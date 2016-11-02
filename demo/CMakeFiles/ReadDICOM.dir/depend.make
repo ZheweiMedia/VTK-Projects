@@ -23,12 +23,16 @@ CMakeFiles/ReadDICOM.dir/ReadDICOM.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Commo
 CMakeFiles/ReadDICOM.dir/ReadDICOM.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Common/Core/vtkWeakPointerBase.h
 CMakeFiles/ReadDICOM.dir/ReadDICOM.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Common/Core/vtkWin32Header.h
 CMakeFiles/ReadDICOM.dir/ReadDICOM.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Common/Core/vtkWindow.h
+CMakeFiles/ReadDICOM.dir/ReadDICOM.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Common/DataModel/vtkDataObject.h
+CMakeFiles/ReadDICOM.dir/ReadDICOM.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Common/DataModel/vtkDataSet.h
+CMakeFiles/ReadDICOM.dir/ReadDICOM.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Common/DataModel/vtkImageData.h
+CMakeFiles/ReadDICOM.dir/ReadDICOM.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Common/DataModel/vtkStructuredData.h
 CMakeFiles/ReadDICOM.dir/ReadDICOM.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Common/ExecutionModel/vtkAlgorithm.h
 CMakeFiles/ReadDICOM.dir/ReadDICOM.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Common/ExecutionModel/vtkImageAlgorithm.h
 CMakeFiles/ReadDICOM.dir/ReadDICOM.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Common/ExecutionModel/vtkThreadedImageAlgorithm.h
 CMakeFiles/ReadDICOM.dir/ReadDICOM.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/IO/Image/vtkDICOMImageReader.h
 CMakeFiles/ReadDICOM.dir/ReadDICOM.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/IO/Image/vtkImageReader2.h
-CMakeFiles/ReadDICOM.dir/ReadDICOM.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Imaging/Core/vtkImageCast.h
+CMakeFiles/ReadDICOM.dir/ReadDICOM.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Imaging/Core/vtkImageShiftScale.h
 CMakeFiles/ReadDICOM.dir/ReadDICOM.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Imaging/General/vtkImageNormalize.h
 CMakeFiles/ReadDICOM.dir/ReadDICOM.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Interaction/Image/vtkImageViewer2.h
 CMakeFiles/ReadDICOM.dir/ReadDICOM.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Rendering/Core/vtkActor.h
@@ -46,6 +50,7 @@ CMakeFiles/ReadDICOM.dir/ReadDICOM.cxx.o: /home/medialab/VTK-7.0/VTK-build/Commo
 CMakeFiles/ReadDICOM.dir/ReadDICOM.cxx.o: /home/medialab/VTK-7.0/VTK-build/Common/Core/vtkCommonCoreModule.h
 CMakeFiles/ReadDICOM.dir/ReadDICOM.cxx.o: /home/medialab/VTK-7.0/VTK-build/Common/Core/vtkConfigure.h
 CMakeFiles/ReadDICOM.dir/ReadDICOM.cxx.o: /home/medialab/VTK-7.0/VTK-build/Common/Core/vtkVersionMacros.h
+CMakeFiles/ReadDICOM.dir/ReadDICOM.cxx.o: /home/medialab/VTK-7.0/VTK-build/Common/DataModel/vtkCommonDataModelModule.h
 CMakeFiles/ReadDICOM.dir/ReadDICOM.cxx.o: /home/medialab/VTK-7.0/VTK-build/Common/ExecutionModel/vtkCommonExecutionModelModule.h
 CMakeFiles/ReadDICOM.dir/ReadDICOM.cxx.o: /home/medialab/VTK-7.0/VTK-build/Filters/Core/vtkFiltersCoreModule.h
 CMakeFiles/ReadDICOM.dir/ReadDICOM.cxx.o: /home/medialab/VTK-7.0/VTK-build/Filters/General/vtkFiltersGeneralModule.h

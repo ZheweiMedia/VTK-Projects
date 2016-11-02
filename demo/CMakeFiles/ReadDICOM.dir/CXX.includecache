@@ -158,6 +158,32 @@ vtkCommonCoreModule.h
 vtkObject.h
 /home/medialab/VTK-7.0/VTK-7.0.0/Common/Core/vtkObject.h
 
+/home/medialab/VTK-7.0/VTK-7.0.0/Common/DataModel/vtkDataObject.h
+vtkCommonDataModelModule.h
+/home/medialab/VTK-7.0/VTK-7.0.0/Common/DataModel/vtkCommonDataModelModule.h
+vtkObject.h
+/home/medialab/VTK-7.0/VTK-7.0.0/Common/DataModel/vtkObject.h
+
+/home/medialab/VTK-7.0/VTK-7.0.0/Common/DataModel/vtkDataSet.h
+vtkCommonDataModelModule.h
+/home/medialab/VTK-7.0/VTK-7.0.0/Common/DataModel/vtkCommonDataModelModule.h
+vtkDataObject.h
+/home/medialab/VTK-7.0/VTK-7.0.0/Common/DataModel/vtkDataObject.h
+
+/home/medialab/VTK-7.0/VTK-7.0.0/Common/DataModel/vtkImageData.h
+vtkCommonDataModelModule.h
+/home/medialab/VTK-7.0/VTK-7.0.0/Common/DataModel/vtkCommonDataModelModule.h
+vtkDataSet.h
+/home/medialab/VTK-7.0/VTK-7.0.0/Common/DataModel/vtkDataSet.h
+vtkStructuredData.h
+/home/medialab/VTK-7.0/VTK-7.0.0/Common/DataModel/vtkStructuredData.h
+
+/home/medialab/VTK-7.0/VTK-7.0.0/Common/DataModel/vtkStructuredData.h
+vtkCommonDataModelModule.h
+/home/medialab/VTK-7.0/VTK-7.0.0/Common/DataModel/vtkCommonDataModelModule.h
+vtkObject.h
+/home/medialab/VTK-7.0/VTK-7.0.0/Common/DataModel/vtkObject.h
+
 /home/medialab/VTK-7.0/VTK-7.0.0/Common/ExecutionModel/vtkAlgorithm.h
 vtkCommonExecutionModelModule.h
 /home/medialab/VTK-7.0/VTK-7.0.0/Common/ExecutionModel/vtkCommonExecutionModelModule.h
@@ -188,7 +214,7 @@ vtkIOImageModule.h
 vtkImageAlgorithm.h
 /home/medialab/VTK-7.0/VTK-7.0.0/IO/Image/vtkImageAlgorithm.h
 
-/home/medialab/VTK-7.0/VTK-7.0.0/Imaging/Core/vtkImageCast.h
+/home/medialab/VTK-7.0/VTK-7.0.0/Imaging/Core/vtkImageShiftScale.h
 vtkImagingCoreModule.h
 /home/medialab/VTK-7.0/VTK-7.0.0/Imaging/Core/vtkImagingCoreModule.h
 vtkThreadedImageAlgorithm.h
@@ -306,6 +332,8 @@ vtkVersionMacros.h
 
 /home/medialab/VTK-7.0/VTK-build/Common/Core/vtkVersionMacros.h
 
+/home/medialab/VTK-7.0/VTK-build/Common/DataModel/vtkCommonDataModelModule.h
+
 /home/medialab/VTK-7.0/VTK-build/Common/ExecutionModel/vtkCommonExecutionModelModule.h
 
 /home/medialab/VTK-7.0/VTK-build/Filters/Core/vtkFiltersCoreModule.h
@@ -413,6 +441,8 @@ vtkRenderer.h
 -
 vtkImageNormalize.h
 -
-vtkImageCast.h
+vtkImageShiftScale.h
+-
+vtkImageData.h
 -
 
