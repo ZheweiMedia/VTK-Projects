@@ -156,5 +156,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/ReadDICOM.dir/DependInfo.cmake"
+  "CMakeFiles/cylinderSurface.dir/DependInfo.cmake"
+  "CMakeFiles/trip.dir/DependInfo.cmake"
+  "CMakeFiles/cylinderUnsmooth.dir/DependInfo.cmake"
   )

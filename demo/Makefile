@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/medialab/Zhewei/VTK-Projects/demo
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -77,6 +66,17 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -111,124 +111,44 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named cylinderSurface
+# Target rules for targets named ReadDICOM
 
 # Build rule for target.
-cylinderSurface: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 cylinderSurface
-.PHONY : cylinderSurface
+ReadDICOM: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ReadDICOM
+.PHONY : ReadDICOM
 
 # fast build rule for target.
-cylinderSurface/fast:
-	$(MAKE) -f CMakeFiles/cylinderSurface.dir/build.make CMakeFiles/cylinderSurface.dir/build
-.PHONY : cylinderSurface/fast
+ReadDICOM/fast:
+	$(MAKE) -f CMakeFiles/ReadDICOM.dir/build.make CMakeFiles/ReadDICOM.dir/build
+.PHONY : ReadDICOM/fast
 
-#=============================================================================
-# Target rules for targets named trip
+ReadDICOM.o: ReadDICOM.cxx.o
 
-# Build rule for target.
-trip: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 trip
-.PHONY : trip
-
-# fast build rule for target.
-trip/fast:
-	$(MAKE) -f CMakeFiles/trip.dir/build.make CMakeFiles/trip.dir/build
-.PHONY : trip/fast
-
-#=============================================================================
-# Target rules for targets named cylinderUnsmooth
-
-# Build rule for target.
-cylinderUnsmooth: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 cylinderUnsmooth
-.PHONY : cylinderUnsmooth
-
-# fast build rule for target.
-cylinderUnsmooth/fast:
-	$(MAKE) -f CMakeFiles/cylinderUnsmooth.dir/build.make CMakeFiles/cylinderUnsmooth.dir/build
-.PHONY : cylinderUnsmooth/fast
-
-cylinderSurface.o: cylinderSurface.cxx.o
-
-.PHONY : cylinderSurface.o
+.PHONY : ReadDICOM.o
 
 # target to build an object file
-cylinderSurface.cxx.o:
-	$(MAKE) -f CMakeFiles/cylinderSurface.dir/build.make CMakeFiles/cylinderSurface.dir/cylinderSurface.cxx.o
-.PHONY : cylinderSurface.cxx.o
+ReadDICOM.cxx.o:
+	$(MAKE) -f CMakeFiles/ReadDICOM.dir/build.make CMakeFiles/ReadDICOM.dir/ReadDICOM.cxx.o
+.PHONY : ReadDICOM.cxx.o
 
-cylinderSurface.i: cylinderSurface.cxx.i
+ReadDICOM.i: ReadDICOM.cxx.i
 
-.PHONY : cylinderSurface.i
-
-# target to preprocess a source file
-cylinderSurface.cxx.i:
-	$(MAKE) -f CMakeFiles/cylinderSurface.dir/build.make CMakeFiles/cylinderSurface.dir/cylinderSurface.cxx.i
-.PHONY : cylinderSurface.cxx.i
-
-cylinderSurface.s: cylinderSurface.cxx.s
-
-.PHONY : cylinderSurface.s
-
-# target to generate assembly for a file
-cylinderSurface.cxx.s:
-	$(MAKE) -f CMakeFiles/cylinderSurface.dir/build.make CMakeFiles/cylinderSurface.dir/cylinderSurface.cxx.s
-.PHONY : cylinderSurface.cxx.s
-
-cylinderUnsmooth.o: cylinderUnsmooth.cxx.o
-
-.PHONY : cylinderUnsmooth.o
-
-# target to build an object file
-cylinderUnsmooth.cxx.o:
-	$(MAKE) -f CMakeFiles/cylinderUnsmooth.dir/build.make CMakeFiles/cylinderUnsmooth.dir/cylinderUnsmooth.cxx.o
-.PHONY : cylinderUnsmooth.cxx.o
-
-cylinderUnsmooth.i: cylinderUnsmooth.cxx.i
-
-.PHONY : cylinderUnsmooth.i
+.PHONY : ReadDICOM.i
 
 # target to preprocess a source file
-cylinderUnsmooth.cxx.i:
-	$(MAKE) -f CMakeFiles/cylinderUnsmooth.dir/build.make CMakeFiles/cylinderUnsmooth.dir/cylinderUnsmooth.cxx.i
-.PHONY : cylinderUnsmooth.cxx.i
+ReadDICOM.cxx.i:
+	$(MAKE) -f CMakeFiles/ReadDICOM.dir/build.make CMakeFiles/ReadDICOM.dir/ReadDICOM.cxx.i
+.PHONY : ReadDICOM.cxx.i
 
-cylinderUnsmooth.s: cylinderUnsmooth.cxx.s
+ReadDICOM.s: ReadDICOM.cxx.s
 
-.PHONY : cylinderUnsmooth.s
-
-# target to generate assembly for a file
-cylinderUnsmooth.cxx.s:
-	$(MAKE) -f CMakeFiles/cylinderUnsmooth.dir/build.make CMakeFiles/cylinderUnsmooth.dir/cylinderUnsmooth.cxx.s
-.PHONY : cylinderUnsmooth.cxx.s
-
-cylinder_trip.o: cylinder_trip.cxx.o
-
-.PHONY : cylinder_trip.o
-
-# target to build an object file
-cylinder_trip.cxx.o:
-	$(MAKE) -f CMakeFiles/trip.dir/build.make CMakeFiles/trip.dir/cylinder_trip.cxx.o
-.PHONY : cylinder_trip.cxx.o
-
-cylinder_trip.i: cylinder_trip.cxx.i
-
-.PHONY : cylinder_trip.i
-
-# target to preprocess a source file
-cylinder_trip.cxx.i:
-	$(MAKE) -f CMakeFiles/trip.dir/build.make CMakeFiles/trip.dir/cylinder_trip.cxx.i
-.PHONY : cylinder_trip.cxx.i
-
-cylinder_trip.s: cylinder_trip.cxx.s
-
-.PHONY : cylinder_trip.s
+.PHONY : ReadDICOM.s
 
 # target to generate assembly for a file
-cylinder_trip.cxx.s:
-	$(MAKE) -f CMakeFiles/trip.dir/build.make CMakeFiles/trip.dir/cylinder_trip.cxx.s
-.PHONY : cylinder_trip.cxx.s
+ReadDICOM.cxx.s:
+	$(MAKE) -f CMakeFiles/ReadDICOM.dir/build.make CMakeFiles/ReadDICOM.dir/ReadDICOM.cxx.s
+.PHONY : ReadDICOM.cxx.s
 
 # Help Target
 help:
@@ -236,20 +156,12 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... edit_cache"
-	@echo "... cylinderSurface"
-	@echo "... trip"
-	@echo "... cylinderUnsmooth"
 	@echo "... rebuild_cache"
-	@echo "... cylinderSurface.o"
-	@echo "... cylinderSurface.i"
-	@echo "... cylinderSurface.s"
-	@echo "... cylinderUnsmooth.o"
-	@echo "... cylinderUnsmooth.i"
-	@echo "... cylinderUnsmooth.s"
-	@echo "... cylinder_trip.o"
-	@echo "... cylinder_trip.i"
-	@echo "... cylinder_trip.s"
+	@echo "... edit_cache"
+	@echo "... ReadDICOM"
+	@echo "... ReadDICOM.o"
+	@echo "... ReadDICOM.i"
+	@echo "... ReadDICOM.s"
 .PHONY : help
 
 

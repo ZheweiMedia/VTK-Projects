@@ -1,28 +1,14 @@
 cmake_minimum_required(VERSION 2.8)
-PROJECT(demo)
-
+ 
+PROJECT(ReadDICOM)
+ 
 find_package(VTK REQUIRED)
 include(${VTK_USE_FILE})
-
-add_executable(cylinderSurface cylinderSurface.cxx)
-
-
+ 
+add_executable(ReadDICOM ReadDICOM.cxx)
+ 
 if(VTK_LIBRARIES)
-    target_link_libraries(cylinderSurface ${VTK_LIBRARIES})
+  target_link_libraries(ReadDICOM ${VTK_LIBRARIES})
 else()
-    target_link_libraries(cylinderSurface vtkHybrid vtkWidgets)
-endif()
-
-add_executable(trip cylinder_trip.cxx)
-if(VTK_LIBRARIES)
-    target_link_libraries(trip  ${VTK_LIBRARIES})
-else()
-    target_link_libraries(trip vtkHybrid vtkWidgets)
-endif()
-
-add_executable(cylinderUnsmooth cylinderUnsmooth.cxx)
-if(VTK_LIBRARIES)
-    target_link_libraries(cylinderUnsmooth  ${VTK_LIBRARIES})
-else()
-    target_link_libraries(cylinderUnsmooth vtkHybrid vtkWidgets)
+  target_link_libraries(ReadDICOM vtkHybrid vtkWidgets)
 endif()
