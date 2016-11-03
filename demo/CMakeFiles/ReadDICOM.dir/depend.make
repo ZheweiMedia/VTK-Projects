@@ -33,7 +33,8 @@ CMakeFiles/ReadDICOM.dir/ReadDICOM.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Commo
 CMakeFiles/ReadDICOM.dir/ReadDICOM.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/IO/Image/vtkDICOMImageReader.h
 CMakeFiles/ReadDICOM.dir/ReadDICOM.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/IO/Image/vtkImageReader2.h
 CMakeFiles/ReadDICOM.dir/ReadDICOM.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Imaging/Core/vtkImageShiftScale.h
-CMakeFiles/ReadDICOM.dir/ReadDICOM.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Imaging/General/vtkImageNormalize.h
+CMakeFiles/ReadDICOM.dir/ReadDICOM.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Imaging/General/vtkImageGaussianSmooth.h
+CMakeFiles/ReadDICOM.dir/ReadDICOM.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Imaging/General/vtkImageGradient.h
 CMakeFiles/ReadDICOM.dir/ReadDICOM.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Interaction/Image/vtkImageViewer2.h
 CMakeFiles/ReadDICOM.dir/ReadDICOM.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Rendering/Core/vtkActor.h
 CMakeFiles/ReadDICOM.dir/ReadDICOM.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Rendering/Core/vtkActorCollection.h

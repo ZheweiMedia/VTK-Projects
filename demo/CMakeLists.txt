@@ -12,3 +12,11 @@ if(VTK_LIBRARIES)
 else()
   target_link_libraries(ReadDICOM vtkHybrid vtkWidgets)
 endif()
+
+add_executable(ReadDICOMSeries ReadDICOMSeries.cxx)
+ 
+if(VTK_LIBRARIES)
+  target_link_libraries(ReadDICOMSeries ${VTK_LIBRARIES})
+else()
+  target_link_libraries(ReadDICOMSeries vtkHybrid vtkWidgets)
+endif()

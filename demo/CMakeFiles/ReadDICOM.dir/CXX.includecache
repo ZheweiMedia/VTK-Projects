@@ -220,7 +220,13 @@ vtkImagingCoreModule.h
 vtkThreadedImageAlgorithm.h
 /home/medialab/VTK-7.0/VTK-7.0.0/Imaging/Core/vtkThreadedImageAlgorithm.h
 
-/home/medialab/VTK-7.0/VTK-7.0.0/Imaging/General/vtkImageNormalize.h
+/home/medialab/VTK-7.0/VTK-7.0.0/Imaging/General/vtkImageGaussianSmooth.h
+vtkImagingGeneralModule.h
+/home/medialab/VTK-7.0/VTK-7.0.0/Imaging/General/vtkImagingGeneralModule.h
+vtkThreadedImageAlgorithm.h
+/home/medialab/VTK-7.0/VTK-7.0.0/Imaging/General/vtkThreadedImageAlgorithm.h
+
+/home/medialab/VTK-7.0/VTK-7.0.0/Imaging/General/vtkImageGradient.h
 vtkImagingGeneralModule.h
 /home/medialab/VTK-7.0/VTK-7.0.0/Imaging/General/vtkImagingGeneralModule.h
 vtkThreadedImageAlgorithm.h
@@ -439,10 +445,12 @@ vtkRenderWindowInteractor.h
 -
 vtkRenderer.h
 -
-vtkImageNormalize.h
--
 vtkImageShiftScale.h
 -
 vtkImageData.h
+-
+vtkImageGaussianSmooth.h
+-
+vtkImageGradient.h
 -
 
