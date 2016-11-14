@@ -1,0 +1,14 @@
+cmake_minimum_required(VERSION 2.8)
+ 
+PROJECT(readNII)
+ 
+find_package(VTK REQUIRED)
+include(${VTK_USE_FILE})
+ 
+add_executable(readNII readNii.cxx)
+ 
+if(VTK_LIBRARIES)
+  target_link_libraries(readNII ${VTK_LIBRARIES})
+else()
+  target_link_libraries(readNII vtkHybrid vtkWidgets)
+endif()
