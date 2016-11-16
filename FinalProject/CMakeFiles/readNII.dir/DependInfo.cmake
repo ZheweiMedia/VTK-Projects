@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/medialab/Zhewei/VTK-Projects/FinalProject/readNii.cxx" "/home/medialab/Zhewei/VTK-Projects/FinalProject/CMakeFiles/readNII.dir/readNii.cxx.o"
+  "/home/medialab/Zhewei/VTK-Projects/FinalProject/readNII.cxx" "/home/medialab/Zhewei/VTK-Projects/FinalProject/CMakeFiles/readNII.dir/readNII.cxx.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

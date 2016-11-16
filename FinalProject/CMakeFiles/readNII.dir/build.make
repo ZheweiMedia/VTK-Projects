@@ -57,38 +57,38 @@ include CMakeFiles/readNII.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/readNII.dir/flags.make
 
-CMakeFiles/readNII.dir/readNii.cxx.o: CMakeFiles/readNII.dir/flags.make
-CMakeFiles/readNII.dir/readNii.cxx.o: readNii.cxx
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/medialab/Zhewei/VTK-Projects/FinalProject/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/readNII.dir/readNii.cxx.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/readNII.dir/readNii.cxx.o -c /home/medialab/Zhewei/VTK-Projects/FinalProject/readNii.cxx
+CMakeFiles/readNII.dir/readNII.cxx.o: CMakeFiles/readNII.dir/flags.make
+CMakeFiles/readNII.dir/readNII.cxx.o: readNII.cxx
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/medialab/Zhewei/VTK-Projects/FinalProject/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/readNII.dir/readNII.cxx.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/readNII.dir/readNII.cxx.o -c /home/medialab/Zhewei/VTK-Projects/FinalProject/readNII.cxx
 
-CMakeFiles/readNII.dir/readNii.cxx.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/readNII.dir/readNii.cxx.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/medialab/Zhewei/VTK-Projects/FinalProject/readNii.cxx > CMakeFiles/readNII.dir/readNii.cxx.i
+CMakeFiles/readNII.dir/readNII.cxx.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/readNII.dir/readNII.cxx.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/medialab/Zhewei/VTK-Projects/FinalProject/readNII.cxx > CMakeFiles/readNII.dir/readNII.cxx.i
 
-CMakeFiles/readNII.dir/readNii.cxx.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/readNII.dir/readNii.cxx.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/medialab/Zhewei/VTK-Projects/FinalProject/readNii.cxx -o CMakeFiles/readNII.dir/readNii.cxx.s
+CMakeFiles/readNII.dir/readNII.cxx.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/readNII.dir/readNII.cxx.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/medialab/Zhewei/VTK-Projects/FinalProject/readNII.cxx -o CMakeFiles/readNII.dir/readNII.cxx.s
 
-CMakeFiles/readNII.dir/readNii.cxx.o.requires:
+CMakeFiles/readNII.dir/readNII.cxx.o.requires:
 
-.PHONY : CMakeFiles/readNII.dir/readNii.cxx.o.requires
+.PHONY : CMakeFiles/readNII.dir/readNII.cxx.o.requires
 
-CMakeFiles/readNII.dir/readNii.cxx.o.provides: CMakeFiles/readNII.dir/readNii.cxx.o.requires
-	$(MAKE) -f CMakeFiles/readNII.dir/build.make CMakeFiles/readNII.dir/readNii.cxx.o.provides.build
-.PHONY : CMakeFiles/readNII.dir/readNii.cxx.o.provides
+CMakeFiles/readNII.dir/readNII.cxx.o.provides: CMakeFiles/readNII.dir/readNII.cxx.o.requires
+	$(MAKE) -f CMakeFiles/readNII.dir/build.make CMakeFiles/readNII.dir/readNII.cxx.o.provides.build
+.PHONY : CMakeFiles/readNII.dir/readNII.cxx.o.provides
 
-CMakeFiles/readNII.dir/readNii.cxx.o.provides.build: CMakeFiles/readNII.dir/readNii.cxx.o
+CMakeFiles/readNII.dir/readNII.cxx.o.provides.build: CMakeFiles/readNII.dir/readNII.cxx.o
 
 
 # Object files for target readNII
 readNII_OBJECTS = \
-"CMakeFiles/readNII.dir/readNii.cxx.o"
+"CMakeFiles/readNII.dir/readNII.cxx.o"
 
 # External object files for target readNII
 readNII_EXTERNAL_OBJECTS =
 
-readNII: CMakeFiles/readNII.dir/readNii.cxx.o
+readNII: CMakeFiles/readNII.dir/readNII.cxx.o
 readNII: CMakeFiles/readNII.dir/build.make
 readNII: /home/medialab/VTK-7.0/VTK-build/lib/libvtkIOMINC-7.0.so.1
 readNII: /home/medialab/VTK-7.0/VTK-build/lib/libvtkGeovisCore-7.0.so.1
@@ -215,7 +215,7 @@ CMakeFiles/readNII.dir/build: readNII
 
 .PHONY : CMakeFiles/readNII.dir/build
 
-CMakeFiles/readNII.dir/requires: CMakeFiles/readNII.dir/readNii.cxx.o.requires
+CMakeFiles/readNII.dir/requires: CMakeFiles/readNII.dir/readNII.cxx.o.requires
 
 .PHONY : CMakeFiles/readNII.dir/requires
 

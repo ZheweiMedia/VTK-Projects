@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/readNII.dir/readNii.cxx.o"
+  "CMakeFiles/readNII.dir/readNII.cxx.o"
   "readNII.pdb"
   "readNII"
 )

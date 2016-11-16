@@ -5,7 +5,7 @@ PROJECT(readNII)
 find_package(VTK REQUIRED)
 include(${VTK_USE_FILE})
  
-add_executable(readNII readNii.cxx)
+add_executable(readNII readNII.cxx)
  
 if(VTK_LIBRARIES)
   target_link_libraries(readNII ${VTK_LIBRARIES})

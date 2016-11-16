@@ -123,32 +123,32 @@ readNII/fast:
 	$(MAKE) -f CMakeFiles/readNII.dir/build.make CMakeFiles/readNII.dir/build
 .PHONY : readNII/fast
 
-readNii.o: readNii.cxx.o
+readNII.o: readNII.cxx.o
 
-.PHONY : readNii.o
+.PHONY : readNII.o
 
 # target to build an object file
-readNii.cxx.o:
-	$(MAKE) -f CMakeFiles/readNII.dir/build.make CMakeFiles/readNII.dir/readNii.cxx.o
-.PHONY : readNii.cxx.o
+readNII.cxx.o:
+	$(MAKE) -f CMakeFiles/readNII.dir/build.make CMakeFiles/readNII.dir/readNII.cxx.o
+.PHONY : readNII.cxx.o
 
-readNii.i: readNii.cxx.i
+readNII.i: readNII.cxx.i
 
-.PHONY : readNii.i
+.PHONY : readNII.i
 
 # target to preprocess a source file
-readNii.cxx.i:
-	$(MAKE) -f CMakeFiles/readNII.dir/build.make CMakeFiles/readNII.dir/readNii.cxx.i
-.PHONY : readNii.cxx.i
+readNII.cxx.i:
+	$(MAKE) -f CMakeFiles/readNII.dir/build.make CMakeFiles/readNII.dir/readNII.cxx.i
+.PHONY : readNII.cxx.i
 
-readNii.s: readNii.cxx.s
+readNII.s: readNII.cxx.s
 
-.PHONY : readNii.s
+.PHONY : readNII.s
 
 # target to generate assembly for a file
-readNii.cxx.s:
-	$(MAKE) -f CMakeFiles/readNII.dir/build.make CMakeFiles/readNII.dir/readNii.cxx.s
-.PHONY : readNii.cxx.s
+readNII.cxx.s:
+	$(MAKE) -f CMakeFiles/readNII.dir/build.make CMakeFiles/readNII.dir/readNII.cxx.s
+.PHONY : readNII.cxx.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... readNII"
-	@echo "... readNii.o"
-	@echo "... readNii.i"
-	@echo "... readNii.s"
+	@echo "... readNII.o"
+	@echo "... readNII.i"
+	@echo "... readNII.s"
 .PHONY : help
 
 
