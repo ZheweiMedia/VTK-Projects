@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named readNIITest
+
+# Build rule for target.
+readNIITest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 readNIITest
+.PHONY : readNIITest
+
+# fast build rule for target.
+readNIITest/fast:
+	$(MAKE) -f CMakeFiles/readNIITest.dir/build.make CMakeFiles/readNIITest.dir/build
+.PHONY : readNIITest/fast
+
+#=============================================================================
 # Target rules for targets named readNII
 
 # Build rule for target.
@@ -150,6 +163,33 @@ readNII.cxx.s:
 	$(MAKE) -f CMakeFiles/readNII.dir/build.make CMakeFiles/readNII.dir/readNII.cxx.s
 .PHONY : readNII.cxx.s
 
+readNIITest.o: readNIITest.cxx.o
+
+.PHONY : readNIITest.o
+
+# target to build an object file
+readNIITest.cxx.o:
+	$(MAKE) -f CMakeFiles/readNIITest.dir/build.make CMakeFiles/readNIITest.dir/readNIITest.cxx.o
+.PHONY : readNIITest.cxx.o
+
+readNIITest.i: readNIITest.cxx.i
+
+.PHONY : readNIITest.i
+
+# target to preprocess a source file
+readNIITest.cxx.i:
+	$(MAKE) -f CMakeFiles/readNIITest.dir/build.make CMakeFiles/readNIITest.dir/readNIITest.cxx.i
+.PHONY : readNIITest.cxx.i
+
+readNIITest.s: readNIITest.cxx.s
+
+.PHONY : readNIITest.s
+
+# target to generate assembly for a file
+readNIITest.cxx.s:
+	$(MAKE) -f CMakeFiles/readNIITest.dir/build.make CMakeFiles/readNIITest.dir/readNIITest.cxx.s
+.PHONY : readNIITest.cxx.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -157,11 +197,15 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... readNIITest"
 	@echo "... rebuild_cache"
 	@echo "... readNII"
 	@echo "... readNII.o"
 	@echo "... readNII.i"
 	@echo "... readNII.s"
+	@echo "... readNIITest.o"
+	@echo "... readNIITest.i"
+	@echo "... readNIITest.s"
 .PHONY : help
 
 

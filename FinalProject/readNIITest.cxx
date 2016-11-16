@@ -117,8 +117,9 @@ int main(int argc, char* argv[])
 
   
   imageViewer->SetupInteractor(renderWindowInteractor);
-  imageViewer->Render();
+  //imageViewer->Render();
   imageViewer->GetRenderer()->ResetCamera();
+  imageViewer->GetRenderer()->SetViewport(0.5, 0.5, 1.0, 1.0);
   imageViewer->Render();
  
   renderWindowInteractor->Start();

@@ -1,3 +1,4 @@
 /home/medialab/Zhewei/VTK-Projects/FinalProject/CMakeFiles/edit_cache.dir
+/home/medialab/Zhewei/VTK-Projects/FinalProject/CMakeFiles/readNIITest.dir
 /home/medialab/Zhewei/VTK-Projects/FinalProject/CMakeFiles/rebuild_cache.dir
 /home/medialab/Zhewei/VTK-Projects/FinalProject/CMakeFiles/readNII.dir

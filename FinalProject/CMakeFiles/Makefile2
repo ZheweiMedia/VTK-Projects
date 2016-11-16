@@ -60,6 +60,43 @@ CMAKE_SOURCE_DIR = /home/medialab/Zhewei/VTK-Projects/FinalProject
 CMAKE_BINARY_DIR = /home/medialab/Zhewei/VTK-Projects/FinalProject
 
 #=============================================================================
+# Target rules for target CMakeFiles/readNIITest.dir
+
+# All Build rule for target.
+CMakeFiles/readNIITest.dir/all:
+	$(MAKE) -f CMakeFiles/readNIITest.dir/build.make CMakeFiles/readNIITest.dir/depend
+	$(MAKE) -f CMakeFiles/readNIITest.dir/build.make CMakeFiles/readNIITest.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/medialab/Zhewei/VTK-Projects/FinalProject/CMakeFiles --progress-num=3,4 "Built target readNIITest"
+.PHONY : CMakeFiles/readNIITest.dir/all
+
+# Include target in all.
+all: CMakeFiles/readNIITest.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/readNIITest.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/medialab/Zhewei/VTK-Projects/FinalProject/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/readNIITest.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/medialab/Zhewei/VTK-Projects/FinalProject/CMakeFiles 0
+.PHONY : CMakeFiles/readNIITest.dir/rule
+
+# Convenience name for target.
+readNIITest: CMakeFiles/readNIITest.dir/rule
+
+.PHONY : readNIITest
+
+# clean rule for target.
+CMakeFiles/readNIITest.dir/clean:
+	$(MAKE) -f CMakeFiles/readNIITest.dir/build.make CMakeFiles/readNIITest.dir/clean
+.PHONY : CMakeFiles/readNIITest.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/readNIITest.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/readNII.dir
 
 # All Build rule for target.
