@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named readNII
+
+# Build rule for target.
+readNII: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 readNII
+.PHONY : readNII
+
+# fast build rule for target.
+readNII/fast:
+	$(MAKE) -f CMakeFiles/readNII.dir/build.make CMakeFiles/readNII.dir/build
+.PHONY : readNII/fast
+
+#=============================================================================
 # Target rules for targets named readNIITest
 
 # Build rule for target.
@@ -124,17 +137,17 @@ readNIITest/fast:
 .PHONY : readNIITest/fast
 
 #=============================================================================
-# Target rules for targets named readNII
+# Target rules for targets named readNII_view2
 
 # Build rule for target.
-readNII: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 readNII
-.PHONY : readNII
+readNII_view2: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 readNII_view2
+.PHONY : readNII_view2
 
 # fast build rule for target.
-readNII/fast:
-	$(MAKE) -f CMakeFiles/readNII.dir/build.make CMakeFiles/readNII.dir/build
-.PHONY : readNII/fast
+readNII_view2/fast:
+	$(MAKE) -f CMakeFiles/readNII_view2.dir/build.make CMakeFiles/readNII_view2.dir/build
+.PHONY : readNII_view2/fast
 
 readNII.o: readNII.cxx.o
 
@@ -190,6 +203,33 @@ readNIITest.cxx.s:
 	$(MAKE) -f CMakeFiles/readNIITest.dir/build.make CMakeFiles/readNIITest.dir/readNIITest.cxx.s
 .PHONY : readNIITest.cxx.s
 
+readNII_view2.o: readNII_view2.cxx.o
+
+.PHONY : readNII_view2.o
+
+# target to build an object file
+readNII_view2.cxx.o:
+	$(MAKE) -f CMakeFiles/readNII_view2.dir/build.make CMakeFiles/readNII_view2.dir/readNII_view2.cxx.o
+.PHONY : readNII_view2.cxx.o
+
+readNII_view2.i: readNII_view2.cxx.i
+
+.PHONY : readNII_view2.i
+
+# target to preprocess a source file
+readNII_view2.cxx.i:
+	$(MAKE) -f CMakeFiles/readNII_view2.dir/build.make CMakeFiles/readNII_view2.dir/readNII_view2.cxx.i
+.PHONY : readNII_view2.cxx.i
+
+readNII_view2.s: readNII_view2.cxx.s
+
+.PHONY : readNII_view2.s
+
+# target to generate assembly for a file
+readNII_view2.cxx.s:
+	$(MAKE) -f CMakeFiles/readNII_view2.dir/build.make CMakeFiles/readNII_view2.dir/readNII_view2.cxx.s
+.PHONY : readNII_view2.cxx.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -197,15 +237,19 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
-	@echo "... readNIITest"
-	@echo "... rebuild_cache"
 	@echo "... readNII"
+	@echo "... rebuild_cache"
+	@echo "... readNIITest"
+	@echo "... readNII_view2"
 	@echo "... readNII.o"
 	@echo "... readNII.i"
 	@echo "... readNII.s"
 	@echo "... readNIITest.o"
 	@echo "... readNIITest.i"
 	@echo "... readNIITest.s"
+	@echo "... readNII_view2.o"
+	@echo "... readNII_view2.i"
+	@echo "... readNII_view2.s"
 .PHONY : help
 
 

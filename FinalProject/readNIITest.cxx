@@ -13,30 +13,27 @@ Zhewei 11/14/2016
 #include <vtkRenderWindowInteractor.h>
 #include <vtkRenderer.h>
 #include <vtkActor.h>
-// headers needed for this example
+// headers needed for this project
 #include <vtkImageViewer2.h>
-#include <vtkDICOMImageReader.h>
 #include <vtkNIFTIImageReader.h>
 #include <vtkInteractorStyleImage.h>
-#include <vtkActor2D.h>
 #include <vtkTextProperty.h>
 #include <vtkTextMapper.h>
+#include <vtkImageResliceMapper.h>
+#include <vtkImageSlice.h>
 // needed to easily convert int to std::string
 #include <sstream>
 #include <vtkImageShiftScale.h>
 #include <vtkImageData.h>
-#include <vtkImageGaussianSmooth.h>
-#include <vtkImageGradient.h>
-
-
-
+#include "utility.h"
 
 
 
 int main(int argc, char* argv[])
 {
   // Verify input arguments
-  // So we have three images, 
+  // So we have three images,
+
   if (argc != 4)
     {
       std::cout << "Usage: " << argv[0]
@@ -56,72 +53,81 @@ int main(int argc, char* argv[])
   vtkSmartPointer<vtkNIFTIImageReader> templateReader =
     vtkSmartPointer<vtkNIFTIImageReader>::New();
   templateReader->SetFileName(templateFileName.c_str());
-  templateReader->Update();
-  //templateReader->GetDataSpacing(template_3D);
-  //std::cout << template_3D[0]<<" "<<template_3D[1] << " "
-  //          << template_3D[2]<<std::endl;
-  std::cout << templateReader->GetFilePattern() << std::endl;
+templateReader->Update();
 
   vtkSmartPointer<vtkImageData> templateImage =
     vtkSmartPointer<vtkImageData>::New();
   templateImage->DeepCopy(templateReader->GetOutput());
   templateImage->GetScalarRange(template_range);
-  templateImage->GetDimensions(template_3D);
-  std::cout << template_range[0] << " " << template_range[1] << std::endl;
-  std::cout << template_3D[0]<<" "<<template_3D[1] << " "
-            << template_3D[2]<<std::endl;
+
   // find out how to clip one frame for visulization
+  // Three views, each view show different frame
 
-  vtkSmartPointer<vtkImageData> _2DImage =
-    vtkSmartPointer<vtkImageData>::New();
-  int imageExtent[6] = { 0, template_3D[0]-1, 0, template_3D[1]-1, 0, 0 };
-  _2DImage->SetExtent(imageExtent);
-  _2DImage->AllocateScalars(VTK_DOUBLE, 1);
-
-  for (int y = imageExtent[2]; y <= imageExtent[3]; y++)
-    {
-      for (int x = imageExtent[0]; x <= imageExtent[1]; x++)
-        {
-          double* _2D_pixel = static_cast<double*>(_2DImage->
-                                               GetScalarPointer(x, y, 0));
-          int* Or_pixel = static_cast<int*>(templateImage->
-                                                  GetScalarPointer(x,y,50));
-          _2D_pixel[0] = Or_pixel[0];
-        }
-    }
-  _2DImage->GetScalarRange(template_range);
-  std::cout << template_range[0] << " " << template_range[1] << std::endl;
-  vtkSmartPointer<vtkImageShiftScale> template_shift =
-    vtkSmartPointer<vtkImageShiftScale>::New();
-  template_shift->SetInputData(_2DImage);
-  template_shift->SetShift(-template_range[0]);
-  template_shift->SetScale(255/(template_range[1]-template_range[0]));
-  template_shift->SetOutputScalarTypeToUnsignedChar();
-  template_shift->Update();
+  vtkSmartPointer<vtkImageData> _2DImage_direction1 =
+    DifferentViews(templateImage, 1, 50);
+  vtkSmartPointer<vtkImageData> _2DImage_direction2 =
+    DifferentViews(templateImage, 2, 50);
+  vtkSmartPointer<vtkImageData> _2DImage_direction3 =
+    DifferentViews(templateImage, 3, 50);
+    
+  vtkSmartPointer<vtkImageShiftScale> _Image_1_Rescale =
+    RescaleImage(_2DImage_direction1);
+  vtkSmartPointer<vtkImageShiftScale> _Image_2_Rescale =
+    RescaleImage(_2DImage_direction2);
+  vtkSmartPointer<vtkImageShiftScale> _Image_3_Rescale =
+    RescaleImage(_2DImage_direction3);
+  
 
   // Visualize
-  vtkSmartPointer<vtkImageViewer2> imageViewer =
-    vtkSmartPointer<vtkImageViewer2>::New();
-  imageViewer->SetInputConnection(template_shift->GetOutputPort());
-  std::cout << imageViewer->GetSliceMin() << std::endl;
-  std::cout << imageViewer->GetSliceMax() << std::endl;
+  vtkSmartPointer<vtkImageResliceMapper> _Image_1_Mapper =
+    vtkSmartPointer<vtkImageResliceMapper>::New();
+  vtkSmartPointer<vtkImageResliceMapper> _Image_2_Mapper =
+    vtkSmartPointer<vtkImageResliceMapper>::New();
+  vtkSmartPointer<vtkImageResliceMapper> _Image_3_Mapper =
+    vtkSmartPointer<vtkImageResliceMapper>::New();
+  _Image_1_Mapper->SetInputConnection(_Image_1_Rescale->GetOutputPort());
+  _Image_2_Mapper->SetInputConnection(_Image_2_Rescale->GetOutputPort());
+  _Image_3_Mapper->SetInputConnection(_Image_3_Rescale->GetOutputPort());
 
-  std::cout << imageViewer->GetSlice() << std::endl;
+  vtkSmartPointer<vtkImageSlice> _ImageActor_1 =
+    vtkSmartPointer<vtkImageSlice>::New();
+  vtkSmartPointer<vtkImageSlice> _ImageActor_2 =
+    vtkSmartPointer<vtkImageSlice>::New();
+  vtkSmartPointer<vtkImageSlice> _ImageActor_3 =
+    vtkSmartPointer<vtkImageSlice>::New();
+  _ImageActor_1->SetMapper(_Image_1_Mapper);
+  _ImageActor_2->SetMapper(_Image_2_Mapper);
+  _ImageActor_3->SetMapper(_Image_3_Mapper);
 
-  //imageViewer->SetSlice(3);
+  vtkSmartPointer<vtkRenderer> _Image_1_renderer = 
+    vtkSmartPointer<vtkRenderer>::New();
+  vtkSmartPointer<vtkRenderer> _Image_2_renderer = 
+    vtkSmartPointer<vtkRenderer>::New();
+  vtkSmartPointer<vtkRenderer> _Image_3_renderer = 
+    vtkSmartPointer<vtkRenderer>::New();
+  _Image_1_renderer->AddActor(_ImageActor_1);
+  _Image_1_renderer->SetViewport(0.0, 0.5, 0.5, 1);
+  _Image_1_renderer->SetBackground( 0.2, 0.0, 0.2 );
+  _Image_2_renderer->AddActor(_ImageActor_2);
+  _Image_2_renderer->SetViewport(0.5, 0.5, 1.0, 1.0);
+  _Image_2_renderer->SetBackground( 0.2, 0.2, 0.0 );
+  _Image_3_renderer->AddActor(_ImageActor_3);
+  _Image_3_renderer->SetViewport(0.0, 0.0
+                                 , 0.5, 0.5);
+  _Image_3_renderer->SetBackground( 0.0, 0.2, 0.2 );
 
-  
+  vtkSmartPointer<vtkRenderWindow> renderWindow = 
+    vtkSmartPointer<vtkRenderWindow>::New();
+  renderWindow->AddRenderer(_Image_1_renderer);
+  renderWindow->AddRenderer(_Image_2_renderer);
+  renderWindow->AddRenderer(_Image_3_renderer);
+  renderWindow->SetSize(1000,1000);
 
-  vtkSmartPointer<vtkRenderWindowInteractor> renderWindowInteractor =
+  vtkSmartPointer<vtkRenderWindowInteractor> renderWindowInteractor = 
     vtkSmartPointer<vtkRenderWindowInteractor>::New();
+  renderWindowInteractor->SetRenderWindow(renderWindow);
 
-  
-  imageViewer->SetupInteractor(renderWindowInteractor);
-  //imageViewer->Render();
-  imageViewer->GetRenderer()->ResetCamera();
-  imageViewer->GetRenderer()->SetViewport(0.5, 0.5, 1.0, 1.0);
-  imageViewer->Render();
- 
+  renderWindow->Render();
   renderWindowInteractor->Start();
  
   return EXIT_SUCCESS;

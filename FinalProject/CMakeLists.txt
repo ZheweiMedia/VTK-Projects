@@ -20,3 +20,11 @@ if(VTK_LIBRARIES)
 else()
   target_link_libraries(readNIITest vtkHybrid vtkWidgets)
 endif()
+
+add_executable(readNII_view2 readNII_view2.cxx)
+ 
+if(VTK_LIBRARIES)
+  target_link_libraries(readNII_view2 ${VTK_LIBRARIES})
+else()
+  target_link_libraries(readNII_view2 vtkHybrid vtkWidgets)
+endif()

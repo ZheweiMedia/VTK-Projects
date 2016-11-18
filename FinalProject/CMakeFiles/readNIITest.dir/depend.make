@@ -32,20 +32,18 @@ CMakeFiles/readNIITest.dir/readNIITest.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/C
 CMakeFiles/readNIITest.dir/readNIITest.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Common/ExecutionModel/vtkAlgorithm.h
 CMakeFiles/readNIITest.dir/readNIITest.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Common/ExecutionModel/vtkImageAlgorithm.h
 CMakeFiles/readNIITest.dir/readNIITest.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Common/ExecutionModel/vtkThreadedImageAlgorithm.h
-CMakeFiles/readNIITest.dir/readNIITest.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/IO/Image/vtkDICOMImageReader.h
 CMakeFiles/readNIITest.dir/readNIITest.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/IO/Image/vtkImageReader2.h
 CMakeFiles/readNIITest.dir/readNIITest.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/IO/Image/vtkNIFTIImageReader.h
 CMakeFiles/readNIITest.dir/readNIITest.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Imaging/Core/vtkImageShiftScale.h
-CMakeFiles/readNIITest.dir/readNIITest.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Imaging/General/vtkImageGaussianSmooth.h
-CMakeFiles/readNIITest.dir/readNIITest.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Imaging/General/vtkImageGradient.h
 CMakeFiles/readNIITest.dir/readNIITest.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Interaction/Image/vtkImageViewer2.h
 CMakeFiles/readNIITest.dir/readNIITest.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Interaction/Style/vtkInteractorStyleImage.h
 CMakeFiles/readNIITest.dir/readNIITest.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Interaction/Style/vtkInteractorStyleTrackballCamera.h
 CMakeFiles/readNIITest.dir/readNIITest.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Rendering/Core/vtkAbstractMapper.h
+CMakeFiles/readNIITest.dir/readNIITest.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Rendering/Core/vtkAbstractMapper3D.h
 CMakeFiles/readNIITest.dir/readNIITest.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Rendering/Core/vtkActor.h
-CMakeFiles/readNIITest.dir/readNIITest.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Rendering/Core/vtkActor2D.h
 CMakeFiles/readNIITest.dir/readNIITest.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Rendering/Core/vtkActorCollection.h
-CMakeFiles/readNIITest.dir/readNIITest.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Rendering/Core/vtkCoordinate.h
+CMakeFiles/readNIITest.dir/readNIITest.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Rendering/Core/vtkImageMapper3D.h
+CMakeFiles/readNIITest.dir/readNIITest.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Rendering/Core/vtkImageSlice.h
 CMakeFiles/readNIITest.dir/readNIITest.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Rendering/Core/vtkInteractorObserver.h
 CMakeFiles/readNIITest.dir/readNIITest.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Rendering/Core/vtkInteractorStyle.h
 CMakeFiles/readNIITest.dir/readNIITest.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Rendering/Core/vtkMapper2D.h
@@ -60,6 +58,7 @@ CMakeFiles/readNIITest.dir/readNIITest.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/R
 CMakeFiles/readNIITest.dir/readNIITest.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Rendering/Core/vtkViewport.h
 CMakeFiles/readNIITest.dir/readNIITest.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Rendering/Core/vtkVolume.h
 CMakeFiles/readNIITest.dir/readNIITest.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Rendering/Core/vtkVolumeCollection.h
+CMakeFiles/readNIITest.dir/readNIITest.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Rendering/Image/vtkImageResliceMapper.h
 CMakeFiles/readNIITest.dir/readNIITest.cxx.o: /home/medialab/VTK-7.0/VTK-build/Common/Core/vtkAtomic.h
 CMakeFiles/readNIITest.dir/readNIITest.cxx.o: /home/medialab/VTK-7.0/VTK-build/Common/Core/vtkCommonCoreModule.h
 CMakeFiles/readNIITest.dir/readNIITest.cxx.o: /home/medialab/VTK-7.0/VTK-build/Common/Core/vtkConfigure.h
@@ -73,7 +72,6 @@ CMakeFiles/readNIITest.dir/readNIITest.cxx.o: /home/medialab/VTK-7.0/VTK-build/F
 CMakeFiles/readNIITest.dir/readNIITest.cxx.o: /home/medialab/VTK-7.0/VTK-build/Filters/Sources/vtkFiltersSourcesModule.h
 CMakeFiles/readNIITest.dir/readNIITest.cxx.o: /home/medialab/VTK-7.0/VTK-build/IO/Image/vtkIOImageModule.h
 CMakeFiles/readNIITest.dir/readNIITest.cxx.o: /home/medialab/VTK-7.0/VTK-build/Imaging/Core/vtkImagingCoreModule.h
-CMakeFiles/readNIITest.dir/readNIITest.cxx.o: /home/medialab/VTK-7.0/VTK-build/Imaging/General/vtkImagingGeneralModule.h
 CMakeFiles/readNIITest.dir/readNIITest.cxx.o: /home/medialab/VTK-7.0/VTK-build/Imaging/Hybrid/vtkImagingHybridModule.h
 CMakeFiles/readNIITest.dir/readNIITest.cxx.o: /home/medialab/VTK-7.0/VTK-build/Interaction/Image/vtkInteractionImageModule.h
 CMakeFiles/readNIITest.dir/readNIITest.cxx.o: /home/medialab/VTK-7.0/VTK-build/Interaction/Style/vtkInteractionStyleModule.h
@@ -81,6 +79,8 @@ CMakeFiles/readNIITest.dir/readNIITest.cxx.o: /home/medialab/VTK-7.0/VTK-build/I
 CMakeFiles/readNIITest.dir/readNIITest.cxx.o: /home/medialab/VTK-7.0/VTK-build/Rendering/Annotation/vtkRenderingAnnotationModule.h
 CMakeFiles/readNIITest.dir/readNIITest.cxx.o: /home/medialab/VTK-7.0/VTK-build/Rendering/Core/vtkRenderingCoreModule.h
 CMakeFiles/readNIITest.dir/readNIITest.cxx.o: /home/medialab/VTK-7.0/VTK-build/Rendering/FreeType/vtkRenderingFreeTypeModule.h
+CMakeFiles/readNIITest.dir/readNIITest.cxx.o: /home/medialab/VTK-7.0/VTK-build/Rendering/Image/vtkRenderingImageModule.h
 CMakeFiles/readNIITest.dir/readNIITest.cxx.o: /home/medialab/VTK-7.0/VTK-build/Rendering/Volume/vtkRenderingVolumeModule.h
 CMakeFiles/readNIITest.dir/readNIITest.cxx.o: readNIITest.cxx
+CMakeFiles/readNIITest.dir/readNIITest.cxx.o: utility.h
 
