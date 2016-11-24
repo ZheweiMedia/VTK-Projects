@@ -1,9 +1,18 @@
-// read DICOM files in, and volume rendering.
+/*****************************************************************************
+ * 1. read DICOM files in, and volume rendering. <-- done, now modify it to-->
+ * 2. read a .nii file in.
+ *
+ *
+ *
+ *
+ *
+ ******************************************************************************/
 
 
 #include <vtkSmartPointer.h>
 #include <vtkCamera.h>
 #include <vtkDICOMImageReader.h>
+#include <vtkNIFTIImageReader.h>
 #include <vtkImageResample.h>
 #include <vtkFiniteDifferenceGradientEstimator.h>
 #include <vtkPiecewiseFunction.h>
@@ -17,6 +26,10 @@
 #include <vtkFixedPointVolumeRayCastMapper.h>
 #include <vtkColorTransferFunction.h>
 #include <vtkInteractorObserver.h>
+#include <vtkImageShiftScale.h>
+#include <sstream>
+
+
 
 int main (int argc, char *argv[])
 {
@@ -27,7 +40,7 @@ int main (int argc, char *argv[])
     }
 
 
-  char *dirname = argv[1];
+  std::string dirname = argv[1];
   vtkAlgorithm *reader;
   vtkImageData *input;
   double reductionFactor = 1.0;
@@ -37,6 +50,7 @@ int main (int argc, char *argv[])
   int clip = 0;
   int blendType = 0;
   bool independentComponents = true;
+  double _range[2];
 
   // Create the renderers, render window, and interactor
 
@@ -53,12 +67,14 @@ int main (int argc, char *argv[])
   
 
   // Read file in
-  vtkSmartPointer<vtkDICOMImageReader> dicomReader =
-    vtkSmartPointer<vtkDICOMImageReader>::New();
-  dicomReader->SetDirectoryName(dirname);
-  dicomReader->Update();
-  input = dicomReader->GetOutput();
-  reader = dicomReader;
+
+  vtkSmartPointer<vtkNIFTIImageReader> niiReader =
+    vtkSmartPointer<vtkNIFTIImageReader>::New();
+  niiReader->SetFileName(dirname.c_str());
+  niiReader->Update();
+  input = niiReader->GetOutput();
+  reader = niiReader;
+
 
   // resample the data
   vtkSmartPointer<vtkImageResample> resample =
@@ -79,9 +95,9 @@ int main (int argc, char *argv[])
 
   vtkSmartPointer<vtkColorTransferFunction> cTFun =
     vtkSmartPointer<vtkColorTransferFunction>::New();
-  cTFun->AddRGBSegment(0.0, 1.0, 1.0, 1.0, 55.0, 1.0, 1.0, 1.0);
+  cTFun->AddRGBSegment(0.0, 1.0, 1.0, 1.0, 255.0, 1.0, 1.0, 1.0);
   cTFun->AddRGBPoint(0.0, 0.0, 0.1, 0.0);
-  cTFun->AddRGBPoint(255.0, 0.0, 0.7, 0.0 );
+  cTFun->AddRGBPoint(255.0, 0.0, 1.0, 0.0 );
 
   vtkSmartPointer<vtkVolumeProperty> property =
     vtkSmartPointer<vtkVolumeProperty>::New();
