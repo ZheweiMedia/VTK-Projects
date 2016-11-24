@@ -1,22 +1,24 @@
+#
+
 cmake_minimum_required(VERSION 2.8)
- 
-PROJECT(ReadDICOM)
- 
+
+PROJECT(volumeRender)
+
 find_package(VTK REQUIRED)
 include(${VTK_USE_FILE})
- 
-add_executable(ReadDICOM ReadDICOM.cxx)
- 
+
+add_executable(volumeRender volumeRender.cxx)
+
 if(VTK_LIBRARIES)
-  target_link_libraries(ReadDICOM ${VTK_LIBRARIES})
+  target_link_libraries(volumeRender ${VTK_LIBRARIES})
 else()
-  target_link_libraries(ReadDICOM vtkHybrid vtkWidgets)
+  target_link_libraries(volumeRender vtkHybrid vtkWidgets)
 endif()
 
-add_executable(ReadDICOMSeries ReadDICOMSeries.cxx)
- 
+add_executable(FixedPointVolumeRayCastMapperCT FixedPointVolumeRayCastMapperCT.cxx)
+
 if(VTK_LIBRARIES)
-  target_link_libraries(ReadDICOMSeries ${VTK_LIBRARIES})
+  target_link_libraries(FixedPointVolumeRayCastMapperCT ${VTK_LIBRARIES})
 else()
-  target_link_libraries(ReadDICOMSeries vtkHybrid vtkWidgets)
+  target_link_libraries(FixedPointVolumeRayCastMapperCT vtkHybrid vtkWidgets)
 endif()

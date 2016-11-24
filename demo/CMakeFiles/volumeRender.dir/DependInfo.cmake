@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/medialab/Zhewei/VTK-Projects/demo/ReadDICOM.cxx" "/home/medialab/Zhewei/VTK-Projects/demo/CMakeFiles/ReadDICOM.dir/ReadDICOM.cxx.o"
+  "/home/medialab/Zhewei/VTK-Projects/demo/volumeRender.cxx" "/home/medialab/Zhewei/VTK-Projects/demo/CMakeFiles/volumeRender.dir/volumeRender.cxx.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

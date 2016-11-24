@@ -48,24 +48,13 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/medialab/Zhewei/VTK-Projects/tmp
+CMAKE_SOURCE_DIR = /home/medialab/Zhewei/VTK-Projects/demo
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/medialab/Zhewei/VTK-Projects/tmp
+CMAKE_BINARY_DIR = /home/medialab/Zhewei/VTK-Projects/demo
 
 #=============================================================================
 # Targets provided globally by CMake.
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -78,11 +67,22 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/medialab/Zhewei/VTK-Projects/tmp/CMakeFiles /home/medialab/Zhewei/VTK-Projects/tmp/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/medialab/Zhewei/VTK-Projects/demo/CMakeFiles /home/medialab/Zhewei/VTK-Projects/demo/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/medialab/Zhewei/VTK-Projects/tmp/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/medialab/Zhewei/VTK-Projects/demo/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,44 +111,84 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Shadows
+# Target rules for targets named ReadDICOMSeries
 
 # Build rule for target.
-Shadows: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Shadows
-.PHONY : Shadows
+ReadDICOMSeries: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ReadDICOMSeries
+.PHONY : ReadDICOMSeries
 
 # fast build rule for target.
-Shadows/fast:
-	$(MAKE) -f CMakeFiles/Shadows.dir/build.make CMakeFiles/Shadows.dir/build
-.PHONY : Shadows/fast
+ReadDICOMSeries/fast:
+	$(MAKE) -f CMakeFiles/ReadDICOMSeries.dir/build.make CMakeFiles/ReadDICOMSeries.dir/build
+.PHONY : ReadDICOMSeries/fast
 
-Shadows.o: Shadows.cxx.o
+#=============================================================================
+# Target rules for targets named ReadDICOM
 
-.PHONY : Shadows.o
+# Build rule for target.
+ReadDICOM: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ReadDICOM
+.PHONY : ReadDICOM
+
+# fast build rule for target.
+ReadDICOM/fast:
+	$(MAKE) -f CMakeFiles/ReadDICOM.dir/build.make CMakeFiles/ReadDICOM.dir/build
+.PHONY : ReadDICOM/fast
+
+ReadDICOM.o: ReadDICOM.cxx.o
+
+.PHONY : ReadDICOM.o
 
 # target to build an object file
-Shadows.cxx.o:
-	$(MAKE) -f CMakeFiles/Shadows.dir/build.make CMakeFiles/Shadows.dir/Shadows.cxx.o
-.PHONY : Shadows.cxx.o
+ReadDICOM.cxx.o:
+	$(MAKE) -f CMakeFiles/ReadDICOM.dir/build.make CMakeFiles/ReadDICOM.dir/ReadDICOM.cxx.o
+.PHONY : ReadDICOM.cxx.o
 
-Shadows.i: Shadows.cxx.i
+ReadDICOM.i: ReadDICOM.cxx.i
 
-.PHONY : Shadows.i
+.PHONY : ReadDICOM.i
 
 # target to preprocess a source file
-Shadows.cxx.i:
-	$(MAKE) -f CMakeFiles/Shadows.dir/build.make CMakeFiles/Shadows.dir/Shadows.cxx.i
-.PHONY : Shadows.cxx.i
+ReadDICOM.cxx.i:
+	$(MAKE) -f CMakeFiles/ReadDICOM.dir/build.make CMakeFiles/ReadDICOM.dir/ReadDICOM.cxx.i
+.PHONY : ReadDICOM.cxx.i
 
-Shadows.s: Shadows.cxx.s
+ReadDICOM.s: ReadDICOM.cxx.s
 
-.PHONY : Shadows.s
+.PHONY : ReadDICOM.s
 
 # target to generate assembly for a file
-Shadows.cxx.s:
-	$(MAKE) -f CMakeFiles/Shadows.dir/build.make CMakeFiles/Shadows.dir/Shadows.cxx.s
-.PHONY : Shadows.cxx.s
+ReadDICOM.cxx.s:
+	$(MAKE) -f CMakeFiles/ReadDICOM.dir/build.make CMakeFiles/ReadDICOM.dir/ReadDICOM.cxx.s
+.PHONY : ReadDICOM.cxx.s
+
+ReadDICOMSeries.o: ReadDICOMSeries.cxx.o
+
+.PHONY : ReadDICOMSeries.o
+
+# target to build an object file
+ReadDICOMSeries.cxx.o:
+	$(MAKE) -f CMakeFiles/ReadDICOMSeries.dir/build.make CMakeFiles/ReadDICOMSeries.dir/ReadDICOMSeries.cxx.o
+.PHONY : ReadDICOMSeries.cxx.o
+
+ReadDICOMSeries.i: ReadDICOMSeries.cxx.i
+
+.PHONY : ReadDICOMSeries.i
+
+# target to preprocess a source file
+ReadDICOMSeries.cxx.i:
+	$(MAKE) -f CMakeFiles/ReadDICOMSeries.dir/build.make CMakeFiles/ReadDICOMSeries.dir/ReadDICOMSeries.cxx.i
+.PHONY : ReadDICOMSeries.cxx.i
+
+ReadDICOMSeries.s: ReadDICOMSeries.cxx.s
+
+.PHONY : ReadDICOMSeries.s
+
+# target to generate assembly for a file
+ReadDICOMSeries.cxx.s:
+	$(MAKE) -f CMakeFiles/ReadDICOMSeries.dir/build.make CMakeFiles/ReadDICOMSeries.dir/ReadDICOMSeries.cxx.s
+.PHONY : ReadDICOMSeries.cxx.s
 
 # Help Target
 help:
@@ -156,12 +196,16 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... Shadows"
-	@echo "... Shadows.o"
-	@echo "... Shadows.i"
-	@echo "... Shadows.s"
+	@echo "... edit_cache"
+	@echo "... ReadDICOMSeries"
+	@echo "... ReadDICOM"
+	@echo "... ReadDICOM.o"
+	@echo "... ReadDICOM.i"
+	@echo "... ReadDICOM.s"
+	@echo "... ReadDICOMSeries.o"
+	@echo "... ReadDICOMSeries.i"
+	@echo "... ReadDICOMSeries.s"
 .PHONY : help
 
 

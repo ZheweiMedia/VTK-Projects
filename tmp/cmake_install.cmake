@@ -1,4 +1,4 @@
-# Install script for directory: /home/medialab/Zhewei/VTK-Projects/tmp
+# Install script for directory: /home/medialab/Zhewei/VTK-Projects/demo
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/medialab/Zhewei/VTK-Projects/tmp/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/medialab/Zhewei/VTK-Projects/demo/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

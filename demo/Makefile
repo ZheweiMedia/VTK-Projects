@@ -111,84 +111,84 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named ReadDICOMSeries
+# Target rules for targets named FixedPointVolumeRayCastMapperCT
 
 # Build rule for target.
-ReadDICOMSeries: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ReadDICOMSeries
-.PHONY : ReadDICOMSeries
+FixedPointVolumeRayCastMapperCT: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 FixedPointVolumeRayCastMapperCT
+.PHONY : FixedPointVolumeRayCastMapperCT
 
 # fast build rule for target.
-ReadDICOMSeries/fast:
-	$(MAKE) -f CMakeFiles/ReadDICOMSeries.dir/build.make CMakeFiles/ReadDICOMSeries.dir/build
-.PHONY : ReadDICOMSeries/fast
+FixedPointVolumeRayCastMapperCT/fast:
+	$(MAKE) -f CMakeFiles/FixedPointVolumeRayCastMapperCT.dir/build.make CMakeFiles/FixedPointVolumeRayCastMapperCT.dir/build
+.PHONY : FixedPointVolumeRayCastMapperCT/fast
 
 #=============================================================================
-# Target rules for targets named ReadDICOM
+# Target rules for targets named volumeRender
 
 # Build rule for target.
-ReadDICOM: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ReadDICOM
-.PHONY : ReadDICOM
+volumeRender: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 volumeRender
+.PHONY : volumeRender
 
 # fast build rule for target.
-ReadDICOM/fast:
-	$(MAKE) -f CMakeFiles/ReadDICOM.dir/build.make CMakeFiles/ReadDICOM.dir/build
-.PHONY : ReadDICOM/fast
+volumeRender/fast:
+	$(MAKE) -f CMakeFiles/volumeRender.dir/build.make CMakeFiles/volumeRender.dir/build
+.PHONY : volumeRender/fast
 
-ReadDICOM.o: ReadDICOM.cxx.o
+FixedPointVolumeRayCastMapperCT.o: FixedPointVolumeRayCastMapperCT.cxx.o
 
-.PHONY : ReadDICOM.o
-
-# target to build an object file
-ReadDICOM.cxx.o:
-	$(MAKE) -f CMakeFiles/ReadDICOM.dir/build.make CMakeFiles/ReadDICOM.dir/ReadDICOM.cxx.o
-.PHONY : ReadDICOM.cxx.o
-
-ReadDICOM.i: ReadDICOM.cxx.i
-
-.PHONY : ReadDICOM.i
-
-# target to preprocess a source file
-ReadDICOM.cxx.i:
-	$(MAKE) -f CMakeFiles/ReadDICOM.dir/build.make CMakeFiles/ReadDICOM.dir/ReadDICOM.cxx.i
-.PHONY : ReadDICOM.cxx.i
-
-ReadDICOM.s: ReadDICOM.cxx.s
-
-.PHONY : ReadDICOM.s
-
-# target to generate assembly for a file
-ReadDICOM.cxx.s:
-	$(MAKE) -f CMakeFiles/ReadDICOM.dir/build.make CMakeFiles/ReadDICOM.dir/ReadDICOM.cxx.s
-.PHONY : ReadDICOM.cxx.s
-
-ReadDICOMSeries.o: ReadDICOMSeries.cxx.o
-
-.PHONY : ReadDICOMSeries.o
+.PHONY : FixedPointVolumeRayCastMapperCT.o
 
 # target to build an object file
-ReadDICOMSeries.cxx.o:
-	$(MAKE) -f CMakeFiles/ReadDICOMSeries.dir/build.make CMakeFiles/ReadDICOMSeries.dir/ReadDICOMSeries.cxx.o
-.PHONY : ReadDICOMSeries.cxx.o
+FixedPointVolumeRayCastMapperCT.cxx.o:
+	$(MAKE) -f CMakeFiles/FixedPointVolumeRayCastMapperCT.dir/build.make CMakeFiles/FixedPointVolumeRayCastMapperCT.dir/FixedPointVolumeRayCastMapperCT.cxx.o
+.PHONY : FixedPointVolumeRayCastMapperCT.cxx.o
 
-ReadDICOMSeries.i: ReadDICOMSeries.cxx.i
+FixedPointVolumeRayCastMapperCT.i: FixedPointVolumeRayCastMapperCT.cxx.i
 
-.PHONY : ReadDICOMSeries.i
+.PHONY : FixedPointVolumeRayCastMapperCT.i
 
 # target to preprocess a source file
-ReadDICOMSeries.cxx.i:
-	$(MAKE) -f CMakeFiles/ReadDICOMSeries.dir/build.make CMakeFiles/ReadDICOMSeries.dir/ReadDICOMSeries.cxx.i
-.PHONY : ReadDICOMSeries.cxx.i
+FixedPointVolumeRayCastMapperCT.cxx.i:
+	$(MAKE) -f CMakeFiles/FixedPointVolumeRayCastMapperCT.dir/build.make CMakeFiles/FixedPointVolumeRayCastMapperCT.dir/FixedPointVolumeRayCastMapperCT.cxx.i
+.PHONY : FixedPointVolumeRayCastMapperCT.cxx.i
 
-ReadDICOMSeries.s: ReadDICOMSeries.cxx.s
+FixedPointVolumeRayCastMapperCT.s: FixedPointVolumeRayCastMapperCT.cxx.s
 
-.PHONY : ReadDICOMSeries.s
+.PHONY : FixedPointVolumeRayCastMapperCT.s
 
 # target to generate assembly for a file
-ReadDICOMSeries.cxx.s:
-	$(MAKE) -f CMakeFiles/ReadDICOMSeries.dir/build.make CMakeFiles/ReadDICOMSeries.dir/ReadDICOMSeries.cxx.s
-.PHONY : ReadDICOMSeries.cxx.s
+FixedPointVolumeRayCastMapperCT.cxx.s:
+	$(MAKE) -f CMakeFiles/FixedPointVolumeRayCastMapperCT.dir/build.make CMakeFiles/FixedPointVolumeRayCastMapperCT.dir/FixedPointVolumeRayCastMapperCT.cxx.s
+.PHONY : FixedPointVolumeRayCastMapperCT.cxx.s
+
+volumeRender.o: volumeRender.cxx.o
+
+.PHONY : volumeRender.o
+
+# target to build an object file
+volumeRender.cxx.o:
+	$(MAKE) -f CMakeFiles/volumeRender.dir/build.make CMakeFiles/volumeRender.dir/volumeRender.cxx.o
+.PHONY : volumeRender.cxx.o
+
+volumeRender.i: volumeRender.cxx.i
+
+.PHONY : volumeRender.i
+
+# target to preprocess a source file
+volumeRender.cxx.i:
+	$(MAKE) -f CMakeFiles/volumeRender.dir/build.make CMakeFiles/volumeRender.dir/volumeRender.cxx.i
+.PHONY : volumeRender.cxx.i
+
+volumeRender.s: volumeRender.cxx.s
+
+.PHONY : volumeRender.s
+
+# target to generate assembly for a file
+volumeRender.cxx.s:
+	$(MAKE) -f CMakeFiles/volumeRender.dir/build.make CMakeFiles/volumeRender.dir/volumeRender.cxx.s
+.PHONY : volumeRender.cxx.s
 
 # Help Target
 help:
@@ -198,14 +198,14 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... ReadDICOMSeries"
-	@echo "... ReadDICOM"
-	@echo "... ReadDICOM.o"
-	@echo "... ReadDICOM.i"
-	@echo "... ReadDICOM.s"
-	@echo "... ReadDICOMSeries.o"
-	@echo "... ReadDICOMSeries.i"
-	@echo "... ReadDICOMSeries.s"
+	@echo "... FixedPointVolumeRayCastMapperCT"
+	@echo "... volumeRender"
+	@echo "... FixedPointVolumeRayCastMapperCT.o"
+	@echo "... FixedPointVolumeRayCastMapperCT.i"
+	@echo "... FixedPointVolumeRayCastMapperCT.s"
+	@echo "... volumeRender.o"
+	@echo "... volumeRender.i"
+	@echo "... volumeRender.s"
 .PHONY : help
 
 
