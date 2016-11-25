@@ -11,7 +11,6 @@
 
 #include <vtkSmartPointer.h>
 #include <vtkCamera.h>
-#include <vtkDICOMImageReader.h>
 #include <vtkNIFTIImageReader.h>
 #include <vtkImageResample.h>
 #include <vtkFiniteDifferenceGradientEstimator.h>
@@ -28,6 +27,7 @@
 #include <vtkInteractorObserver.h>
 #include <vtkImageShiftScale.h>
 #include <sstream>
+#include "utility.h"
 
 
 
@@ -40,7 +40,9 @@ int main (int argc, char *argv[])
     }
 
 
-  std::string dirname = argv[1];
+  std::string MRI_name = argv[1];
+  std::string fMRI_name = argv[2];
+  std::string template_name = argv[3];
   vtkAlgorithm *reader;
   vtkImageData *input;
   double reductionFactor = 1.0;
@@ -51,6 +53,33 @@ int main (int argc, char *argv[])
   int blendType = 0;
   bool independentComponents = true;
   double _range[2];
+
+  // Read file in, and resample, then mapper
+
+  vtkSmartPointer<vtkFixedPointVolumeRayCastMapper> MRI_mapper =
+    reader_to_mapper(MRI_name, reductionFactor);
+
+  vtkSmartPointer<vtkFixedPointVolumeRayCastMapper> fMRI_mapper =
+    reader_to_mapper(fMRI_name, reductionFactor);
+
+  // Create a transfer function mapping scalar value to opacity
+
+  vtkSmartPointer<vtkVolumeProperty> MRI_Property =
+    property(opacityLevel, opacityWindow, independentComponents, 'G');
+
+  vtkSmartPointer<vtkVolumeProperty> fMRI_Property =
+    property(opacityLevel, opacityWindow, independentComponents, 'R');
+  
+
+  vtkSmartPointer<vtkVolume> MRI_volume =
+    vtkSmartPointer<vtkVolume>::New();
+  MRI_volume->SetMapper(MRI_mapper);
+  MRI_volume->SetProperty(MRI_Property);
+
+  vtkSmartPointer<vtkVolume> fMRI_volume =
+    vtkSmartPointer<vtkVolume>::New();
+  fMRI_volume->SetMapper(fMRI_mapper);
+  fMRI_volume->SetProperty(fMRI_Property);
 
   // Create the renderers, render window, and interactor
 
@@ -64,65 +93,12 @@ int main (int argc, char *argv[])
   iren->SetRenderWindow(renWin);
   iren->SetDesiredUpdateRate(frameRate / (1+clip));
   iren->GetInteractorStyle()->SetDefaultRenderer(ren);
-  
-
-  // Read file in
-
-  vtkSmartPointer<vtkNIFTIImageReader> niiReader =
-    vtkSmartPointer<vtkNIFTIImageReader>::New();
-  niiReader->SetFileName(dirname.c_str());
-  niiReader->Update();
-  input = niiReader->GetOutput();
-  reader = niiReader;
-
-
-  // resample the data
-  vtkSmartPointer<vtkImageResample> resample =
-    vtkSmartPointer<vtkImageResample>::New();
-  if ( reductionFactor < 1.0 )
-    {
-      resample->SetInputConnection( reader->GetOutputPort());
-      resample->SetAxisMagnificationFactor(0, reductionFactor);
-      resample->SetAxisMagnificationFactor(1, reductionFactor);
-      resample->SetAxisMagnificationFactor(2, reductionFactor);
-    }
-
-  // Create a transfer function mapping scalar value to opacity
-  vtkSmartPointer<vtkPiecewiseFunction> oTFun =
-    vtkSmartPointer<vtkPiecewiseFunction>::New();
-  oTFun->AddSegment(opacityLevel - 0.5*opacityWindow, 0.0,
-                    opacityLevel + 0.5*opacityWindow, 1.0);
-
-  vtkSmartPointer<vtkColorTransferFunction> cTFun =
-    vtkSmartPointer<vtkColorTransferFunction>::New();
-  cTFun->AddRGBSegment(0.0, 1.0, 1.0, 1.0, 255.0, 1.0, 1.0, 1.0);
-  cTFun->AddRGBPoint(0.0, 0.0, 0.1, 0.0);
-  cTFun->AddRGBPoint(255.0, 0.0, 1.0, 0.0 );
-
-  vtkSmartPointer<vtkVolumeProperty> property =
-    vtkSmartPointer<vtkVolumeProperty>::New();
-  property->SetScalarOpacity(oTFun);
-  property->SetColor(cTFun);
-  property->SetInterpolationTypeToLinear();
-  property->SetIndependentComponents(independentComponents);
-
-  vtkSmartPointer<vtkFixedPointVolumeRayCastMapper> mapper =
-    vtkSmartPointer<vtkFixedPointVolumeRayCastMapper>::New();
-  mapper->SetBlendModeToMaximumIntensity();
-  if ( reductionFactor < 1.0 )
-    mapper->SetInputConnection( resample->GetOutputPort());
-  else
-    mapper->SetInputConnection( reader->GetOutputPort());
-
-  vtkSmartPointer<vtkVolume> volume =
-    vtkSmartPointer<vtkVolume>::New();
-  volume->SetMapper(mapper);
-  volume->SetProperty(property);
 
   
   renWin->SetSize(600, 600);
   renWin->Render();
-  ren->AddVolume(volume);
+  ren->AddVolume(MRI_volume);
+  ren->AddVolume(fMRI_volume);
   ren->ResetCamera();
   renWin->Render();
   iren->Start();

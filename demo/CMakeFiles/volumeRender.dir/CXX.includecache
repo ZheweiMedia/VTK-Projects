@@ -296,17 +296,17 @@ cstdlib
 cmath
 -
 
-/home/medialab/VTK-7.0/VTK-7.0.0/IO/Image/vtkDICOMImageReader.h
-vtkIOImageModule.h
-/home/medialab/VTK-7.0/VTK-7.0.0/IO/Image/vtkIOImageModule.h
-vtkImageReader2.h
-/home/medialab/VTK-7.0/VTK-7.0.0/IO/Image/vtkImageReader2.h
-
 /home/medialab/VTK-7.0/VTK-7.0.0/IO/Image/vtkImageReader2.h
 vtkIOImageModule.h
 /home/medialab/VTK-7.0/VTK-7.0.0/IO/Image/vtkIOImageModule.h
 vtkImageAlgorithm.h
 /home/medialab/VTK-7.0/VTK-7.0.0/IO/Image/vtkImageAlgorithm.h
+
+/home/medialab/VTK-7.0/VTK-7.0.0/IO/Image/vtkNIFTIImageReader.h
+vtkIOImageModule.h
+/home/medialab/VTK-7.0/VTK-7.0.0/IO/Image/vtkIOImageModule.h
+vtkImageReader2.h
+/home/medialab/VTK-7.0/VTK-7.0.0/IO/Image/vtkImageReader2.h
 
 /home/medialab/VTK-7.0/VTK-7.0.0/IO/Legacy/vtkDataReader.h
 vtkIOLegacyModule.h
@@ -329,6 +329,12 @@ vtkImageReslice.h
 /home/medialab/VTK-7.0/VTK-7.0.0/Imaging/Core/vtkImageReslice.h
 
 /home/medialab/VTK-7.0/VTK-7.0.0/Imaging/Core/vtkImageReslice.h
+vtkImagingCoreModule.h
+/home/medialab/VTK-7.0/VTK-7.0.0/Imaging/Core/vtkImagingCoreModule.h
+vtkThreadedImageAlgorithm.h
+/home/medialab/VTK-7.0/VTK-7.0.0/Imaging/Core/vtkThreadedImageAlgorithm.h
+
+/home/medialab/VTK-7.0/VTK-7.0.0/Imaging/Core/vtkImageShiftScale.h
 vtkImagingCoreModule.h
 /home/medialab/VTK-7.0/VTK-7.0.0/Imaging/Core/vtkImagingCoreModule.h
 vtkThreadedImageAlgorithm.h
@@ -530,12 +536,32 @@ vtkRenderingCoreModule.h
 vtkAutoInit.h
 /home/medialab/VTK-7.0/VTK-build/Rendering/Volume/vtkAutoInit.h
 
+/home/medialab/Zhewei/VTK-Projects/demo/utility.h
+vtkSmartPointer.h
+-
+vtkNIFTIImageReader.h
+-
+vtkImageResample.h
+-
+vtkFixedPointVolumeRayCastMapper.h
+-
+vtkVolumeProperty.h
+-
+vtkPiecewiseFunction.h
+-
+vtkColorTransferFunction.h
+-
+vtkVolumeProperty.h
+-
+sstream
+-
+
 /home/medialab/Zhewei/VTK-Projects/demo/volumeRender.cxx
 vtkSmartPointer.h
 -
 vtkCamera.h
 -
-vtkDICOMImageReader.h
+vtkNIFTIImageReader.h
 -
 vtkImageResample.h
 -
@@ -563,4 +589,10 @@ vtkColorTransferFunction.h
 -
 vtkInteractorObserver.h
 -
+vtkImageShiftScale.h
+-
+sstream
+-
+utility.h
+/home/medialab/Zhewei/VTK-Projects/demo/utility.h
 

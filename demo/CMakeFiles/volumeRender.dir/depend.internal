@@ -42,12 +42,13 @@ CMakeFiles/volumeRender.dir/volumeRender.cxx.o
  /home/medialab/VTK-7.0/VTK-7.0.0/Common/ExecutionModel/vtkImageAlgorithm.h
  /home/medialab/VTK-7.0/VTK-7.0.0/Common/ExecutionModel/vtkThreadedImageAlgorithm.h
  /home/medialab/VTK-7.0/VTK-7.0.0/Common/Math/vtkTuple.h
- /home/medialab/VTK-7.0/VTK-7.0.0/IO/Image/vtkDICOMImageReader.h
  /home/medialab/VTK-7.0/VTK-7.0.0/IO/Image/vtkImageReader2.h
+ /home/medialab/VTK-7.0/VTK-7.0.0/IO/Image/vtkNIFTIImageReader.h
  /home/medialab/VTK-7.0/VTK-7.0.0/IO/Legacy/vtkDataReader.h
  /home/medialab/VTK-7.0/VTK-7.0.0/IO/Legacy/vtkStructuredPointsReader.h
  /home/medialab/VTK-7.0/VTK-7.0.0/Imaging/Core/vtkImageResample.h
  /home/medialab/VTK-7.0/VTK-7.0.0/Imaging/Core/vtkImageReslice.h
+ /home/medialab/VTK-7.0/VTK-7.0.0/Imaging/Core/vtkImageShiftScale.h
  /home/medialab/VTK-7.0/VTK-7.0.0/Rendering/Core/vtkAbstractMapper.h
  /home/medialab/VTK-7.0/VTK-7.0.0/Rendering/Core/vtkAbstractMapper3D.h
  /home/medialab/VTK-7.0/VTK-7.0.0/Rendering/Core/vtkAbstractVolumeMapper.h
@@ -82,4 +83,5 @@ CMakeFiles/volumeRender.dir/volumeRender.cxx.o
  /home/medialab/VTK-7.0/VTK-build/Imaging/Core/vtkImagingCoreModule.h
  /home/medialab/VTK-7.0/VTK-build/Rendering/Core/vtkRenderingCoreModule.h
  /home/medialab/VTK-7.0/VTK-build/Rendering/Volume/vtkRenderingVolumeModule.h
+ /home/medialab/Zhewei/VTK-Projects/demo/utility.h
  /home/medialab/Zhewei/VTK-Projects/demo/volumeRender.cxx

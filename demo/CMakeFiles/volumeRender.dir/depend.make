@@ -41,12 +41,13 @@ CMakeFiles/volumeRender.dir/volumeRender.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0
 CMakeFiles/volumeRender.dir/volumeRender.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Common/ExecutionModel/vtkImageAlgorithm.h
 CMakeFiles/volumeRender.dir/volumeRender.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Common/ExecutionModel/vtkThreadedImageAlgorithm.h
 CMakeFiles/volumeRender.dir/volumeRender.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Common/Math/vtkTuple.h
-CMakeFiles/volumeRender.dir/volumeRender.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/IO/Image/vtkDICOMImageReader.h
 CMakeFiles/volumeRender.dir/volumeRender.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/IO/Image/vtkImageReader2.h
+CMakeFiles/volumeRender.dir/volumeRender.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/IO/Image/vtkNIFTIImageReader.h
 CMakeFiles/volumeRender.dir/volumeRender.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/IO/Legacy/vtkDataReader.h
 CMakeFiles/volumeRender.dir/volumeRender.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/IO/Legacy/vtkStructuredPointsReader.h
 CMakeFiles/volumeRender.dir/volumeRender.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Imaging/Core/vtkImageResample.h
 CMakeFiles/volumeRender.dir/volumeRender.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Imaging/Core/vtkImageReslice.h
+CMakeFiles/volumeRender.dir/volumeRender.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Imaging/Core/vtkImageShiftScale.h
 CMakeFiles/volumeRender.dir/volumeRender.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Rendering/Core/vtkAbstractMapper.h
 CMakeFiles/volumeRender.dir/volumeRender.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Rendering/Core/vtkAbstractMapper3D.h
 CMakeFiles/volumeRender.dir/volumeRender.cxx.o: /home/medialab/VTK-7.0/VTK-7.0.0/Rendering/Core/vtkAbstractVolumeMapper.h
@@ -81,5 +82,6 @@ CMakeFiles/volumeRender.dir/volumeRender.cxx.o: /home/medialab/VTK-7.0/VTK-build
 CMakeFiles/volumeRender.dir/volumeRender.cxx.o: /home/medialab/VTK-7.0/VTK-build/Imaging/Core/vtkImagingCoreModule.h
 CMakeFiles/volumeRender.dir/volumeRender.cxx.o: /home/medialab/VTK-7.0/VTK-build/Rendering/Core/vtkRenderingCoreModule.h
 CMakeFiles/volumeRender.dir/volumeRender.cxx.o: /home/medialab/VTK-7.0/VTK-build/Rendering/Volume/vtkRenderingVolumeModule.h
+CMakeFiles/volumeRender.dir/volumeRender.cxx.o: utility.h
 CMakeFiles/volumeRender.dir/volumeRender.cxx.o: volumeRender.cxx
 
