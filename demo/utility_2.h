@@ -75,7 +75,7 @@ reader_to_mapper(std::string fileName, const double reductionFactor, double* ran
       image->ShallowCopy(niiReader->GetOutput());
       image->GetScalarRange(range);
     }
-  mapper->SetBlendModeToMaximumIntensity();
+   mapper->SetBlendModeToMaximumIntensity();
 
   return mapper;
 }
@@ -97,8 +97,10 @@ vtkSmartPointer<vtkVolumeProperty> property(const double opacity_Bottom,
     vtkSmartPointer<vtkVolumeProperty>::New();
 
   oTFun->AddPoint(0.0, 0.0);
-  oTFun->AddPoint(opacity_Bottom, 0.0);
-  oTFun->AddPoint(opacity_Top, 1.0);
+  oTFun->AddPoint(3000, 0.0);
+  oTFun->AddPoint(7500, 1.0);
+  oTFun->AddPoint(7500.1, 0.0);
+  oTFun->AddPoint(10000.0, 0.0);
 
 
   cTFun->AddRGBPoint(0.0, 1.0, 1.0, 1.0);

@@ -1,4 +1,4 @@
-/home/medialab/Zhewei/VTK-Projects/demo/CMakeFiles/rebuild_cache.dir
-/home/medialab/Zhewei/VTK-Projects/demo/CMakeFiles/edit_cache.dir
-/home/medialab/Zhewei/VTK-Projects/demo/CMakeFiles/FixedPointVolumeRayCastMapperCT.dir
-/home/medialab/Zhewei/VTK-Projects/demo/CMakeFiles/volumeRender.dir
+/home/zhewei/Documents/vtk_Projects/demo/CMakeFiles/testCutter.dir
+/home/zhewei/Documents/vtk_Projects/demo/CMakeFiles/FixedPointVolumeRayCastMapperCT.dir
+/home/zhewei/Documents/vtk_Projects/demo/CMakeFiles/testMapper.dir
+/home/zhewei/Documents/vtk_Projects/demo/CMakeFiles/volumeRender.dir

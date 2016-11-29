@@ -22,3 +22,20 @@ if(VTK_LIBRARIES)
 else()
   target_link_libraries(FixedPointVolumeRayCastMapperCT vtkHybrid vtkWidgets)
 endif()
+
+
+add_executable(testMapper testMapper.cxx)
+
+if(VTK_LIBRARIES)
+  target_link_libraries(testMapper ${VTK_LIBRARIES})
+else()
+  target_link_libraries(testMapper vtkHybrid vtkWidgets)
+endif()
+
+add_executable(testCutter testCutter.cxx)
+
+if(VTK_LIBRARIES)
+  target_link_libraries(testCutter ${VTK_LIBRARIES})
+else()
+  target_link_libraries(testCutter vtkHybrid vtkWidgets)
+endif()
