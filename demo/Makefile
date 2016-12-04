@@ -48,10 +48,10 @@ RM = /usr/local/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zhewei/Documents/vtk_Projects/demo
+CMAKE_SOURCE_DIR = /home/zhewei/Documents/VTK-Projects/demo
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zhewei/Documents/vtk_Projects/demo
+CMAKE_BINARY_DIR = /home/zhewei/Documents/VTK-Projects/demo
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zhewei/Documents/vtk_Projects/demo/CMakeFiles /home/zhewei/Documents/vtk_Projects/demo/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zhewei/Documents/VTK-Projects/demo/CMakeFiles /home/zhewei/Documents/VTK-Projects/demo/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zhewei/Documents/vtk_Projects/demo/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zhewei/Documents/VTK-Projects/demo/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -161,6 +161,19 @@ testRenderAndImage: cmake_check_build_system
 testRenderAndImage/fast:
 	$(MAKE) -f CMakeFiles/testRenderAndImage.dir/build.make CMakeFiles/testRenderAndImage.dir/build
 .PHONY : testRenderAndImage/fast
+
+#=============================================================================
+# Target rules for targets named testRenderMRI
+
+# Build rule for target.
+testRenderMRI: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testRenderMRI
+.PHONY : testRenderMRI
+
+# fast build rule for target.
+testRenderMRI/fast:
+	$(MAKE) -f CMakeFiles/testRenderMRI.dir/build.make CMakeFiles/testRenderMRI.dir/build
+.PHONY : testRenderMRI/fast
 
 #=============================================================================
 # Target rules for targets named volumeRender
@@ -283,6 +296,33 @@ testRenderAndImage.cxx.s:
 	$(MAKE) -f CMakeFiles/testRenderAndImage.dir/build.make CMakeFiles/testRenderAndImage.dir/testRenderAndImage.cxx.s
 .PHONY : testRenderAndImage.cxx.s
 
+testRenderMRI.o: testRenderMRI.cxx.o
+
+.PHONY : testRenderMRI.o
+
+# target to build an object file
+testRenderMRI.cxx.o:
+	$(MAKE) -f CMakeFiles/testRenderMRI.dir/build.make CMakeFiles/testRenderMRI.dir/testRenderMRI.cxx.o
+.PHONY : testRenderMRI.cxx.o
+
+testRenderMRI.i: testRenderMRI.cxx.i
+
+.PHONY : testRenderMRI.i
+
+# target to preprocess a source file
+testRenderMRI.cxx.i:
+	$(MAKE) -f CMakeFiles/testRenderMRI.dir/build.make CMakeFiles/testRenderMRI.dir/testRenderMRI.cxx.i
+.PHONY : testRenderMRI.cxx.i
+
+testRenderMRI.s: testRenderMRI.cxx.s
+
+.PHONY : testRenderMRI.s
+
+# target to generate assembly for a file
+testRenderMRI.cxx.s:
+	$(MAKE) -f CMakeFiles/testRenderMRI.dir/build.make CMakeFiles/testRenderMRI.dir/testRenderMRI.cxx.s
+.PHONY : testRenderMRI.cxx.s
+
 volumeRender.o: volumeRender.cxx.o
 
 .PHONY : volumeRender.o
@@ -318,6 +358,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... testRenderMRI"
 	@echo "... testRenderAndImage"
 	@echo "... testCutter"
 	@echo "... FixedPointVolumeRayCastMapperCT"
@@ -335,6 +376,9 @@ help:
 	@echo "... testRenderAndImage.o"
 	@echo "... testRenderAndImage.i"
 	@echo "... testRenderAndImage.s"
+	@echo "... testRenderMRI.o"
+	@echo "... testRenderMRI.i"
+	@echo "... testRenderMRI.s"
 	@echo "... volumeRender.o"
 	@echo "... volumeRender.i"
 	@echo "... volumeRender.s"

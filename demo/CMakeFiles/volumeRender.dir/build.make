@@ -43,10 +43,10 @@ RM = /usr/local/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zhewei/Documents/vtk_Projects/demo
+CMAKE_SOURCE_DIR = /home/zhewei/Documents/VTK-Projects/demo
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zhewei/Documents/vtk_Projects/demo
+CMAKE_BINARY_DIR = /home/zhewei/Documents/VTK-Projects/demo
 
 # Include any dependencies generated for this target.
 include CMakeFiles/volumeRender.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/volumeRender.dir/flags.make
 
 CMakeFiles/volumeRender.dir/volumeRender.cxx.o: CMakeFiles/volumeRender.dir/flags.make
 CMakeFiles/volumeRender.dir/volumeRender.cxx.o: volumeRender.cxx
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zhewei/Documents/vtk_Projects/demo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/volumeRender.dir/volumeRender.cxx.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/volumeRender.dir/volumeRender.cxx.o -c /home/zhewei/Documents/vtk_Projects/demo/volumeRender.cxx
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zhewei/Documents/VTK-Projects/demo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/volumeRender.dir/volumeRender.cxx.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/volumeRender.dir/volumeRender.cxx.o -c /home/zhewei/Documents/VTK-Projects/demo/volumeRender.cxx
 
 CMakeFiles/volumeRender.dir/volumeRender.cxx.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/volumeRender.dir/volumeRender.cxx.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/zhewei/Documents/vtk_Projects/demo/volumeRender.cxx > CMakeFiles/volumeRender.dir/volumeRender.cxx.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/zhewei/Documents/VTK-Projects/demo/volumeRender.cxx > CMakeFiles/volumeRender.dir/volumeRender.cxx.i
 
 CMakeFiles/volumeRender.dir/volumeRender.cxx.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/volumeRender.dir/volumeRender.cxx.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/zhewei/Documents/vtk_Projects/demo/volumeRender.cxx -o CMakeFiles/volumeRender.dir/volumeRender.cxx.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/zhewei/Documents/VTK-Projects/demo/volumeRender.cxx -o CMakeFiles/volumeRender.dir/volumeRender.cxx.s
 
 CMakeFiles/volumeRender.dir/volumeRender.cxx.o.requires:
 
@@ -90,124 +90,129 @@ volumeRender_EXTERNAL_OBJECTS =
 
 volumeRender: CMakeFiles/volumeRender.dir/volumeRender.cxx.o
 volumeRender: CMakeFiles/volumeRender.dir/build.make
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkIOInfovis-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtklibxml2-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkIOAMR-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkFiltersAMR-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkFiltersTexture-7.0.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkFiltersSelection-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkFiltersHyperTree-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkRenderingVolumeOpenGL2-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkImagingMath-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkIOInfovis-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkIOMINC-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkRenderingLOD-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkIOExodus-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkInteractionImage-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkIOMovie-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkFiltersFlowPaths-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkFiltersTexture-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkDomainsChemistryOpenGL2-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkDomainsChemistry-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkIOImport-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkRenderingContextOpenGL2-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkIOEnSight-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkFiltersPoints-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkFiltersGeneric-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkIOPLY-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkIOParallel-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkIOGeometry-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkFiltersVerdict-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkViewsInfovis-7.1.so.1
 volumeRender: /usr/lib/x86_64-linux-gnu/libpython2.7.so
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkWrappingTools-7.0.a
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkImagingMorphological-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkFiltersParallelImaging-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkImagingMath-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkIOImport-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkDomainsChemistryOpenGL2-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkDomainsChemistry-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkIOMovie-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkoggtheora-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkIOEnSight-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkFiltersProgrammable-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkIOExport-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkFiltersFlowPaths-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkRenderingContextOpenGL2-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkImagingStencil-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkInteractionImage-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkIOParallel-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkIONetCDF-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkFiltersPython-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkFiltersGeneric-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkRenderingLOD-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkImagingStatistics-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkIOParallelXML-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkFiltersSMP-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkIOSQL-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkRenderingImage-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkFiltersVerdict-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkverdict-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkIOExodus-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkFiltersSelection-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkIOPLY-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkIOMINC-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkViewsInfovis-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkViewsContext2D-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkIOVideo-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkFiltersHyperTree-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkIOLSDyna-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkGeovisCore-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkRenderingVolumeOpenGL2-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkFiltersParallel-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkjsoncpp-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkWrappingPython27Core-7.0.so.1
-volumeRender: /usr/lib/x86_64-linux-gnu/libpython2.7.so
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkParallelCore-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkIOLegacy-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtksqlite-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkexoIIc-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkNetCDF_cxx-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkNetCDF-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkhdf5_hl-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkhdf5-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkChartsCore-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkFiltersImaging-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkRenderingLabel-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkRenderingContext2D-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkIOXML-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkIOGeometry-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkIOXMLParser-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkexpat-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkproj4-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkViewsCore-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkInteractionWidgets-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkImagingGeneral-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkFiltersHybrid-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkImagingSources-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkRenderingAnnotation-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkRenderingFreeType-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkfreetype-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkImagingColor-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkInteractionStyle-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkInfovisLayout-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkInfovisCore-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkFiltersModeling-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkRenderingOpenGL2-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkglew-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkImagingHybrid-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkIOImage-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkIOCore-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkDICOMParser-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkmetaio-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkpng-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtktiff-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkzlib-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkjpeg-7.0.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkFiltersParallelImaging-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkGeovisCore-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkproj4-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkImagingStatistics-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkImagingStencil-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkIOExport-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkRenderingImage-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkIOTecplotTable-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkIOLSDyna-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkFiltersPython-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkWrappingPython27Core-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkWrappingTools-7.1.a
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkIOParallelXML-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkIOAMR-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkViewsContext2D-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkIOSQL-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkFiltersProgrammable-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkImagingMorphological-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkIOVideo-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkFiltersSMP-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtklibxml2-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkoggtheora-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkIONetCDF-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkexoIIc-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkNetCDF_cxx-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkNetCDF-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkjsoncpp-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkverdict-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkRenderingLabel-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkChartsCore-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkFiltersParallel-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkFiltersImaging-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkInfovisLayout-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkInfovisCore-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkRenderingGL2PSOpenGL2-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkRenderingOpenGL2-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkglew-7.1.so.1
 volumeRender: /usr/lib/x86_64-linux-gnu/libSM.so
 volumeRender: /usr/lib/x86_64-linux-gnu/libICE.so
 volumeRender: /usr/lib/x86_64-linux-gnu/libX11.so
 volumeRender: /usr/lib/x86_64-linux-gnu/libXext.so
 volumeRender: /usr/lib/x86_64-linux-gnu/libXt.so
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkRenderingVolume-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkRenderingCore-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkFiltersExtraction-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkFiltersStatistics-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkImagingFourier-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkImagingCore-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkalglib-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkCommonColor-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkFiltersGeometry-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkFiltersSources-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkFiltersGeneral-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkFiltersCore-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkCommonExecutionModel-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkCommonComputationalGeometry-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkCommonDataModel-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkCommonMisc-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkCommonTransforms-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkCommonMath-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkCommonSystem-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtkCommonCore-7.0.so.1
-volumeRender: /home/zhewei/Documents/VTK7/VTK-build/lib/libvtksys-7.0.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkgl2ps-7.1.so.1
+volumeRender: /usr/lib/x86_64-linux-gnu/libpython2.7.so
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkhdf5_hl-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkhdf5-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkFiltersAMR-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkParallelCore-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkIOLegacy-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkViewsCore-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkInteractionWidgets-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkFiltersHybrid-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkFiltersModeling-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkImagingHybrid-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkIOImage-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkDICOMParser-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkmetaio-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkpng-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtktiff-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkjpeg-7.1.so.1
+volumeRender: /usr/lib/x86_64-linux-gnu/libm.so
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkInteractionStyle-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkFiltersExtraction-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkFiltersStatistics-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkImagingFourier-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkalglib-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkRenderingAnnotation-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkImagingColor-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkRenderingVolume-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkIOXML-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkIOXMLParser-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkexpat-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkRenderingContext2D-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkRenderingFreeType-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkRenderingCore-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkCommonColor-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkFiltersGeometry-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkFiltersSources-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkfreetype-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkIOCore-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkzlib-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtksqlite-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkImagingGeneral-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkImagingSources-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkImagingCore-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkFiltersGeneral-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkCommonComputationalGeometry-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkFiltersCore-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkCommonExecutionModel-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkCommonDataModel-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkCommonTransforms-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkCommonMisc-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkCommonMath-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkCommonSystem-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtkCommonCore-7.1.so.1
+volumeRender: /home/zhewei/Documents/VTK-7.1/VTK-build/lib/libvtksys-7.1.so.1
 volumeRender: CMakeFiles/volumeRender.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zhewei/Documents/vtk_Projects/demo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable volumeRender"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zhewei/Documents/VTK-Projects/demo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable volumeRender"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/volumeRender.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -224,6 +229,6 @@ CMakeFiles/volumeRender.dir/clean:
 .PHONY : CMakeFiles/volumeRender.dir/clean
 
 CMakeFiles/volumeRender.dir/depend:
-	cd /home/zhewei/Documents/vtk_Projects/demo && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zhewei/Documents/vtk_Projects/demo /home/zhewei/Documents/vtk_Projects/demo /home/zhewei/Documents/vtk_Projects/demo /home/zhewei/Documents/vtk_Projects/demo /home/zhewei/Documents/vtk_Projects/demo/CMakeFiles/volumeRender.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/zhewei/Documents/VTK-Projects/demo && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zhewei/Documents/VTK-Projects/demo /home/zhewei/Documents/VTK-Projects/demo /home/zhewei/Documents/VTK-Projects/demo /home/zhewei/Documents/VTK-Projects/demo /home/zhewei/Documents/VTK-Projects/demo/CMakeFiles/volumeRender.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/volumeRender.dir/depend
 

@@ -38,8 +38,6 @@
 #include <vtkActor2D.h>
 #include <vtkImageActor.h>
 #include <vtkImageMapper3D.h>
-#include <vtkImageResliceMapper.h>
-
 
 
 
@@ -176,7 +174,7 @@ int main (int argc, char *argv[])
           if (template_pixel[0] == index[ROI_index])
             template_pixel[0] = 255.0;
           else
-            template_pixel[0] = template_pixel[0]/30;
+            template_pixel[0] = 0;
 
           float* oneFrame_pixel =
             static_cast<float*>(oneFrame->GetScalarPointer(i, j, 0));
@@ -206,7 +204,28 @@ int main (int argc, char *argv[])
   template_volume->SetMapper(template_mapper);
   template_volume->SetProperty(template_Property);
 
+  /* // convert template_image from imagedata to polydata
+  vtkSmartPointer<vtkImageDataGeometryFilter> imageDataGeometryFilter = 
+    vtkSmartPointer<vtkImageDataGeometryFilter>::New();
+  imageDataGeometryFilter->SetInputData(template_image);
+  imageDataGeometryFilter->Update();
+
+  vtkSmartPointer<vtkPolyDataToImageStencil> pol2stenc =
+    vtkSmartPointer<vtkPolyDataToImageStencil>::New();
+  pol2stenc->SetInputData(imageDataGeometryFilter->GetOutput());
+  pol2stenc->SetOutputOrigin(origin);
+  pol2stenc->SetOutputSpacing(spacing);
+  pol2stenc->SetOutputWholeExtent(oneFrame->GetExtent());
+  pol2stenc->Update();
   
+
+  vtkSmartPointer<vtkImageStencil> imgstenc = 
+    vtkSmartPointer<vtkImageStencil>::New();
+  imgstenc->SetInputData(oneFrame);
+  imgstenc->SetStencilConnection(pol2stenc->GetOutputPort());
+  imgstenc->ReverseStencilOff();
+  imgstenc->SetBackgroundValue(0);
+  imgstenc->Update();*/
 
   vtkSmartPointer<vtkImageMapper> imageMapper = vtkSmartPointer<vtkImageMapper>::New();
   imageMapper->SetInputData(oneFrame);
@@ -239,9 +258,8 @@ int main (int argc, char *argv[])
   renWin->Render();
   //ren->AddVolume(MRI_volume);
   //ren->AddVolume(fMRI_volume);
-  
-  ren->AddActor(imageActor);
   ren->AddVolume(template_volume);
+  ren->AddActor(imageActor);
   ren->ResetCamera();
   renWin->Render();
   iren->Start();

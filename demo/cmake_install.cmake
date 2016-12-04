@@ -1,4 +1,4 @@
-# Install script for directory: /home/zhewei/Documents/vtk_Projects/demo
+# Install script for directory: /home/zhewei/Documents/VTK-Projects/demo
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/zhewei/Documents/vtk_Projects/demo/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/zhewei/Documents/VTK-Projects/demo/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

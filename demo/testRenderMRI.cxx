@@ -38,14 +38,12 @@
 #include <vtkActor2D.h>
 #include <vtkImageActor.h>
 #include <vtkImageMapper3D.h>
-#include <vtkImageResliceMapper.h>
 
 
 
 
 
-
-#include "utility_RenderAndImage.h"
+#include "utility_RenderMRI.h"
 
 
 
@@ -118,7 +116,7 @@ int main (int argc, char *argv[])
 
   vtkSmartPointer<vtkImageData> fMRI_image =
     vtkSmartPointer<vtkImageData>::New();
-  fMRI_image->ShallowCopy(template_Reader->GetOutput());
+  fMRI_image->ShallowCopy(fMRI_Reader->GetOutput());
   
   vtkSmartPointer<vtkImageData> template_image =
     vtkSmartPointer<vtkImageData>::New();
@@ -176,17 +174,13 @@ int main (int argc, char *argv[])
           if (template_pixel[0] == index[ROI_index])
             template_pixel[0] = 255.0;
           else
-            template_pixel[0] = template_pixel[0]/30;
+            template_pixel[0] = 0.0;
 
-          float* oneFrame_pixel =
-            static_cast<float*>(oneFrame->GetScalarPointer(i, j, 0));
-          if (k == 45)
+          float* MRI_pixel =
+            static_cast<float*>(MRI_image->GetScalarPointer(i, j, k));
+          if (k != 45)
             {
-              float* MRI_pixel =
-                static_cast<float*>(MRI_image->GetScalarPointer(i, j, k));
-              oneFrame_pixel[0] = MRI_pixel[0];
-              //if (MRI_pixel[0] != 0)
-              //std::cout << MRI_pixel[0] << std::endl;
+              MRI_pixel[0] = 0.0;
             }
             
         }
@@ -195,16 +189,30 @@ int main (int argc, char *argv[])
     vtkSmartPointer<vtkFixedPointVolumeRayCastMapper>::New();
   template_mapper->SetInputData(template_image);
   template_mapper->SetBlendModeToMaximumIntensity();
+
+  vtkSmartPointer<vtkFixedPointVolumeRayCastMapper> MRI_mapper =
+    vtkSmartPointer<vtkFixedPointVolumeRayCastMapper>::New();
+  MRI_mapper->SetInputData(MRI_image);
+  MRI_mapper->SetBlendModeToMaximumIntensity();
   
 
   //oneFrame->SetOrigin(origin);
   vtkSmartPointer<vtkVolumeProperty> template_Property =
     property(template_range[0], template_range[1], independentComponents, 'B');
 
+  vtkSmartPointer<vtkVolumeProperty> MRI_Property =
+    property(0, 255, independentComponents, 'K');
+
   vtkSmartPointer<vtkVolume> template_volume =
     vtkSmartPointer<vtkVolume>::New();
   template_volume->SetMapper(template_mapper);
   template_volume->SetProperty(template_Property);
+  vtkSmartPointer<vtkVolume> MRI_volume =
+    vtkSmartPointer<vtkVolume>::New();
+  MRI_volume->SetMapper(MRI_mapper);
+  MRI_volume->SetProperty(MRI_Property);
+
+
 
   
 
@@ -237,10 +245,10 @@ int main (int argc, char *argv[])
   
   renWin->SetSize(600, 600);
   renWin->Render();
-  //ren->AddVolume(MRI_volume);
+  ren->AddVolume(MRI_volume);
   //ren->AddVolume(fMRI_volume);
   
-  ren->AddActor(imageActor);
+  //ren->AddActor(imageActor);
   ren->AddVolume(template_volume);
   ren->ResetCamera();
   renWin->Render();
