@@ -96,7 +96,7 @@ vtkSmartPointer<vtkVolumeProperty> property(const double opacity_Bottom,
   else if (color == 'B')
     cTFun->AddRGBPoint(255.0, 0.0,0.0, 1.0);
   else if (color == 'K')
-    cTFun->AddRGBPoint(225.0, 0.0, 0.0, 0.0);
+    cTFun->AddRGBPoint(255.0, 0.0, 0.0, 0.0);
 
   property->SetScalarOpacity(oTFun);
   property->SetColor(cTFun);
