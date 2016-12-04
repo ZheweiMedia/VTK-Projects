@@ -39,3 +39,12 @@ if(VTK_LIBRARIES)
 else()
   target_link_libraries(testCutter vtkHybrid vtkWidgets)
 endif()
+
+
+add_executable(testRenderAndImage testRenderAndImage.cxx)
+
+if(VTK_LIBRARIES)
+  target_link_libraries(testRenderAndImage ${VTK_LIBRARIES})
+else()
+  target_link_libraries(testRenderAndImage vtkHybrid vtkWidgets)
+endif()

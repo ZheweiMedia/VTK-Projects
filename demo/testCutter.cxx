@@ -86,46 +86,34 @@ int main (int argc, char *argv[])
   std::cout << index[80] << std::endl;
 
 
+  vtkSmartPointer<vtkImageData> MRI_image =
+    reader_rescale(MRI_name, MRI_range);
+
+  vtkSmartPointer<vtkImageData> fMRI_image =
+    reader_rescale(fMRI_name, fMRI_range);
+
   vtkSmartPointer<vtkNIFTIImageReader> template_Reader =
     vtkSmartPointer<vtkNIFTIImageReader>::New();
   template_Reader->SetFileName(template_name.c_str());
-  
-  vtkSmartPointer<vtkNIFTIImageReader> MRI_Reader =
-    vtkSmartPointer<vtkNIFTIImageReader>::New();
-  MRI_Reader->SetFileName(MRI_name.c_str());
-
-  vtkSmartPointer<vtkNIFTIImageReader> fMRI_Reader =
-    vtkSmartPointer<vtkNIFTIImageReader>::New();
-  fMRI_Reader->SetFileName(fMRI_name.c_str());
-
   template_Reader->Update();
-  MRI_Reader->Update();
-  fMRI_Reader->Update();
 
-  vtkSmartPointer<vtkImageResample> resample =
-    vtkSmartPointer<vtkImageResample>::New();
+  vtkSmartPointer<vtkImageData> template_image =
+    vtkSmartPointer<vtkImageData>::New();
+  template_image->ShallowCopy(template_Reader->GetOutput());
+
 
   vtkSmartPointer<vtkFixedPointVolumeRayCastMapper> MRI_mapper =
     vtkSmartPointer<vtkFixedPointVolumeRayCastMapper>::New();
-  //mapper->SetInputConnection(reader->GetOutputPort());
   vtkSmartPointer<vtkFixedPointVolumeRayCastMapper> fMRI_mapper =
     vtkSmartPointer<vtkFixedPointVolumeRayCastMapper>::New();
   vtkSmartPointer<vtkFixedPointVolumeRayCastMapper> template_mapper =
     vtkSmartPointer<vtkFixedPointVolumeRayCastMapper>::New();
 
-  // deep copy data to imagedata
+  // shallow copy data to imagedata
 
-  vtkSmartPointer<vtkImageData> MRI_image =
-    vtkSmartPointer<vtkImageData>::New();
-  MRI_image->ShallowCopy(MRI_Reader->GetOutput());
-
-  vtkSmartPointer<vtkImageData> fMRI_image =
-    vtkSmartPointer<vtkImageData>::New();
-  fMRI_image->ShallowCopy(template_Reader->GetOutput());
-  
-  vtkSmartPointer<vtkImageData> template_image =
-    vtkSmartPointer<vtkImageData>::New();
-  template_image->ShallowCopy(template_Reader->GetOutput());
+  MRI_image->GetScalarRange(MRI_range);
+  fMRI_image->GetScalarRange(fMRI_range);
+  template_image->GetScalarRange(template_range);
 
   int* dims = MRI_image->GetDimensions();
   std::cout << dims[0] << " " << dims[1] << " " << dims[2] << std::endl;
@@ -141,10 +129,11 @@ int main (int argc, char *argv[])
         {
           float* MRI_pixel =
             static_cast<float*>(MRI_image->GetScalarPointer(i, j, k));
+          float* fMRI_pixel =
+            static_cast<float*>(fMRI_image->GetScalarPointer(i, j, k));
           short* template_pixel =
             static_cast<short*>(template_image->GetScalarPointer(i, j, k));
-          short* fMRI_pixel =
-            static_cast<short*>(fMRI_image->GetScalarPointer(i, j, k));
+          
 
           if (template_pixel[0] == index[ROI_index])
             {
@@ -153,21 +142,24 @@ int main (int argc, char *argv[])
           else
             {
               template_pixel[0] = 0;
-              MRI_pixel[0] = MRI_pixel[0]/8;
-              fMRI_pixel[0] = fMRI_pixel[0]/8;
+              MRI_pixel[0] = MRI_pixel[0]/10;
+              fMRI_pixel[0] = fMRI_pixel[0]/10;
             }
             
         }
 
   MRI_image->GetScalarRange(MRI_range);
   fMRI_image->GetScalarRange(fMRI_range);
-  std::cout << MRI_range[0] << " " << MRI_range[1] << std::endl;
+  std::cout << fMRI_range[0] << " " << fMRI_range[1] << std::endl;
 
   MRI_mapper->SetInputData(MRI_image);
   MRI_mapper->SetBlendModeToMaximumIntensity();
 
-  fMRI_mapper->SetInputData(MRI_image);
+  fMRI_mapper->SetInputData(fMRI_image);
   fMRI_mapper->SetBlendModeToMaximumIntensity();
+
+  template_mapper->SetInputData(template_image);
+  template_mapper->SetBlendModeToMaximumIntensity();
 
   
   // Create a transfer function mapping scalar value to opacity and color
@@ -177,8 +169,6 @@ int main (int argc, char *argv[])
 
   vtkSmartPointer<vtkVolumeProperty> fMRI_Property =
     property(fMRI_range[0], fMRI_range[1], independentComponents, 'R');
-
-
 
   vtkSmartPointer<vtkVolumeProperty> template_Property =
     property(template_range[0], template_range[1], independentComponents, 'B');
@@ -192,11 +182,15 @@ int main (int argc, char *argv[])
     vtkSmartPointer<vtkVolume>::New();
   vtkSmartPointer<vtkVolume> template_volume =
     vtkSmartPointer<vtkVolume>::New();
+
   MRI_volume->SetMapper(MRI_mapper);
   MRI_volume->SetProperty(MRI_Property);
 
   fMRI_volume->SetMapper(fMRI_mapper);
   fMRI_volume->SetProperty(fMRI_Property);
+
+  template_volume->SetMapper(template_mapper);
+  template_volume->SetProperty(template_Property);
 
   // Create the renderers, render window, and interactor
 

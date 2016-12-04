@@ -1,3 +1,4 @@
+/home/zhewei/Documents/vtk_Projects/demo/CMakeFiles/testRenderAndImage.dir
 /home/zhewei/Documents/vtk_Projects/demo/CMakeFiles/testCutter.dir
 /home/zhewei/Documents/vtk_Projects/demo/CMakeFiles/FixedPointVolumeRayCastMapperCT.dir
 /home/zhewei/Documents/vtk_Projects/demo/CMakeFiles/testMapper.dir

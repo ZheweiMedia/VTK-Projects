@@ -83,8 +83,7 @@ vtkSmartPointer<vtkVolumeProperty> property(const double opacity_Bottom,
   vtkSmartPointer<vtkVolumeProperty> property =
     vtkSmartPointer<vtkVolumeProperty>::New();
 
-  oTFun->AddPoint(0.0, 0.0);
-  oTFun->AddPoint(opacity_Bottom, 0.1);
+  oTFun->AddPoint(opacity_Bottom, 0.2);
   oTFun->AddPoint(opacity_Top, 1.0);
   std::cout << opacity_Top << std::endl;
 

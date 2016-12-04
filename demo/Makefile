@@ -150,6 +150,19 @@ testMapper/fast:
 .PHONY : testMapper/fast
 
 #=============================================================================
+# Target rules for targets named testRenderAndImage
+
+# Build rule for target.
+testRenderAndImage: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testRenderAndImage
+.PHONY : testRenderAndImage
+
+# fast build rule for target.
+testRenderAndImage/fast:
+	$(MAKE) -f CMakeFiles/testRenderAndImage.dir/build.make CMakeFiles/testRenderAndImage.dir/build
+.PHONY : testRenderAndImage/fast
+
+#=============================================================================
 # Target rules for targets named volumeRender
 
 # Build rule for target.
@@ -243,6 +256,33 @@ testMapper.cxx.s:
 	$(MAKE) -f CMakeFiles/testMapper.dir/build.make CMakeFiles/testMapper.dir/testMapper.cxx.s
 .PHONY : testMapper.cxx.s
 
+testRenderAndImage.o: testRenderAndImage.cxx.o
+
+.PHONY : testRenderAndImage.o
+
+# target to build an object file
+testRenderAndImage.cxx.o:
+	$(MAKE) -f CMakeFiles/testRenderAndImage.dir/build.make CMakeFiles/testRenderAndImage.dir/testRenderAndImage.cxx.o
+.PHONY : testRenderAndImage.cxx.o
+
+testRenderAndImage.i: testRenderAndImage.cxx.i
+
+.PHONY : testRenderAndImage.i
+
+# target to preprocess a source file
+testRenderAndImage.cxx.i:
+	$(MAKE) -f CMakeFiles/testRenderAndImage.dir/build.make CMakeFiles/testRenderAndImage.dir/testRenderAndImage.cxx.i
+.PHONY : testRenderAndImage.cxx.i
+
+testRenderAndImage.s: testRenderAndImage.cxx.s
+
+.PHONY : testRenderAndImage.s
+
+# target to generate assembly for a file
+testRenderAndImage.cxx.s:
+	$(MAKE) -f CMakeFiles/testRenderAndImage.dir/build.make CMakeFiles/testRenderAndImage.dir/testRenderAndImage.cxx.s
+.PHONY : testRenderAndImage.cxx.s
+
 volumeRender.o: volumeRender.cxx.o
 
 .PHONY : volumeRender.o
@@ -278,6 +318,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... testRenderAndImage"
 	@echo "... testCutter"
 	@echo "... FixedPointVolumeRayCastMapperCT"
 	@echo "... testMapper"
@@ -291,6 +332,9 @@ help:
 	@echo "... testMapper.o"
 	@echo "... testMapper.i"
 	@echo "... testMapper.s"
+	@echo "... testRenderAndImage.o"
+	@echo "... testRenderAndImage.i"
+	@echo "... testRenderAndImage.s"
 	@echo "... volumeRender.o"
 	@echo "... volumeRender.i"
 	@echo "... volumeRender.s"
