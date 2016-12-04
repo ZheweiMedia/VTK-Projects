@@ -39,6 +39,10 @@
 #include <vtkImageActor.h>
 #include <vtkImageMapper3D.h>
 #include <vtkImageResliceMapper.h>
+#include <vtkImageSincInterpolator.h>
+#include <vtkImageResize.h>
+
+
 
 
 
@@ -203,19 +207,44 @@ int main (int argc, char *argv[])
   template_volume->SetMapper(template_mapper);
   template_volume->SetProperty(template_Property);
 
+
+
   // resize image
-  
+  vtkSmartPointer<vtkImageResize> resize =
+    vtkSmartPointer<vtkImageResize>::New();
+  resize->SetInputData(oneFrame);
+  resize->SetOutputDimensions(91, 109, 1);
+  //resize->InterpolateOff();
+  resize->Update();
+
+  vtkSmartPointer<vtkImageData> oneFrametest =
+    vtkSmartPointer<vtkImageData>::New();
+  oneFrametest->ShallowCopy(resize->GetOutput());
+  dims = oneFrametest->GetDimensions();
+  std::cout << dims[0] << " " <<dims[1] << " " << dims[2] << std::endl;
 
   
 
   vtkSmartPointer<vtkImageResliceMapper> imageMapper =
     vtkSmartPointer<vtkImageResliceMapper>::New();
-  imageMapper->SetInputData(oneFrame);
+  imageMapper->SetInputConnection(resize->GetOutputPort());
 
   vtkSmartPointer<vtkImageActor> imageActor = vtkSmartPointer<vtkImageActor>::New();
-  imageActor->GetMapper()->SetInputData(oneFrame);
-  imageActor->SetPosition(23, 25, 95);
+  imageActor->GetMapper()->SetInputConnection(resize->GetOutputPort());
+  imageActor->SetPosition(123, 25, 95);
   imageActor->SetInterpolate(1);
+
+  vtkSmartPointer<vtkFixedPointVolumeRayCastMapper> oneFrame_mapper =
+    vtkSmartPointer<vtkFixedPointVolumeRayCastMapper>::New();
+  oneFrame_mapper->SetInputData(oneFrame);
+  oneFrame_mapper->SetBlendModeToMaximumIntensity();
+
+  vtkSmartPointer<vtkVolume> oneFrame_volume =
+    vtkSmartPointer<vtkVolume>::New();
+  oneFrame_volume->SetMapper(oneFrame_mapper);
+  vtkSmartPointer<vtkVolumeProperty> oneFrame_Property =
+    property(0, 255, independentComponents, 'r');
+  //oneFrame_volume->SetProperty(oneFrame_Property);
 
   
   
@@ -238,14 +267,15 @@ int main (int argc, char *argv[])
   //iren->GetInteractorStyle()->SetDefaultRenderer(ren);
 
   
-  renWin->SetSize(600, 600);
-  renWin->Render();
+  renWin->SetSize(300, 300);
+  //renWin->Render();
   //ren->AddVolume(MRI_volume);
   //ren->AddVolume(fMRI_volume);
   
-  ren->AddActor(imageActor);
-  ren->AddVolume(template_volume);
-  ren->ResetCamera();
+  //ren->AddActor(imageActor);
+  ren->AddVolume(oneFrame_volume);
+  //ren->AddVolume(template_volume);
+  //ren->ResetCamera();
   renWin->Render();
   iren->Start();
 

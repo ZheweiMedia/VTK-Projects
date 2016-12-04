@@ -38,6 +38,7 @@
 #include <vtkActor2D.h>
 #include <vtkImageActor.h>
 #include <vtkImageMapper3D.h>
+#include <vtkSmartVolumeMapper.h>
 
 
 
@@ -190,10 +191,10 @@ int main (int argc, char *argv[])
   template_mapper->SetInputData(template_image);
   template_mapper->SetBlendModeToMaximumIntensity();
 
-  vtkSmartPointer<vtkFixedPointVolumeRayCastMapper> MRI_mapper =
-    vtkSmartPointer<vtkFixedPointVolumeRayCastMapper>::New();
+  vtkSmartPointer<vtkSmartVolumeMapper> MRI_mapper =
+    vtkSmartPointer<vtkSmartVolumeMapper>::New();
   MRI_mapper->SetInputData(MRI_image);
-  MRI_mapper->SetBlendModeToMaximumIntensity();
+  MRI_mapper->SetBlendModeToAdditive();
   
 
   //oneFrame->SetOrigin(origin);
@@ -239,8 +240,8 @@ int main (int argc, char *argv[])
     vtkSmartPointer<vtkRenderer>::New();
   renWin->AddRenderer(ren);
   iren->SetRenderWindow(renWin);
-  //iren->SetDesiredUpdateRate(frameRate / (1+clip));
-  //iren->GetInteractorStyle()->SetDefaultRenderer(ren);
+  iren->SetDesiredUpdateRate(frameRate / (1+clip));
+  iren->GetInteractorStyle()->SetDefaultRenderer(ren);
 
   
   renWin->SetSize(600, 600);
