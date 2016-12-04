@@ -185,8 +185,6 @@ int main (int argc, char *argv[])
               float* MRI_pixel =
                 static_cast<float*>(MRI_image->GetScalarPointer(i, j, k));
               oneFrame_pixel[0] = MRI_pixel[0];
-              //if (MRI_pixel[0] != 0)
-              //std::cout << MRI_pixel[0] << std::endl;
             }
             
         }
@@ -197,7 +195,6 @@ int main (int argc, char *argv[])
   template_mapper->SetBlendModeToMaximumIntensity();
   
 
-  //oneFrame->SetOrigin(origin);
   vtkSmartPointer<vtkVolumeProperty> template_Property =
     property(template_range[0], template_range[1], independentComponents, 'B');
 
@@ -206,13 +203,19 @@ int main (int argc, char *argv[])
   template_volume->SetMapper(template_mapper);
   template_volume->SetProperty(template_Property);
 
+  // resize image
   
 
-  vtkSmartPointer<vtkImageMapper> imageMapper = vtkSmartPointer<vtkImageMapper>::New();
+  
+
+  vtkSmartPointer<vtkImageResliceMapper> imageMapper =
+    vtkSmartPointer<vtkImageResliceMapper>::New();
   imageMapper->SetInputData(oneFrame);
+
   vtkSmartPointer<vtkImageActor> imageActor = vtkSmartPointer<vtkImageActor>::New();
   imageActor->GetMapper()->SetInputData(oneFrame);
   imageActor->SetPosition(23, 25, 95);
+  imageActor->SetInterpolate(1);
 
   
   
