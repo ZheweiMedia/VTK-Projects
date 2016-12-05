@@ -41,6 +41,9 @@
 #include <vtkImageResliceMapper.h>
 #include <vtkImageSincInterpolator.h>
 #include <vtkImageResize.h>
+#include <vtkCoordinate.h>
+#include <vtkCenterOfMass.h>
+
 
 
 
@@ -244,14 +247,19 @@ int main (int argc, char *argv[])
   oneFrame_volume->SetMapper(oneFrame_mapper);
   vtkSmartPointer<vtkVolumeProperty> oneFrame_Property =
     property(0, 255, independentComponents, 'r');
-  //oneFrame_volume->SetProperty(oneFrame_Property);
+  oneFrame_volume->SetProperty(oneFrame_Property);
 
   
-  
-  
-  //template_volume->SetMapper(oneFrame_mapper);
-  
-
+  vtkSmartPointer<vtkCenterOfMass> centerOfMassFilter =
+    vtkSmartPointer<vtkCenterOfMass>::New();
+  centerOfMassFilter->SetInputData(template_image);
+  centerOfMassFilter->SetUseScalarsAsWeights(false);
+  centerOfMassFilter->Update();
+ 
+  double center[3];
+  centerOfMassFilter->GetCenter(center);
+ 
+  std::cout << "Center of mass is " << center[0] << " " << center[1] << " " << center[2] << std::endl;
   
   // Create the renderers, render window, and interactor
 
@@ -266,8 +274,18 @@ int main (int argc, char *argv[])
   //iren->SetDesiredUpdateRate(frameRate / (1+clip));
   //iren->GetInteractorStyle()->SetDefaultRenderer(ren);
 
+  vtkSmartPointer<vtkCoordinate> coordinate = 
+    vtkSmartPointer<vtkCoordinate>::New();
+  coordinate->SetCoordinateSystemToNormalizedDisplay();
+  coordinate->SetValue(.5,.5,0);
+  std::cout << *coordinate << std::endl;
+  std::cout << coordinate->GetCoordinateSystemAsString() << std::endl;
+
+
+
+
   
-  renWin->SetSize(300, 300);
+  renWin->SetSize(600, 600);
   //renWin->Render();
   //ren->AddVolume(MRI_volume);
   //ren->AddVolume(fMRI_volume);
