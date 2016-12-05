@@ -41,6 +41,10 @@
 #include <vtkImageResliceMapper.h>
 #include <vtkImageSincInterpolator.h>
 #include <vtkImageResize.h>
+#include <vtkPolyDataMapper.h>
+#include <vtkPolyDataMapper.h>
+#include <vtkSurfaceReconstructionFilter.h>
+#include <vtkContourFilter.h>
 
 
 
@@ -180,7 +184,7 @@ int main (int argc, char *argv[])
           if (template_pixel[0] == index[ROI_index])
             template_pixel[0] = 255.0;
           else
-            template_pixel[0] = template_pixel[0]/30;
+            template_pixel[0] = 0.0;
 
           float* oneFrame_pixel =
             static_cast<float*>(oneFrame->GetScalarPointer(i, j, 0));
@@ -193,19 +197,31 @@ int main (int argc, char *argv[])
             
         }
 
-  vtkSmartPointer<vtkFixedPointVolumeRayCastMapper> template_mapper =
-    vtkSmartPointer<vtkFixedPointVolumeRayCastMapper>::New();
-  template_mapper->SetInputData(template_image);
-  template_mapper->SetBlendModeToMaximumIntensity();
-  
+  vtkSmartPointer<vtkSurfaceReconstructionFilter> surf = 
+    vtkSmartPointer<vtkSurfaceReconstructionFilter>::New();
+  surf->SetInputData(template_image);
 
-  vtkSmartPointer<vtkVolumeProperty> template_Property =
-    property(template_range[0], template_range[1], independentComponents, 'B');
+  vtkSmartPointer<vtkContourFilter> cf = 
+    vtkSmartPointer<vtkContourFilter>::New();
+  cf->SetInputConnection(surf->GetOutputPort());
+  cf->SetNumberOfContours(1);
+  cf->SetValue(0, 255.0);
 
-  vtkSmartPointer<vtkVolume> template_volume =
-    vtkSmartPointer<vtkVolume>::New();
-  template_volume->SetMapper(template_mapper);
-  template_volume->SetProperty(template_Property);
+  vtkSmartPointer<vtkImageDataGeometryFilter> templateDataGeometryFilter = 
+    vtkSmartPointer<vtkImageDataGeometryFilter>::New();
+  templateDataGeometryFilter->SetInputData(template_image);
+  templateDataGeometryFilter->Update();
+
+  vtkSmartPointer<vtkPolyDataMapper> contoursMapper =
+    vtkSmartPointer<vtkPolyDataMapper>::New();
+  contoursMapper->SetInputConnection(cf->GetOutputPort());
+  contoursMapper->ScalarVisibilityOff();
+  contoursMapper->ImmediateModeRenderingOn();
+
+  vtkSmartPointer<vtkActor> contoursActor =
+    vtkSmartPointer<vtkActor>::New();
+  contoursActor->SetMapper( contoursMapper );
+
 
 
 
@@ -272,9 +288,11 @@ int main (int argc, char *argv[])
   //ren->AddVolume(MRI_volume);
   //ren->AddVolume(fMRI_volume);
   
-  ren->AddActor(imageActor);
+  //ren->AddActor(imageActor);
+  //ren->AddActor(contoursActor);
+  ren->AddViewProp( contoursActor );
   //ren->AddVolume(oneFrame_volume);
-  ren->AddVolume(template_volume);
+  //ren->AddVolume(template_volume);
   //ren->ResetCamera();
   renWin->Render();
   iren->Start();

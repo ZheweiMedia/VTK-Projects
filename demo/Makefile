@@ -124,6 +124,19 @@ FixedPointVolumeRayCastMapperCT/fast:
 .PHONY : FixedPointVolumeRayCastMapperCT/fast
 
 #=============================================================================
+# Target rules for targets named testContour
+
+# Build rule for target.
+testContour: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testContour
+.PHONY : testContour
+
+# fast build rule for target.
+testContour/fast:
+	$(MAKE) -f CMakeFiles/testContour.dir/build.make CMakeFiles/testContour.dir/build
+.PHONY : testContour/fast
+
+#=============================================================================
 # Target rules for targets named testCutter
 
 # Build rule for target.
@@ -214,6 +227,33 @@ FixedPointVolumeRayCastMapperCT.s: FixedPointVolumeRayCastMapperCT.cxx.s
 FixedPointVolumeRayCastMapperCT.cxx.s:
 	$(MAKE) -f CMakeFiles/FixedPointVolumeRayCastMapperCT.dir/build.make CMakeFiles/FixedPointVolumeRayCastMapperCT.dir/FixedPointVolumeRayCastMapperCT.cxx.s
 .PHONY : FixedPointVolumeRayCastMapperCT.cxx.s
+
+testContour.o: testContour.cxx.o
+
+.PHONY : testContour.o
+
+# target to build an object file
+testContour.cxx.o:
+	$(MAKE) -f CMakeFiles/testContour.dir/build.make CMakeFiles/testContour.dir/testContour.cxx.o
+.PHONY : testContour.cxx.o
+
+testContour.i: testContour.cxx.i
+
+.PHONY : testContour.i
+
+# target to preprocess a source file
+testContour.cxx.i:
+	$(MAKE) -f CMakeFiles/testContour.dir/build.make CMakeFiles/testContour.dir/testContour.cxx.i
+.PHONY : testContour.cxx.i
+
+testContour.s: testContour.cxx.s
+
+.PHONY : testContour.s
+
+# target to generate assembly for a file
+testContour.cxx.s:
+	$(MAKE) -f CMakeFiles/testContour.dir/build.make CMakeFiles/testContour.dir/testContour.cxx.s
+.PHONY : testContour.cxx.s
 
 testCutter.o: testCutter.cxx.o
 
@@ -361,12 +401,16 @@ help:
 	@echo "... testRenderMRI"
 	@echo "... testRenderAndImage"
 	@echo "... testCutter"
+	@echo "... testContour"
 	@echo "... FixedPointVolumeRayCastMapperCT"
 	@echo "... testMapper"
 	@echo "... volumeRender"
 	@echo "... FixedPointVolumeRayCastMapperCT.o"
 	@echo "... FixedPointVolumeRayCastMapperCT.i"
 	@echo "... FixedPointVolumeRayCastMapperCT.s"
+	@echo "... testContour.o"
+	@echo "... testContour.i"
+	@echo "... testContour.s"
 	@echo "... testCutter.o"
 	@echo "... testCutter.i"
 	@echo "... testCutter.s"
