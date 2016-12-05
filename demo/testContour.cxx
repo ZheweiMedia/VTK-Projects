@@ -42,9 +42,13 @@
 #include <vtkImageSincInterpolator.h>
 #include <vtkImageResize.h>
 #include <vtkPolyDataMapper.h>
-#include <vtkPolyDataMapper.h>
 #include <vtkSurfaceReconstructionFilter.h>
 #include <vtkContourFilter.h>
+#include <vtkMarchingCubes.h>
+#include <vtkImageStack.h>
+#include <vtkImageSlice.h>
+
+
 
 
 
@@ -197,70 +201,56 @@ int main (int argc, char *argv[])
             
         }
 
-  vtkSmartPointer<vtkSurfaceReconstructionFilter> surf = 
-    vtkSmartPointer<vtkSurfaceReconstructionFilter>::New();
-  surf->SetInputData(template_image);
+  vtkSmartPointer<vtkMarchingCubes> surface = 
+    vtkSmartPointer<vtkMarchingCubes>::New();
+  surface->SetInputData(template_image);
+  surface->SetValue(0, 255.0);
 
-  vtkSmartPointer<vtkContourFilter> cf = 
-    vtkSmartPointer<vtkContourFilter>::New();
-  cf->SetInputConnection(surf->GetOutputPort());
-  cf->SetNumberOfContours(1);
-  cf->SetValue(0, 255.0);
+
+  
 
   vtkSmartPointer<vtkImageDataGeometryFilter> templateDataGeometryFilter = 
     vtkSmartPointer<vtkImageDataGeometryFilter>::New();
   templateDataGeometryFilter->SetInputData(template_image);
   templateDataGeometryFilter->Update();
 
-  vtkSmartPointer<vtkPolyDataMapper> contoursMapper =
-    vtkSmartPointer<vtkPolyDataMapper>::New();
-  contoursMapper->SetInputConnection(cf->GetOutputPort());
-  contoursMapper->ScalarVisibilityOff();
-  contoursMapper->ImmediateModeRenderingOn();
-
-  vtkSmartPointer<vtkActor> contoursActor =
-    vtkSmartPointer<vtkActor>::New();
-  contoursActor->SetMapper( contoursMapper );
-
-
-
-
-  // resize image
-  vtkSmartPointer<vtkImageResize> resize =
-    vtkSmartPointer<vtkImageResize>::New();
-  resize->SetInputData(oneFrame);
-  resize->SetOutputDimensions(91, 109, 1);
-  //resize->InterpolateOff();
-  resize->Update();
-
-  vtkSmartPointer<vtkImageData> oneFrametest =
+  vtkSmartPointer<vtkImageData> templateImage =
     vtkSmartPointer<vtkImageData>::New();
-  oneFrametest->ShallowCopy(resize->GetOutput());
-  dims = oneFrametest->GetDimensions();
-  std::cout << dims[0] << " " <<dims[1] << " " << dims[2] << std::endl;
+  templateImage->ShallowCopy(surface->GetOutput());
 
-  
+  vtkSmartPointer<vtkPolyDataMapper> contourMapper = vtkSmartPointer<vtkPolyDataMapper>::New();
+  contourMapper->SetInputConnection(surface->GetOutputPort());
+  contourMapper->ScalarVisibilityOff();
+  contourMapper->ImmediateModeRenderingOn();
+
+  vtkSmartPointer<vtkActor> contourActor =
+  vtkSmartPointer<vtkActor>::New();
+  contourActor->SetMapper( contourMapper );
+
+
+
+  /*
+  vtkSmartPointer<vtkImageActor> imageActor = vtkSmartPointer<vtkImageActor>::New();
+  imageActor->GetMapper()->SetInputData(oneFrame);
+  imageActor->SetPosition(0.0, 0.0, 0.0);
+  imageActor->SetInterpolate(1);*/
 
   vtkSmartPointer<vtkImageResliceMapper> imageMapper =
     vtkSmartPointer<vtkImageResliceMapper>::New();
-  imageMapper->SetInputConnection(resize->GetOutputPort());
+  imageMapper->SetInputData(oneFrame);
+  vtkSmartPointer<vtkImageActor> imageActor =
+    vtkSmartPointer<vtkImageActor>::New();
+  imageActor->SetMapper(imageMapper);
 
-  vtkSmartPointer<vtkImageActor> imageActor = vtkSmartPointer<vtkImageActor>::New();
-  imageActor->GetMapper()->SetInputConnection(resize->GetOutputPort());
-  imageActor->SetPosition(123, 25, 95);
-  imageActor->SetInterpolate(1);
+  /*vtkSmartPointer<vtkImageSlice> imageSlice1 = vtkSmartPointer<vtkImageSlice>::New();
+  imageSlice1->SetMapper(imageMapper);
+  vtkSmartPointer<vtkImageSlice> imageSlice2 = vtkSmartPointer<vtkImageSlice>::New();
+  imageSlice1->GetMapper()->SetInputConnection(surface->GetOutputPort());
 
-  vtkSmartPointer<vtkFixedPointVolumeRayCastMapper> oneFrame_mapper =
-    vtkSmartPointer<vtkFixedPointVolumeRayCastMapper>::New();
-  oneFrame_mapper->SetInputData(oneFrame);
-  oneFrame_mapper->SetBlendModeToMaximumIntensity();
-
-  vtkSmartPointer<vtkVolume> oneFrame_volume =
-    vtkSmartPointer<vtkVolume>::New();
-  oneFrame_volume->SetMapper(oneFrame_mapper);
-  vtkSmartPointer<vtkVolumeProperty> oneFrame_Property =
-    property(0, 255, independentComponents, 'r');
-  //oneFrame_volume->SetProperty(oneFrame_Property);
+  vtkSmartPointer<vtkImageStack> imageStack = vtkSmartPointer<vtkImageStack>::New();
+  imageStack->AddImage(imageSlice1);
+  imageStack->AddImage(imageSlice2);*/
+  
 
   
   
@@ -288,12 +278,13 @@ int main (int argc, char *argv[])
   //ren->AddVolume(MRI_volume);
   //ren->AddVolume(fMRI_volume);
   
-  //ren->AddActor(imageActor);
-  //ren->AddActor(contoursActor);
-  ren->AddViewProp( contoursActor );
+  ren->AddActor(imageActor);
+  //ren->AddActor(contourActor);
+  ren->AddViewProp( contourActor );
   //ren->AddVolume(oneFrame_volume);
   //ren->AddVolume(template_volume);
   //ren->ResetCamera();
+  //ren->AddViewProp(imageStack);
   renWin->Render();
   iren->Start();
 

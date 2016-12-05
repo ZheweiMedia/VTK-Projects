@@ -249,7 +249,7 @@ int main (int argc, char *argv[])
   
   
   
-
+  //template_volume->SetMapper(oneFrame_mapper);
   
 
   
@@ -272,7 +272,7 @@ int main (int argc, char *argv[])
   //ren->AddVolume(MRI_volume);
   //ren->AddVolume(fMRI_volume);
   
-  ren->AddActor(imageActor);
+  //ren->AddActor(imageActor);
   //ren->AddVolume(oneFrame_volume);
   ren->AddVolume(template_volume);
   //ren->ResetCamera();
