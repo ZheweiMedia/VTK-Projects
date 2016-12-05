@@ -47,6 +47,7 @@
 #include <vtkMarchingCubes.h>
 #include <vtkImageStack.h>
 #include <vtkImageSlice.h>
+#include <vtkProperty.h>
 
 
 
@@ -172,6 +173,7 @@ int main (int argc, char *argv[])
   // new a vtkImageData, assume it is (x,y,45)
   vtkSmartPointer<vtkImageData> oneFrame =
     vtkSmartPointer<vtkImageData>::New();
+  oneFrame->DeepCopy(MRI_Reader->GetOutput());
   oneFrame->SetDimensions(dims[0], dims[1], 1);
   oneFrame->AllocateScalars(VTK_FLOAT,1);
   std::cout << "Here:" << dims[0] << " " << dims[1] << std::endl;
@@ -220,12 +222,15 @@ int main (int argc, char *argv[])
 
   vtkSmartPointer<vtkPolyDataMapper> contourMapper = vtkSmartPointer<vtkPolyDataMapper>::New();
   contourMapper->SetInputConnection(surface->GetOutputPort());
-  contourMapper->ScalarVisibilityOff();
+  //contourMapper->ScalarVisibilityOff();
   contourMapper->ImmediateModeRenderingOn();
 
   vtkSmartPointer<vtkActor> contourActor =
   vtkSmartPointer<vtkActor>::New();
+  //contourActor->GetBackfaceProperty()->SetOpacity(0.7);
+  contourActor->ForceOpaqueOn();
   contourActor->SetMapper( contourMapper );
+  
 
 
 
@@ -241,6 +246,8 @@ int main (int argc, char *argv[])
   vtkSmartPointer<vtkImageActor> imageActor =
     vtkSmartPointer<vtkImageActor>::New();
   imageActor->SetMapper(imageMapper);
+  imageActor->SetPosition(0, 0, 1);
+  //imageActor->SetInterpolate(1);
 
   /*vtkSmartPointer<vtkImageSlice> imageSlice1 = vtkSmartPointer<vtkImageSlice>::New();
   imageSlice1->SetMapper(imageMapper);
@@ -273,7 +280,7 @@ int main (int argc, char *argv[])
   //iren->GetInteractorStyle()->SetDefaultRenderer(ren);
 
   
-  renWin->SetSize(300, 300);
+  renWin->SetSize(600, 600);
   //renWin->Render();
   //ren->AddVolume(MRI_volume);
   //ren->AddVolume(fMRI_volume);

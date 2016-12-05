@@ -1,7 +1,7 @@
-/home/zhewei/Documents/VTK-Projects/demo/CMakeFiles/testRenderMRI.dir
-/home/zhewei/Documents/VTK-Projects/demo/CMakeFiles/testRenderAndImage.dir
-/home/zhewei/Documents/VTK-Projects/demo/CMakeFiles/testCutter.dir
-/home/zhewei/Documents/VTK-Projects/demo/CMakeFiles/testContour.dir
-/home/zhewei/Documents/VTK-Projects/demo/CMakeFiles/FixedPointVolumeRayCastMapperCT.dir
-/home/zhewei/Documents/VTK-Projects/demo/CMakeFiles/testMapper.dir
-/home/zhewei/Documents/VTK-Projects/demo/CMakeFiles/volumeRender.dir
+/home/zhewei/Documents/vtk_Projects/VTK-Projects/demo/CMakeFiles/testRenderMRI.dir
+/home/zhewei/Documents/vtk_Projects/VTK-Projects/demo/CMakeFiles/testRenderAndImage.dir
+/home/zhewei/Documents/vtk_Projects/VTK-Projects/demo/CMakeFiles/testCutter.dir
+/home/zhewei/Documents/vtk_Projects/VTK-Projects/demo/CMakeFiles/testContour.dir
+/home/zhewei/Documents/vtk_Projects/VTK-Projects/demo/CMakeFiles/FixedPointVolumeRayCastMapperCT.dir
+/home/zhewei/Documents/vtk_Projects/VTK-Projects/demo/CMakeFiles/testMapper.dir
+/home/zhewei/Documents/vtk_Projects/VTK-Projects/demo/CMakeFiles/volumeRender.dir
