@@ -246,7 +246,7 @@ int main (int argc, char *argv[])
   vtkSmartPointer<vtkImageActor> imageActor =
     vtkSmartPointer<vtkImageActor>::New();
   imageActor->SetMapper(imageMapper);
-  imageActor->SetPosition(0, 0, 1);
+  imageActor->SetPosition(0, 0, -10);
   //imageActor->SetInterpolate(1);
 
   /*vtkSmartPointer<vtkImageSlice> imageSlice1 = vtkSmartPointer<vtkImageSlice>::New();

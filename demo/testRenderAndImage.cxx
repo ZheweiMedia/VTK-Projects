@@ -177,6 +177,9 @@ int main (int argc, char *argv[])
 
 
   // Zone for template, and one frame image of MRI
+  // Find the Z value of the ROI
+  int Z_max = 0;
+  int Z_min = 1000;
   for (int i = 0; i < dims[0]; i++)
     for (int j = 0; j < dims[1]; j++)
       for (int k = 0; k < dims[2]; k++)
@@ -185,20 +188,31 @@ int main (int argc, char *argv[])
             static_cast<short*>(template_image->GetScalarPointer(i, j, k));
 
           if (template_pixel[0] == index[ROI_index])
-            template_pixel[0] = 255.0;
+            {
+              template_pixel[0] = 255.0;
+              if(Z_max < k)
+                Z_max = k;
+              if(Z_min > k)
+                Z_min = k;
+            }
+            
           else
-            template_pixel[0] = 0.0;
+            template_pixel[0] = 0;
 
           float* oneFrame_pixel =
             static_cast<float*>(oneFrame->GetScalarPointer(i, j, 0));
-          if (k == 45)
+          if (k == 55)
             {
               float* MRI_pixel =
                 static_cast<float*>(MRI_image->GetScalarPointer(i, j, k));
               oneFrame_pixel[0] = MRI_pixel[0];
             }
+          if (k < 55)
+            template_pixel[0] = 0.0;
             
         }
+
+  std::cout << Z_min << " " << Z_max << std::endl;
 
   dims = template_image->GetDimensions();
   std::cout << "template dims:" << dims[0] << " " << dims[1] << " " << dims[2] << std::endl;
@@ -217,31 +231,15 @@ int main (int argc, char *argv[])
   template_volume->SetMapper(template_mapper);
   template_volume->SetProperty(template_Property);
 
-
-
-  // resize image
-  vtkSmartPointer<vtkImageResize> resize =
-    vtkSmartPointer<vtkImageResize>::New();
-  resize->SetInputData(oneFrame);
-  //resize->SetOutputDimensions(191, 600, 1);
-  //resize->InterpolateOff();
-  resize->Update();
-
-  vtkSmartPointer<vtkImageData> oneFrametest =
-    vtkSmartPointer<vtkImageData>::New();
-  oneFrametest->ShallowCopy(resize->GetOutput());
-  dims = oneFrametest->GetDimensions();
-  std::cout << dims[0] << " " <<dims[1] << " " << dims[2] << std::endl;
-
   
 
   vtkSmartPointer<vtkImageResliceMapper> imageMapper =
     vtkSmartPointer<vtkImageResliceMapper>::New();
-  imageMapper->SetInputConnection(resize->GetOutputPort());
+  imageMapper->SetInputData(oneFrame);
 
   vtkSmartPointer<vtkImageActor> imageActor = vtkSmartPointer<vtkImageActor>::New();
-  imageActor->GetMapper()->SetInputConnection(resize->GetOutputPort());
-  imageActor->SetPosition(0, 0, 105);
+  imageActor->GetMapper()->SetInputData(oneFrame);
+  imageActor->SetPosition(0, 0, 55*2);
   imageActor->SetInterpolate(1);
 
   vtkSmartPointer<vtkFixedPointVolumeRayCastMapper> oneFrame_mapper =
