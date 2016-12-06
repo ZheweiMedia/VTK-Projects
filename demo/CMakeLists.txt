@@ -73,3 +73,11 @@ if(VTK_LIBRARIES)
 else()
   target_link_libraries(testMRIRender vtkHybrid vtkWidgets)
 endif()
+
+add_executable(MRIRender MRIRender.cxx)
+
+if(VTK_LIBRARIES)
+  target_link_libraries(MRIRender ${VTK_LIBRARIES})
+else()
+  target_link_libraries(MRIRender vtkHybrid vtkWidgets)
+endif()

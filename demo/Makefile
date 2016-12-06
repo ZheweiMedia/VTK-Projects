@@ -124,6 +124,19 @@ FixedPointVolumeRayCastMapperCT/fast:
 .PHONY : FixedPointVolumeRayCastMapperCT/fast
 
 #=============================================================================
+# Target rules for targets named MRIRender
+
+# Build rule for target.
+MRIRender: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 MRIRender
+.PHONY : MRIRender
+
+# fast build rule for target.
+MRIRender/fast:
+	$(MAKE) -f CMakeFiles/MRIRender.dir/build.make CMakeFiles/MRIRender.dir/build
+.PHONY : MRIRender/fast
+
+#=============================================================================
 # Target rules for targets named testContour
 
 # Build rule for target.
@@ -240,6 +253,33 @@ FixedPointVolumeRayCastMapperCT.s: FixedPointVolumeRayCastMapperCT.cxx.s
 FixedPointVolumeRayCastMapperCT.cxx.s:
 	$(MAKE) -f CMakeFiles/FixedPointVolumeRayCastMapperCT.dir/build.make CMakeFiles/FixedPointVolumeRayCastMapperCT.dir/FixedPointVolumeRayCastMapperCT.cxx.s
 .PHONY : FixedPointVolumeRayCastMapperCT.cxx.s
+
+MRIRender.o: MRIRender.cxx.o
+
+.PHONY : MRIRender.o
+
+# target to build an object file
+MRIRender.cxx.o:
+	$(MAKE) -f CMakeFiles/MRIRender.dir/build.make CMakeFiles/MRIRender.dir/MRIRender.cxx.o
+.PHONY : MRIRender.cxx.o
+
+MRIRender.i: MRIRender.cxx.i
+
+.PHONY : MRIRender.i
+
+# target to preprocess a source file
+MRIRender.cxx.i:
+	$(MAKE) -f CMakeFiles/MRIRender.dir/build.make CMakeFiles/MRIRender.dir/MRIRender.cxx.i
+.PHONY : MRIRender.cxx.i
+
+MRIRender.s: MRIRender.cxx.s
+
+.PHONY : MRIRender.s
+
+# target to generate assembly for a file
+MRIRender.cxx.s:
+	$(MAKE) -f CMakeFiles/MRIRender.dir/build.make CMakeFiles/MRIRender.dir/MRIRender.cxx.s
+.PHONY : MRIRender.cxx.s
 
 testContour.o: testContour.cxx.o
 
@@ -437,18 +477,22 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
-	@echo "... rebuild_cache"
-	@echo "... testRenderMRI"
-	@echo "... testRenderAndImage"
-	@echo "... testMRIRender"
-	@echo "... testCutter"
-	@echo "... testContour"
-	@echo "... FixedPointVolumeRayCastMapperCT"
 	@echo "... testMapper"
 	@echo "... volumeRender"
+	@echo "... testContour"
+	@echo "... testCutter"
+	@echo "... testMRIRender"
+	@echo "... testRenderAndImage"
+	@echo "... testRenderMRI"
+	@echo "... MRIRender"
+	@echo "... FixedPointVolumeRayCastMapperCT"
+	@echo "... rebuild_cache"
 	@echo "... FixedPointVolumeRayCastMapperCT.o"
 	@echo "... FixedPointVolumeRayCastMapperCT.i"
 	@echo "... FixedPointVolumeRayCastMapperCT.s"
+	@echo "... MRIRender.o"
+	@echo "... MRIRender.i"
+	@echo "... MRIRender.s"
 	@echo "... testContour.o"
 	@echo "... testContour.i"
 	@echo "... testContour.s"

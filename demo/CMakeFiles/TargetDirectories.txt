@@ -1,3 +1,4 @@
+/home/zhewei/Documents/vtk_Projects/VTK-Projects/demo/CMakeFiles/MRIRender.dir
 /home/zhewei/Documents/vtk_Projects/VTK-Projects/demo/CMakeFiles/testRenderMRI.dir
 /home/zhewei/Documents/vtk_Projects/VTK-Projects/demo/CMakeFiles/testRenderAndImage.dir
 /home/zhewei/Documents/vtk_Projects/VTK-Projects/demo/CMakeFiles/testMRIRender.dir
