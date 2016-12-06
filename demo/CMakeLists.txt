@@ -56,3 +56,28 @@ if(VTK_LIBRARIES)
 else()
   target_link_libraries(testRenderMRI vtkHybrid vtkWidgets)
 endif()
+
+add_executable(testContour testContour.cxx)
+
+if(VTK_LIBRARIES)
+  target_link_libraries(testContour ${VTK_LIBRARIES})
+else()
+  target_link_libraries(testContour vtkHybrid vtkWidgets)
+endif()
+
+
+add_executable(testMRIRender testMRIRender.cxx)
+
+if(VTK_LIBRARIES)
+  target_link_libraries(testMRIRender ${VTK_LIBRARIES})
+else()
+  target_link_libraries(testMRIRender vtkHybrid vtkWidgets)
+endif()
+
+add_executable(MRIRender MRIRender.cxx)
+
+if(VTK_LIBRARIES)
+  target_link_libraries(MRIRender ${VTK_LIBRARIES})
+else()
+  target_link_libraries(MRIRender vtkHybrid vtkWidgets)
+endif()

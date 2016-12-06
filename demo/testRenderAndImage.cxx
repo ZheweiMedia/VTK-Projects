@@ -39,6 +39,14 @@
 #include <vtkImageActor.h>
 #include <vtkImageMapper3D.h>
 #include <vtkImageResliceMapper.h>
+#include <vtkImageSincInterpolator.h>
+#include <vtkImageResize.h>
+#include <vtkCoordinate.h>
+#include <vtkCenterOfMass.h>
+#include <vtkTransformCoordinateSystems.h>
+
+
+
 
 
 
@@ -106,6 +114,8 @@ int main (int argc, char *argv[])
     vtkSmartPointer<vtkNIFTIImageReader>::New();
   fMRI_Reader->SetFileName(fMRI_name.c_str());
 
+  std::cout << "time:" << template_Reader->CanReadFile(template_name.c_str()) << std::endl;
+  
   template_Reader->Update();
   MRI_Reader->Update();
   fMRI_Reader->Update();
@@ -124,8 +134,8 @@ int main (int argc, char *argv[])
     vtkSmartPointer<vtkImageData>::New();
   template_image->ShallowCopy(template_Reader->GetOutput());
 
-  int* dims = MRI_image->GetDimensions();
-  std::cout << dims[0] << " " << dims[1] << " " << dims[2] << std::endl;
+  int* dims = template_image->GetDimensions();
+  std::cout << "template dims:" << dims[0] << " " << dims[1] << " " << dims[2] << std::endl;
   
   std::cout << MRI_image->GetScalarTypeAsString() << std::endl;
   std::cout << fMRI_image->GetScalarTypeAsString() << std::endl;
@@ -136,7 +146,7 @@ int main (int argc, char *argv[])
   template_image->GetScalarRange(template_range);
   std::cout << MRI_range[0] << " " << MRI_range[1] << std::endl;
 
-  std::cout << "Here:" << dims[0] << " " << dims[1] << std::endl;
+  std::cout << "Here1:" << dims[0] << " " << dims[1] << std::endl;
 
   // image of MRI and fMRI
   // Need to re-normalize
@@ -160,12 +170,16 @@ int main (int argc, char *argv[])
   // new a vtkImageData, assume it is (x,y,45)
   vtkSmartPointer<vtkImageData> oneFrame =
     vtkSmartPointer<vtkImageData>::New();
+  oneFrame->DeepCopy(MRI_Reader->GetOutput());
   oneFrame->SetDimensions(dims[0], dims[1], 1);
   oneFrame->AllocateScalars(VTK_FLOAT,1);
   std::cout << "Here:" << dims[0] << " " << dims[1] << std::endl;
 
 
   // Zone for template, and one frame image of MRI
+  // Find the Z value of the ROI
+  int Z_max = 0;
+  int Z_min = 1000;
   for (int i = 0; i < dims[0]; i++)
     for (int j = 0; j < dims[1]; j++)
       for (int k = 0; k < dims[2]; k++)
@@ -174,20 +188,34 @@ int main (int argc, char *argv[])
             static_cast<short*>(template_image->GetScalarPointer(i, j, k));
 
           if (template_pixel[0] == index[ROI_index])
-            template_pixel[0] = 255.0;
+            {
+              template_pixel[0] = 255.0;
+              if(Z_max < k)
+                Z_max = k;
+              if(Z_min > k)
+                Z_min = k;
+            }
+            
           else
-            template_pixel[0] = template_pixel[0]/30;
+            template_pixel[0] = 0;
 
           float* oneFrame_pixel =
             static_cast<float*>(oneFrame->GetScalarPointer(i, j, 0));
-          if (k == 45)
+          if (k == 55)
             {
               float* MRI_pixel =
                 static_cast<float*>(MRI_image->GetScalarPointer(i, j, k));
               oneFrame_pixel[0] = MRI_pixel[0];
             }
+          if (k < 55)
+            template_pixel[0] = 0.0;
             
         }
+
+  std::cout << Z_min << " " << Z_max << std::endl;
+
+  dims = template_image->GetDimensions();
+  std::cout << "template dims:" << dims[0] << " " << dims[1] << " " << dims[2] << std::endl;
 
   vtkSmartPointer<vtkFixedPointVolumeRayCastMapper> template_mapper =
     vtkSmartPointer<vtkFixedPointVolumeRayCastMapper>::New();
@@ -196,15 +224,12 @@ int main (int argc, char *argv[])
   
 
   vtkSmartPointer<vtkVolumeProperty> template_Property =
-    property(template_range[0], template_range[1], independentComponents, 'B');
+    property(0, 255, independentComponents, 'B');
 
   vtkSmartPointer<vtkVolume> template_volume =
     vtkSmartPointer<vtkVolume>::New();
   template_volume->SetMapper(template_mapper);
   template_volume->SetProperty(template_Property);
-
-  // resize image
-  
 
   
 
@@ -214,15 +239,37 @@ int main (int argc, char *argv[])
 
   vtkSmartPointer<vtkImageActor> imageActor = vtkSmartPointer<vtkImageActor>::New();
   imageActor->GetMapper()->SetInputData(oneFrame);
-  imageActor->SetPosition(23, 25, 95);
+  imageActor->SetPosition(0, 0, 55*2);
   imageActor->SetInterpolate(1);
 
-  
-  
-  
+  vtkSmartPointer<vtkFixedPointVolumeRayCastMapper> oneFrame_mapper =
+    vtkSmartPointer<vtkFixedPointVolumeRayCastMapper>::New();
+  oneFrame_mapper->SetInputData(oneFrame);
+  oneFrame_mapper->SetBlendModeToMaximumIntensity();
 
-  
+  vtkSmartPointer<vtkVolume> oneFrame_volume =
+    vtkSmartPointer<vtkVolume>::New();
+  oneFrame_volume->SetMapper(oneFrame_mapper);
+  vtkSmartPointer<vtkVolumeProperty> oneFrame_Property =
+    property(0, 255, independentComponents, 'r');
+  oneFrame_volume->SetProperty(oneFrame_Property);
 
+  vtkSmartPointer<vtkImageDataGeometryFilter> imageDataGeometryFilter = 
+    vtkSmartPointer<vtkImageDataGeometryFilter>::New();
+  //imageDataGeometryFilter->SetInputData(oneFrame);
+  imageDataGeometryFilter->SetInputData(template_image);
+  imageDataGeometryFilter->Update();
+  
+  vtkSmartPointer<vtkCenterOfMass> centerOfMassFilter =
+    vtkSmartPointer<vtkCenterOfMass>::New();
+  centerOfMassFilter->SetInputConnection(imageDataGeometryFilter->GetOutputPort());
+  centerOfMassFilter->SetUseScalarsAsWeights(false);
+  centerOfMassFilter->Update();
+ 
+  double center[3];
+  centerOfMassFilter->GetCenter(center);
+ 
+  std::cout << "Center of mass is " << center[0] << " " << center[1] << " " << center[2] << std::endl;
   
   // Create the renderers, render window, and interactor
 
@@ -237,15 +284,28 @@ int main (int argc, char *argv[])
   //iren->SetDesiredUpdateRate(frameRate / (1+clip));
   //iren->GetInteractorStyle()->SetDefaultRenderer(ren);
 
+  vtkSmartPointer<vtkCoordinate> coordinate = 
+    vtkSmartPointer<vtkCoordinate>::New();
+  coordinate->SetCoordinateSystemToView();
+  //coordinate->SetValue(.5,.5,0);
+  std::cout << *coordinate << std::endl;
+  std::cout << coordinate->GetCoordinateSystemAsString() << std::endl;
+
+
+
+  std::cout << "time:" << template_Reader->GetNIFTIHeader() << std::endl;
+
+
   
   renWin->SetSize(600, 600);
-  renWin->Render();
+  //renWin->Render();
   //ren->AddVolume(MRI_volume);
   //ren->AddVolume(fMRI_volume);
   
   ren->AddActor(imageActor);
+  //ren->AddVolume(oneFrame_volume);
   ren->AddVolume(template_volume);
-  ren->ResetCamera();
+  //ren->ResetCamera();
   renWin->Render();
   iren->Start();
 

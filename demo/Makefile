@@ -48,10 +48,10 @@ RM = /usr/local/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zhewei/Documents/VTK-Projects/demo
+CMAKE_SOURCE_DIR = /home/zhewei/Documents/vtk_Projects/VTK-Projects/demo
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zhewei/Documents/VTK-Projects/demo
+CMAKE_BINARY_DIR = /home/zhewei/Documents/vtk_Projects/VTK-Projects/demo
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zhewei/Documents/VTK-Projects/demo/CMakeFiles /home/zhewei/Documents/VTK-Projects/demo/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zhewei/Documents/vtk_Projects/VTK-Projects/demo/CMakeFiles /home/zhewei/Documents/vtk_Projects/VTK-Projects/demo/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zhewei/Documents/VTK-Projects/demo/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zhewei/Documents/vtk_Projects/VTK-Projects/demo/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -124,6 +124,32 @@ FixedPointVolumeRayCastMapperCT/fast:
 .PHONY : FixedPointVolumeRayCastMapperCT/fast
 
 #=============================================================================
+# Target rules for targets named MRIRender
+
+# Build rule for target.
+MRIRender: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 MRIRender
+.PHONY : MRIRender
+
+# fast build rule for target.
+MRIRender/fast:
+	$(MAKE) -f CMakeFiles/MRIRender.dir/build.make CMakeFiles/MRIRender.dir/build
+.PHONY : MRIRender/fast
+
+#=============================================================================
+# Target rules for targets named testContour
+
+# Build rule for target.
+testContour: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testContour
+.PHONY : testContour
+
+# fast build rule for target.
+testContour/fast:
+	$(MAKE) -f CMakeFiles/testContour.dir/build.make CMakeFiles/testContour.dir/build
+.PHONY : testContour/fast
+
+#=============================================================================
 # Target rules for targets named testCutter
 
 # Build rule for target.
@@ -135,6 +161,19 @@ testCutter: cmake_check_build_system
 testCutter/fast:
 	$(MAKE) -f CMakeFiles/testCutter.dir/build.make CMakeFiles/testCutter.dir/build
 .PHONY : testCutter/fast
+
+#=============================================================================
+# Target rules for targets named testMRIRender
+
+# Build rule for target.
+testMRIRender: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testMRIRender
+.PHONY : testMRIRender
+
+# fast build rule for target.
+testMRIRender/fast:
+	$(MAKE) -f CMakeFiles/testMRIRender.dir/build.make CMakeFiles/testMRIRender.dir/build
+.PHONY : testMRIRender/fast
 
 #=============================================================================
 # Target rules for targets named testMapper
@@ -215,6 +254,60 @@ FixedPointVolumeRayCastMapperCT.cxx.s:
 	$(MAKE) -f CMakeFiles/FixedPointVolumeRayCastMapperCT.dir/build.make CMakeFiles/FixedPointVolumeRayCastMapperCT.dir/FixedPointVolumeRayCastMapperCT.cxx.s
 .PHONY : FixedPointVolumeRayCastMapperCT.cxx.s
 
+MRIRender.o: MRIRender.cxx.o
+
+.PHONY : MRIRender.o
+
+# target to build an object file
+MRIRender.cxx.o:
+	$(MAKE) -f CMakeFiles/MRIRender.dir/build.make CMakeFiles/MRIRender.dir/MRIRender.cxx.o
+.PHONY : MRIRender.cxx.o
+
+MRIRender.i: MRIRender.cxx.i
+
+.PHONY : MRIRender.i
+
+# target to preprocess a source file
+MRIRender.cxx.i:
+	$(MAKE) -f CMakeFiles/MRIRender.dir/build.make CMakeFiles/MRIRender.dir/MRIRender.cxx.i
+.PHONY : MRIRender.cxx.i
+
+MRIRender.s: MRIRender.cxx.s
+
+.PHONY : MRIRender.s
+
+# target to generate assembly for a file
+MRIRender.cxx.s:
+	$(MAKE) -f CMakeFiles/MRIRender.dir/build.make CMakeFiles/MRIRender.dir/MRIRender.cxx.s
+.PHONY : MRIRender.cxx.s
+
+testContour.o: testContour.cxx.o
+
+.PHONY : testContour.o
+
+# target to build an object file
+testContour.cxx.o:
+	$(MAKE) -f CMakeFiles/testContour.dir/build.make CMakeFiles/testContour.dir/testContour.cxx.o
+.PHONY : testContour.cxx.o
+
+testContour.i: testContour.cxx.i
+
+.PHONY : testContour.i
+
+# target to preprocess a source file
+testContour.cxx.i:
+	$(MAKE) -f CMakeFiles/testContour.dir/build.make CMakeFiles/testContour.dir/testContour.cxx.i
+.PHONY : testContour.cxx.i
+
+testContour.s: testContour.cxx.s
+
+.PHONY : testContour.s
+
+# target to generate assembly for a file
+testContour.cxx.s:
+	$(MAKE) -f CMakeFiles/testContour.dir/build.make CMakeFiles/testContour.dir/testContour.cxx.s
+.PHONY : testContour.cxx.s
+
 testCutter.o: testCutter.cxx.o
 
 .PHONY : testCutter.o
@@ -241,6 +334,33 @@ testCutter.s: testCutter.cxx.s
 testCutter.cxx.s:
 	$(MAKE) -f CMakeFiles/testCutter.dir/build.make CMakeFiles/testCutter.dir/testCutter.cxx.s
 .PHONY : testCutter.cxx.s
+
+testMRIRender.o: testMRIRender.cxx.o
+
+.PHONY : testMRIRender.o
+
+# target to build an object file
+testMRIRender.cxx.o:
+	$(MAKE) -f CMakeFiles/testMRIRender.dir/build.make CMakeFiles/testMRIRender.dir/testMRIRender.cxx.o
+.PHONY : testMRIRender.cxx.o
+
+testMRIRender.i: testMRIRender.cxx.i
+
+.PHONY : testMRIRender.i
+
+# target to preprocess a source file
+testMRIRender.cxx.i:
+	$(MAKE) -f CMakeFiles/testMRIRender.dir/build.make CMakeFiles/testMRIRender.dir/testMRIRender.cxx.i
+.PHONY : testMRIRender.cxx.i
+
+testMRIRender.s: testMRIRender.cxx.s
+
+.PHONY : testMRIRender.s
+
+# target to generate assembly for a file
+testMRIRender.cxx.s:
+	$(MAKE) -f CMakeFiles/testMRIRender.dir/build.make CMakeFiles/testMRIRender.dir/testMRIRender.cxx.s
+.PHONY : testMRIRender.cxx.s
 
 testMapper.o: testMapper.cxx.o
 
@@ -357,19 +477,31 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
-	@echo "... rebuild_cache"
-	@echo "... testRenderMRI"
-	@echo "... testRenderAndImage"
-	@echo "... testCutter"
-	@echo "... FixedPointVolumeRayCastMapperCT"
 	@echo "... testMapper"
 	@echo "... volumeRender"
+	@echo "... testContour"
+	@echo "... testCutter"
+	@echo "... testMRIRender"
+	@echo "... testRenderAndImage"
+	@echo "... testRenderMRI"
+	@echo "... MRIRender"
+	@echo "... FixedPointVolumeRayCastMapperCT"
+	@echo "... rebuild_cache"
 	@echo "... FixedPointVolumeRayCastMapperCT.o"
 	@echo "... FixedPointVolumeRayCastMapperCT.i"
 	@echo "... FixedPointVolumeRayCastMapperCT.s"
+	@echo "... MRIRender.o"
+	@echo "... MRIRender.i"
+	@echo "... MRIRender.s"
+	@echo "... testContour.o"
+	@echo "... testContour.i"
+	@echo "... testContour.s"
 	@echo "... testCutter.o"
 	@echo "... testCutter.i"
 	@echo "... testCutter.s"
+	@echo "... testMRIRender.o"
+	@echo "... testMRIRender.i"
+	@echo "... testMRIRender.s"
 	@echo "... testMapper.o"
 	@echo "... testMapper.i"
 	@echo "... testMapper.s"

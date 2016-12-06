@@ -38,6 +38,7 @@
 #include <vtkActor2D.h>
 #include <vtkImageActor.h>
 #include <vtkImageMapper3D.h>
+#include <vtkSmartVolumeMapper.h>
 
 
 
@@ -164,6 +165,9 @@ int main (int argc, char *argv[])
 
 
   // Zone for template, and one frame image of MRI
+  // get the Z length of the Zone
+  int max_Z = 0;
+  int min_Z = 200;
   for (int i = 0; i < dims[0]; i++)
     for (int j = 0; j < dims[1]; j++)
       for (int k = 0; k < dims[2]; k++)
@@ -172,28 +176,37 @@ int main (int argc, char *argv[])
             static_cast<short*>(template_image->GetScalarPointer(i, j, k));
 
           if (template_pixel[0] == index[ROI_index])
-            template_pixel[0] = 255.0;
+            {
+              template_pixel[0] = 255.0;
+              if (k > max_Z)
+                max_Z = k;
+              if (k < min_Z)
+                min_Z = k;
+            }
+            
           else
             template_pixel[0] = 0.0;
 
           float* MRI_pixel =
             static_cast<float*>(MRI_image->GetScalarPointer(i, j, k));
-          if (k != 45)
+          if (k != 55)
             {
               MRI_pixel[0] = 0.0;
             }
             
         }
 
+  std::cout << min_Z << " " << max_Z << std::endl;
+
   vtkSmartPointer<vtkFixedPointVolumeRayCastMapper> template_mapper =
     vtkSmartPointer<vtkFixedPointVolumeRayCastMapper>::New();
   template_mapper->SetInputData(template_image);
   template_mapper->SetBlendModeToMaximumIntensity();
 
-  vtkSmartPointer<vtkFixedPointVolumeRayCastMapper> MRI_mapper =
-    vtkSmartPointer<vtkFixedPointVolumeRayCastMapper>::New();
+  vtkSmartPointer<vtkSmartVolumeMapper> MRI_mapper =
+    vtkSmartPointer<vtkSmartVolumeMapper>::New();
   MRI_mapper->SetInputData(MRI_image);
-  MRI_mapper->SetBlendModeToMaximumIntensity();
+  MRI_mapper->SetBlendModeToAdditive();
   
 
   //oneFrame->SetOrigin(origin);
@@ -214,13 +227,6 @@ int main (int argc, char *argv[])
 
 
 
-  
-
-  vtkSmartPointer<vtkImageMapper> imageMapper = vtkSmartPointer<vtkImageMapper>::New();
-  imageMapper->SetInputData(oneFrame);
-  vtkSmartPointer<vtkImageActor> imageActor = vtkSmartPointer<vtkImageActor>::New();
-  imageActor->GetMapper()->SetInputData(oneFrame);
-  imageActor->SetPosition(23, 25, 95);
 
   
   
@@ -239,8 +245,8 @@ int main (int argc, char *argv[])
     vtkSmartPointer<vtkRenderer>::New();
   renWin->AddRenderer(ren);
   iren->SetRenderWindow(renWin);
-  //iren->SetDesiredUpdateRate(frameRate / (1+clip));
-  //iren->GetInteractorStyle()->SetDefaultRenderer(ren);
+  iren->SetDesiredUpdateRate(frameRate / (1+clip));
+  iren->GetInteractorStyle()->SetDefaultRenderer(ren);
 
   
   renWin->SetSize(600, 600);
