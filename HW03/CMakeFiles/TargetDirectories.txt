@@ -1,0 +1,2 @@
+/home/zhewei/Documents/vtk_Projects/VTK-Projects/HW03/CMakeFiles/ReadDICOMSeries.dir
+/home/zhewei/Documents/vtk_Projects/VTK-Projects/HW03/CMakeFiles/ReadDICOM.dir
