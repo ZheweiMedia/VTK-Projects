@@ -171,13 +171,50 @@ clean: CMakeFiles/testCutter.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/testMRIRender.dir
+
+# All Build rule for target.
+CMakeFiles/testMRIRender.dir/all:
+	$(MAKE) -f CMakeFiles/testMRIRender.dir/build.make CMakeFiles/testMRIRender.dir/depend
+	$(MAKE) -f CMakeFiles/testMRIRender.dir/build.make CMakeFiles/testMRIRender.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zhewei/Documents/vtk_Projects/VTK-Projects/demo/CMakeFiles --progress-num=7,8 "Built target testMRIRender"
+.PHONY : CMakeFiles/testMRIRender.dir/all
+
+# Include target in all.
+all: CMakeFiles/testMRIRender.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/testMRIRender.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zhewei/Documents/vtk_Projects/VTK-Projects/demo/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/testMRIRender.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zhewei/Documents/vtk_Projects/VTK-Projects/demo/CMakeFiles 0
+.PHONY : CMakeFiles/testMRIRender.dir/rule
+
+# Convenience name for target.
+testMRIRender: CMakeFiles/testMRIRender.dir/rule
+
+.PHONY : testMRIRender
+
+# clean rule for target.
+CMakeFiles/testMRIRender.dir/clean:
+	$(MAKE) -f CMakeFiles/testMRIRender.dir/build.make CMakeFiles/testMRIRender.dir/clean
+.PHONY : CMakeFiles/testMRIRender.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/testMRIRender.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/testMapper.dir
 
 # All Build rule for target.
 CMakeFiles/testMapper.dir/all:
 	$(MAKE) -f CMakeFiles/testMapper.dir/build.make CMakeFiles/testMapper.dir/depend
 	$(MAKE) -f CMakeFiles/testMapper.dir/build.make CMakeFiles/testMapper.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zhewei/Documents/vtk_Projects/VTK-Projects/demo/CMakeFiles --progress-num=7,8 "Built target testMapper"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zhewei/Documents/vtk_Projects/VTK-Projects/demo/CMakeFiles --progress-num=9,10 "Built target testMapper"
 .PHONY : CMakeFiles/testMapper.dir/all
 
 # Include target in all.
@@ -214,7 +251,7 @@ clean: CMakeFiles/testMapper.dir/clean
 CMakeFiles/testRenderAndImage.dir/all:
 	$(MAKE) -f CMakeFiles/testRenderAndImage.dir/build.make CMakeFiles/testRenderAndImage.dir/depend
 	$(MAKE) -f CMakeFiles/testRenderAndImage.dir/build.make CMakeFiles/testRenderAndImage.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zhewei/Documents/vtk_Projects/VTK-Projects/demo/CMakeFiles --progress-num=9,10 "Built target testRenderAndImage"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zhewei/Documents/vtk_Projects/VTK-Projects/demo/CMakeFiles --progress-num=11,12 "Built target testRenderAndImage"
 .PHONY : CMakeFiles/testRenderAndImage.dir/all
 
 # Include target in all.
@@ -251,7 +288,7 @@ clean: CMakeFiles/testRenderAndImage.dir/clean
 CMakeFiles/testRenderMRI.dir/all:
 	$(MAKE) -f CMakeFiles/testRenderMRI.dir/build.make CMakeFiles/testRenderMRI.dir/depend
 	$(MAKE) -f CMakeFiles/testRenderMRI.dir/build.make CMakeFiles/testRenderMRI.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zhewei/Documents/vtk_Projects/VTK-Projects/demo/CMakeFiles --progress-num=11,12 "Built target testRenderMRI"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zhewei/Documents/vtk_Projects/VTK-Projects/demo/CMakeFiles --progress-num=13,14 "Built target testRenderMRI"
 .PHONY : CMakeFiles/testRenderMRI.dir/all
 
 # Include target in all.
@@ -288,7 +325,7 @@ clean: CMakeFiles/testRenderMRI.dir/clean
 CMakeFiles/volumeRender.dir/all:
 	$(MAKE) -f CMakeFiles/volumeRender.dir/build.make CMakeFiles/volumeRender.dir/depend
 	$(MAKE) -f CMakeFiles/volumeRender.dir/build.make CMakeFiles/volumeRender.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zhewei/Documents/vtk_Projects/VTK-Projects/demo/CMakeFiles --progress-num=13,14 "Built target volumeRender"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zhewei/Documents/vtk_Projects/VTK-Projects/demo/CMakeFiles --progress-num=15,16 "Built target volumeRender"
 .PHONY : CMakeFiles/volumeRender.dir/all
 
 # Include target in all.

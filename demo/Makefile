@@ -150,6 +150,19 @@ testCutter/fast:
 .PHONY : testCutter/fast
 
 #=============================================================================
+# Target rules for targets named testMRIRender
+
+# Build rule for target.
+testMRIRender: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testMRIRender
+.PHONY : testMRIRender
+
+# fast build rule for target.
+testMRIRender/fast:
+	$(MAKE) -f CMakeFiles/testMRIRender.dir/build.make CMakeFiles/testMRIRender.dir/build
+.PHONY : testMRIRender/fast
+
+#=============================================================================
 # Target rules for targets named testMapper
 
 # Build rule for target.
@@ -282,6 +295,33 @@ testCutter.cxx.s:
 	$(MAKE) -f CMakeFiles/testCutter.dir/build.make CMakeFiles/testCutter.dir/testCutter.cxx.s
 .PHONY : testCutter.cxx.s
 
+testMRIRender.o: testMRIRender.cxx.o
+
+.PHONY : testMRIRender.o
+
+# target to build an object file
+testMRIRender.cxx.o:
+	$(MAKE) -f CMakeFiles/testMRIRender.dir/build.make CMakeFiles/testMRIRender.dir/testMRIRender.cxx.o
+.PHONY : testMRIRender.cxx.o
+
+testMRIRender.i: testMRIRender.cxx.i
+
+.PHONY : testMRIRender.i
+
+# target to preprocess a source file
+testMRIRender.cxx.i:
+	$(MAKE) -f CMakeFiles/testMRIRender.dir/build.make CMakeFiles/testMRIRender.dir/testMRIRender.cxx.i
+.PHONY : testMRIRender.cxx.i
+
+testMRIRender.s: testMRIRender.cxx.s
+
+.PHONY : testMRIRender.s
+
+# target to generate assembly for a file
+testMRIRender.cxx.s:
+	$(MAKE) -f CMakeFiles/testMRIRender.dir/build.make CMakeFiles/testMRIRender.dir/testMRIRender.cxx.s
+.PHONY : testMRIRender.cxx.s
+
 testMapper.o: testMapper.cxx.o
 
 .PHONY : testMapper.o
@@ -400,6 +440,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... testRenderMRI"
 	@echo "... testRenderAndImage"
+	@echo "... testMRIRender"
 	@echo "... testCutter"
 	@echo "... testContour"
 	@echo "... FixedPointVolumeRayCastMapperCT"
@@ -414,6 +455,9 @@ help:
 	@echo "... testCutter.o"
 	@echo "... testCutter.i"
 	@echo "... testCutter.s"
+	@echo "... testMRIRender.o"
+	@echo "... testMRIRender.i"
+	@echo "... testMRIRender.s"
 	@echo "... testMapper.o"
 	@echo "... testMapper.i"
 	@echo "... testMapper.s"
