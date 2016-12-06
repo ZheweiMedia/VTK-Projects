@@ -41,11 +41,11 @@ public:
   vtkImageActor* _imageActor;
   int _MinSlice;
   int _MaxSlice;
+  vtkRenderer* _renderer;
  
 protected:
-  vtkRenderer* _renderer;
   int _Slice;
-  int* dims; 
+  int* dims;
  
 public:
    void SetRender(vtkRenderer* renderer) {
