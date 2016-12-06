@@ -106,7 +106,7 @@ int main (int argc, char *argv[])
   
   renWin->SetSize(600, 600);
   renWin->Render();
-  //ren->AddVolume(MRI_volume);
+  ren->AddVolume(MRI_volume);
   //ren->AddVolume(fMRI_volume);
   ren->AddVolume(template_volume);
   ren->ResetCamera();
