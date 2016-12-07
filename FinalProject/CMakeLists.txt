@@ -1,30 +1,83 @@
+#
+
 cmake_minimum_required(VERSION 2.8)
- 
-PROJECT(readNII)
- 
+
+PROJECT(volumeRender)
+
 find_package(VTK REQUIRED)
 include(${VTK_USE_FILE})
- 
-add_executable(readNII readNII.cxx)
- 
+
+add_executable(volumeRender volumeRender.cxx)
+
 if(VTK_LIBRARIES)
-  target_link_libraries(readNII ${VTK_LIBRARIES})
+  target_link_libraries(volumeRender ${VTK_LIBRARIES})
 else()
-  target_link_libraries(readNII vtkHybrid vtkWidgets)
+  target_link_libraries(volumeRender vtkHybrid vtkWidgets)
 endif()
 
-add_executable(readNIITest readNIITest.cxx)
- 
+add_executable(FixedPointVolumeRayCastMapperCT FixedPointVolumeRayCastMapperCT.cxx)
+
 if(VTK_LIBRARIES)
-  target_link_libraries(readNIITest ${VTK_LIBRARIES})
+  target_link_libraries(FixedPointVolumeRayCastMapperCT ${VTK_LIBRARIES})
 else()
-  target_link_libraries(readNIITest vtkHybrid vtkWidgets)
+  target_link_libraries(FixedPointVolumeRayCastMapperCT vtkHybrid vtkWidgets)
 endif()
 
-add_executable(readNII_view2 readNII_view2.cxx)
- 
+
+add_executable(testMapper testMapper.cxx)
+
 if(VTK_LIBRARIES)
-  target_link_libraries(readNII_view2 ${VTK_LIBRARIES})
+  target_link_libraries(testMapper ${VTK_LIBRARIES})
 else()
-  target_link_libraries(readNII_view2 vtkHybrid vtkWidgets)
+  target_link_libraries(testMapper vtkHybrid vtkWidgets)
+endif()
+
+add_executable(testCutter testCutter.cxx)
+
+if(VTK_LIBRARIES)
+  target_link_libraries(testCutter ${VTK_LIBRARIES})
+else()
+  target_link_libraries(testCutter vtkHybrid vtkWidgets)
+endif()
+
+
+add_executable(testRenderAndImage testRenderAndImage.cxx)
+
+if(VTK_LIBRARIES)
+  target_link_libraries(testRenderAndImage ${VTK_LIBRARIES})
+else()
+  target_link_libraries(testRenderAndImage vtkHybrid vtkWidgets)
+endif()
+
+add_executable(testRenderMRI testRenderMRI.cxx)
+
+if(VTK_LIBRARIES)
+  target_link_libraries(testRenderMRI ${VTK_LIBRARIES})
+else()
+  target_link_libraries(testRenderMRI vtkHybrid vtkWidgets)
+endif()
+
+add_executable(testContour testContour.cxx)
+
+if(VTK_LIBRARIES)
+  target_link_libraries(testContour ${VTK_LIBRARIES})
+else()
+  target_link_libraries(testContour vtkHybrid vtkWidgets)
+endif()
+
+
+add_executable(testMRIRender testMRIRender.cxx)
+
+if(VTK_LIBRARIES)
+  target_link_libraries(testMRIRender ${VTK_LIBRARIES})
+else()
+  target_link_libraries(testMRIRender vtkHybrid vtkWidgets)
+endif()
+
+add_executable(MRIRender MRIRender.cxx)
+
+if(VTK_LIBRARIES)
+  target_link_libraries(MRIRender ${VTK_LIBRARIES})
+else()
+  target_link_libraries(MRIRender vtkHybrid vtkWidgets)
 endif()
